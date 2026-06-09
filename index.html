@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Księżyce Układu Słonecznego</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b0f19;
+            color: #f0f4f8;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(180deg, #02050a 0%, #0b0f19 100%);
+            padding: 40px 20px;
+            text-align: center;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Styl sekcji pojedynczego księżyca */
+        .moon-card {
+            background-color: #141b2d;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+            border: 1px solid #1e293b;
+        }
+
+        @media (min-width: 768px) {
+            .moon-card {
+                flex-direction: row;
+            }
+        }
+
+        .moon-visual {
+            flex: 1;
+            min-height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Nowa sekcja graficzna: dynamiczne generowanie realistycznego Tytana */
+        .moon-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .moon-info {
+            flex: 1.5;
+            padding: 40px;
+        }
+
+        .moon-info h2 {
+            font-size: 2.2rem;
+            color: #fbbf24;
+            margin-bottom: 10px;
+        }
+
+        .planet-tag {
+            display: inline-block;
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .moon-description {
+            color: #cbd5e1;
+            margin-bottom: 25px;
+            font-size: 1.05rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 15px;
+            border-top: 1px solid #1e293b;
+            padding-top: 20px;
+        }
+
+        .stat-box {
+            background-color: #0b0f19;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #1e293b;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #f8fafc;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: #475569;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Księżyce Układu Słonecznego</h1>
+        <p>Eksploracja najbardziej fascynujących światów krążących wokół naszych planet</p>
+    </header>
+
+    <main>
+        <!-- Sekcja: TYTAN -->
+        <section class="moon-card">
+            <div class="moon-visual">
+                <img src="https://photojournal.jpl.nasa.gov/jpeg/PIA14602.jpg" alt="Prawdziwe zdjęcie Tytana z sondy Cassini, pokazujące gęstą, pomarańczową atmosferę kryjącą powierzchnię księżyca">
+            </div>
+
+            
+            <div class="moon-info">
+                <span class="planet-tag">Księżyc Saturna</span>
+                <h2>Tytan</h2>
+                
+                <p class="moon-description">
+                    Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest to niezwykle fascynujący świat – jako jedyny satelita posiada gęstą atmosferę, w której dominują azot i metan. Co więcej, jest to jedyne ciało niebieskie poza Ziemią, na którego powierzchni odkryto stałe zbiorniki cieczy (jeziora płynnego metanu i etanu). Udowodniono również, że pod lodową skorupą Tytana znajduje się globalny ocean płynnej wody.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-value">5150 km</span>
+                        <span class="stat-label">Średnica</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">-179°C</span>
+                        <span class="stat-label">Temp. powierzchni</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">1,5 atm</span>
+                        <span class="stat-label">Ciśnienie</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">15,9 dnia</span>
+                        <span class="stat-label">Okres obiegu</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Atlas Księżyców. Stworzono z pasji do astronomii.</p>
+    </footer>
+
+</body>
+</html>
