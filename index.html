@@ -61,16 +61,28 @@
             }
         }
 
-        /* Kontener dla galerii/slidera */
-        .moon-visual {
+        /* Główny kontener lewej strony (zdjęcie + przyciski pod spodem) */
+        .moon-visual-wrapper {
             flex: 1;
-            min-height: 400px;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            background-color: #05070a;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        @media (min-width: 768px) {
+            .moon-visual-wrapper {
+                border-bottom: none;
+                border-right: 1px solid #1e293b;
+            }
+        }
+
+        /* Kontener dla samego zdjęcia */
+        .moon-visual {
+            width: 100%;
+            height: 380px;
             position: relative;
             overflow: hidden;
-            background-color: #05070a;
         }
 
         /* Stylowanie slajdów */
@@ -81,7 +93,6 @@
             top: 0;
             left: 0;
             display: none;
-            background-color: #05070a;
         }
 
         .slide-container.active {
@@ -97,36 +108,38 @@
             display: block;
         }
 
-        /* Przyciski nawigacji galerii */
+        /* Dolny pasek z przyciskami (teraz są pod zdjęciem) */
+        .slider-controls {
+            display: flex;
+            border-top: 1px solid #1e293b;
+            background-color: #0f172a;
+        }
+
         .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(15, 23, 42, 0.7);
-            color: #f8fafc;
-            border: 1px solid #334155;
-            padding: 12px 16px;
-            font-size: 1.2rem;
+            flex: 1;
+            background: none;
+            border: none;
+            color: #94a3b8;
+            padding: 15px;
+            font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 50%;
-            transition: all 0.2s ease;
-            z-index: 10;
+            transition: transform 0.2s, background-color 0.2s, color 0.2s;
             user-select: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
         }
 
         .slider-btn:hover {
-            background-color: #38bdf8;
-            color: #0f172a;
-            border-color: #38bdf8;
+            background-color: #1e293b;
+            color: #38bdf8;
         }
 
+        /* Rozdzielenie przycisków delikatną linią */
         .btn-prev {
-            left: 15px;
-        }
-
-        .btn-next {
-            right: 15px;
+            border-right: 1px solid #1e293b;
         }
 
         .moon-info {
@@ -215,24 +228,27 @@
 
     <main>
         <section class="moon-card" id="titan-card">
-            <div class="moon-visual">
-                <button class="slider-btn btn-prev" onclick="moveSlide('titan-card', -1)">&#10094;</button>
-                <button class="slider-btn btn-next" onclick="moveSlide('titan-card', 1)">&#10095;</button>
-
-                <div class="slide-container active">
-                    <img src="Saturns-moon-Titan-14.jpg" alt="Tytan - Zdjęcie 1">
+            <div class="moon-visual-wrapper">
+                <div class="moon-visual">
+                    <div class="slide-container active">
+                        <img src="Saturns-moon-Titan-14.jpg" alt="Tytan - Zdjęcie 1">
+                    </div>
+                    <div class="slide-container">
+                        <img src="PIA02145-1200w.jpg" alt="Tytan - Zdjęcie 2">
+                    </div>
+                    <div class="slide-container">
+                        <img src="PIA07232.jpg" alt="Tytan - Zdjęcie 3">
+                    </div>
+                    <div class="slide-container">
+                        <img src="PIA08119.jpg" alt="Tytan - Zdjęcie 4">
+                    </div>
+                    <div class="slide-container">
+                        <img src="PIA21923_CassiniVIMSTitan_MAIN-1200w.jpg" alt="Tytan - Zdjęcie 5">
+                    </div>
                 </div>
-                <div class="slide-container">
-                    <img src="PIA02145-1200w.jpg" alt="Tytan - Zdjęcie 2">
-                </div>
-                <div class="slide-container">
-                    <img src="PIA07232.jpg" alt="Tytan - Zdjęcie 3">
-                </div>
-                <div class="slide-container">
-                    <img src="PIA08119.jpg" alt="Tytan - Zdjęcie 4">
-                </div>
-                <div class="slide-container">
-                    <img src="PIA21923_CassiniVIMSTitan_MAIN-1200w.jpg" alt="Tytan - Zdjęcie 5">
+                <div class="slider-controls">
+                    <button class="slider-btn btn-prev" onclick="moveSlide('titan-card', -1)">&#10094; Poprzednie</button>
+                    <button class="slider-btn btn-next" onclick="moveSlide('titan-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
 
@@ -265,24 +281,27 @@
         </section>
 
         <section class="moon-card enceladus-card" id="enceladus-card">
-            <div class="moon-visual">
-                <button class="slider-btn btn-prev" onclick="moveSlide('enceladus-card', -1)">&#10094;</button>
-                <button class="slider-btn btn-next" onclick="moveSlide('enceladus-card', 1)">&#10095;</button>
-
-                <div class="slide-container active">
-                    <img src="Enceladus (Moon) Facts.jpeg" alt="Enceladus - Zdjęcie 1">
+            <div class="moon-visual-wrapper">
+                <div class="moon-visual">
+                    <div class="slide-container active">
+                        <img src="Enceladus (Moon) Facts.jpeg" alt="Enceladus - Zdjęcie 1">
+                    </div>
+                    <div class="slide-container">
+                        <img src="N00165314.jpg" alt="Enceladus - Zdjęcie 2">
+                    </div>
+                    <div class="slide-container">
+                        <img src="N00244792.jpg" alt="Enceladus - Zdjęcie 3">
+                    </div>
+                    <div class="slide-container">
+                        <img src="NASA's Cassini spacecraft zoomed by Saturn's icy moon Enceladus on Oct_ 14, 2015, capturing this stunning image of the moon's north pole. Credits_ NASA_JPL-Caltech_Space Science Institute.jpg" alt="Enceladus - Zdjęcie 4">
+                    </div>
+                    <div class="slide-container">
+                        <img src="PIA11133.jpg" alt="Enceladus - Zdjęcie 5">
+                    </div>
                 </div>
-                <div class="slide-container">
-                    <img src="N00165314.jpg" alt="Enceladus - Zdjęcie 2">
-                </div>
-                <div class="slide-container">
-                    <img src="N00244792.jpg" alt="Enceladus - Zdjęcie 3">
-                </div>
-                <div class="slide-container">
-                    <img src="NASA's Cassini spacecraft zoomed by Saturn's icy moon Enceladus on Oct_ 14, 2015, capturing this stunning image of the moon's north pole. Credits_ NASA_JPL-Caltech_Space Science Institute.jpg" alt="Enceladus - Zdjęcie 4">
-                </div>
-                <div class="slide-container">
-                    <img src="PIA11133.jpg" alt="Enceladus - Zdjęcie 5">
+                <div class="slider-controls">
+                    <button class="slider-btn btn-prev" onclick="moveSlide('enceladus-card', -1)">&#10094; Poprzednie</button>
+                    <button class="slider-btn btn-next" onclick="moveSlide('enceladus-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
 
@@ -315,31 +334,35 @@
         </section>
 
         <section class="moon-card miranda-card" id="miranda-card">
-            <div class="moon-visual">
-                <button class="slider-btn btn-prev" onclick="moveSlide('miranda-card', -1)">&#10094;</button>
-                <button class="slider-btn btn-next" onclick="moveSlide('miranda-card', 1)">&#10095;</button>
-
-                <div class="slide-container active">
-                    <img src="5cff89f4-7b31-4742-a68a-b8c3bea4c833.jpeg" alt="Miranda - Zdjęcie 1">
+            <div class="moon-visual-wrapper">
+                <div class="moon-visual">
+                    <div class="slide-container active">
+                        <img src="5cff89f4-7b31-4742-a68a-b8c3bea4c833.jpeg" alt="Miranda - Zdjęcie 1">
+                    </div>
+                    <div class="slide-container">
+                        <img src="miranda.jpg" alt="Miranda - Zdjęcie 2">
+                    </div>
+                    <div class="slide-container">
+                        <img src="Miranda.jpeg" alt="Miranda - Zdjęcie 3">
+                    </div>
+                    <div class="slide-container">
+                        <img src="PIA00140.jpg" alt="Miranda - Zdjęcie 4">
+                    </div>
+                    <div class="slide-container">
+                        <img src="20241028-Miranda-Voyager2.jpg" alt="Miranda - Zdjęcie 5">
+                    </div>
+                    <div class="slide-container">
+                        <img src="jpegPIA01490.jpg" alt="Miranda - Zdjęcie 6">
+                    </div>
+                    <div class="slide-container">
+                        <img src="020520_miranda2.jpg" alt="Miranda - Zdjęcie 7">
+                    </div>
                 </div>
-                <div class="slide-container">
-                    <img src="miranda.jpg" alt="Miranda - Zdjęcie 2">
+                <div class="slider-controls">
+                    <button class="slider-btn btn-prev" onclick="moveSlide('miranda-card', -1)">&#10094; Poprzednie</button>
+                    <button class="slider-btn btn-next" onclick="moveSlide('miranda-card', 1)">Następne &#10095;</button>
                 </div>
-                <div class="slide-container">
-                    <img src="Miranda.jpeg" alt="Miranda - Zdjęcie 3">
-                </div>
-                <div class="slide-container">
-                    <img src="PIA00140.jpg" alt="Miranda - Zdjęcie 4">
-                </div>
-                <div class="slide-container">
-                    <img src="20241028-Miranda-Voyager2.jpg" alt="Miranda - Zdjęcie 5">
-                </div>
-                <div class="slide-container">
-                    <img src="jpegPIA01490.jpg" alt="Miranda - Zdjęcie 6">
-                </div>
-                <div class="slide-container">
-                    <img src="020520_miranda2.jpg" alt="Miranda - Zdjęcie 7">
-                </div> </div>
+            </div>
 
             <div class="moon-info">
                 <span class="planet-tag">Księżyc Urana</span>
