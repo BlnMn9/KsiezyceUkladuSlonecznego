@@ -140,9 +140,13 @@
             margin-bottom: 10px;
         }
 
-        /* Osobny kolor akcentu dla Enceladusa (błękit lodowy) */
+        /* Osobne kolory akcentów dla różnych planet */
         .enceladus-card h2 {
             color: #7dd3fc;
+        }
+        
+        .miranda-card h2 {
+            color: #a78bfa;
         }
 
         .planet-tag {
@@ -275,7 +279,7 @@
                     <img src="N00244792.jpg" alt="Enceladus - Zdjęcie 3">
                 </div>
                 <div class="slide-container">
-                    <img src="NASA's Cassini spacecraft zoomed by Saturn's icy moon Enceladus on Oct_ 14, 2015, capturing this stunning image of the moon's north pole. Credits_ NASA_JPL-Caltech_Space Science Institute.jpg" alt="Enceladus - Zdjęcie 4">
+                    <img src="NASA's Cassini spacecraft zoo..." alt="Enceladus - Zdjęcie 4">
                 </div>
                 <div class="slide-container">
                     <img src="PIA11133.jpg" alt="Enceladus - Zdjęcie 5">
@@ -309,6 +313,59 @@
                 </div>
             </div>
         </section>
+
+        <section class="moon-card miranda-card" id="miranda-card">
+            <div class="moon-visual">
+                <button class="slider-btn btn-prev" onclick="moveSlide('miranda-card', -1)">&#10094;</button>
+                <button class="slider-btn btn-next" onclick="moveSlide('miranda-card', 1)">&#10095;</button>
+
+                <div class="slide-container active">
+                    <img src="5cff89f4-7b31-4742-a68a-b8c3bea4c833.jpeg" alt="Miranda - Zdjęcie 1">
+                </div>
+                <div class="slide-container">
+                    <img src="miranda.jpg" alt="Miranda - Zdjęcie 2">
+                </div>
+                <div class="slide-container">
+                    <img src="Miranda.jpeg" alt="Miranda - Zdjęcie 3">
+                </div>
+                <div class="slide-container">
+                    <img src="PIA00140.jpg" alt="Miranda - Zdjęcie 4">
+                </div>
+                <div class="slide-container">
+                    <img src="20241028-Miranda-Voyager2.jpg" alt="Miranda - Zdjęcie 5">
+                </div>
+                <div class="slide-container">
+                    <img src="jpegPIA01490.jpg" alt="Miranda - Zdjęcie 6">
+                </div>
+            </div>
+
+            <div class="moon-info">
+                <span class="planet-tag">Księżyc Urana</span>
+                <h2>Miranda</h2>
+                <p class="moon-description">
+                    Miranda to najmniejszy i położony najbliżej planety z pięciu głównych księżyców Urana. Posiada jedną z najbardziej ekstremalnych i zróżnicowanych powierzchni w Układzie Słonecznym. Obok gigantycznych, głębokich kanionów i kraterów znajdują się tam ogromne, owalne struktury zwane „koronami”. Najbardziej imponującym punktem topograficznym jest Verona Rupes – gigantyczny uskok tektoniczny i najwyższy klif w znanym kosmosie, mierzący nawet do 20 km wysokości.
+                </p>
+
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <span class="stat-value">471 km</span>
+                        <span class="stat-label">Średnica</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">-213°C</span>
+                        <span class="stat-label">Temp. powierzchni</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">0 atm</span>
+                        <span class="stat-label">Atmosfera</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-value">1,41 dnia</span>
+                        <span class="stat-label">Okres obiegu</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -316,23 +373,24 @@
     </footer>
 
     <script>
-        // Obiekt przechowujący indeksy aktualnych slajdów dla każdej karty osobno
+        // Obiekt rejestrujący pozycję slajdu dla każdego slidera na podstawie jego ID
         const sliderStates = {
             'titan-card': 0,
-            'enceladus-card': 0
+            'enceladus-card': 0,
+            'miranda-card': 0
         };
 
         function moveSlide(cardId, direction) {
             const card = document.getElementById(cardId);
             const slides = card.querySelectorAll('.slide-container');
             
-            // Ukryj obecne zdjęcie w wybranej karcie
+            // Ukryj obecne zdjęcie
             slides[sliderStates[cardId]].classList.remove('active');
             
-            // Zmień indeks dla konkretnej karty
+            // Przelicz nowy indeks slajdu
             sliderStates[cardId] += direction;
             
-            // Zapętlenie slidera wewnątrz wybranej karty
+            // Zapętlenie w pętli nieskończonej
             if (sliderStates[cardId] >= slides.length) {
                 sliderStates[cardId] = 0;
             } else if (sliderStates[cardId] < 0) {
