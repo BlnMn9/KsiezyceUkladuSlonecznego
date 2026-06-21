@@ -154,6 +154,7 @@
         .io-card h2 { color: #f59e0b; }
         .europa-card h2 { color: #22d3ee; }
         .ganymede-card h2 { color: #10b981; }
+        .callisto-card h2 { color: #9ca3af; } /* Szarość dla Kallisto */
         .triton-card h2 { color: #2dd4bf; }
         .charon-card h2 { color: #fb7185; }
 
@@ -330,6 +331,7 @@
                 </div>
             </div>
         </section>
+
         <section class="moon-card miranda-card" id="miranda-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
@@ -364,7 +366,7 @@
         </section>
 
         <section class="moon-card io-card" id="io-card">
-             <div class="moon-visual-wrapper">
+            <div class="moon-visual-wrapper">
                 <div class="moon-visual">
                     <div class="slide-container active"><img src="PIA00738~orig.jpg" alt="Io - Zdjęcie 1"></div>
                     <div class="slide-container"><img src="PIA01223~orig.jpg" alt="Io - Zdjęcie 2"></div>
@@ -396,7 +398,7 @@
         </section>
 
         <section class="moon-card europa-card" id="europa-card">
-             <div class="moon-visual-wrapper">
+            <div class="moon-visual-wrapper">
                 <div class="moon-visual">
                     <div class="slide-container active"><img src="europa-full.en.jpg" alt="Europa - Zdjęcie 1"></div>
                     <div class="slide-container"><img src="4965690752_066be059b7_h.jpg" alt="Europa - Zdjęcie 2"></div>
@@ -463,6 +465,39 @@
             </div>
         </section>
 
+        <section class="moon-card callisto-card" id="callisto-card">
+            <div class="moon-visual-wrapper">
+                <div class="moon-visual">
+                    <div class="slide-container active"><img src="Callisto1.jpeg" alt="Kallisto - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="Callisto2.jfif" alt="Kallisto - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="Callisto3.jfif" alt="Kallisto - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="Callisto4.jfif" alt="Kallisto - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="Callisto5.jfif" alt="Kallisto - Zdjęcie 5"></div>
+                    <div class="slide-container"><img src="Callisto6.jfif" alt="Kallisto - Zdjęcie 6"></div>
+                    <div class="slide-container"><img src="Callisto7.jpg" alt="Kallisto - Zdjęcie 7"></div>
+                    <div class="slide-container"><img src="Callisto8.jpg" alt="Kallisto - Zdjęcie 8"></div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn btn-prev" onclick="moveSlide('callisto-card', -1)">&#10094; Poprzednie</button>
+                    <button class="slider-btn btn-next" onclick="moveSlide('callisto-card', 1)">Następne &#10095;</button>
+                </div>
+            </div>
+            <div class="moon-info">
+                <span class="planet-tag">Księżyc Jowisza</span>
+                <h2>Kallisto</h2>
+                <p class="moon-description">
+                    Kallisto to drugi co do wielkości księżyc Jowisza i trzeci w całym Układzie Słonecznym. Charakteryzuje się najgęściej usianą kraterami powierzchnią ze wszystkich znanych ciał niebieskich, co czyni ją najstarszym, niezmienionym geologicznie krajobrazem w naszym systemie planetarnym. Kallisto jest zbudowana w podobnych proporcjach ze skał i lodu. Ze względu na duże oddalenie od Jowisza, nie podlega silnym siłom pływowym, jednak pod jej grubą, lodową skorupą również może skrywać się ocean słonej wody.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-box"><span class="stat-value">4821 km</span><span class="stat-label">Średnica</span></div>
+                    <div class="stat-box"><span class="stat-value">-139°C</span><span class="stat-label">Temp. powierzchni</span></div>
+                    <div class="stat-box"><span class="stat-value">16,69 dnia</span><span class="stat-label">Okres obiegu</span></div>
+                    <div class="stat-box"><span class="stat-value">0,018 M⊕</span><span class="stat-label">Masa (Ziemi)</span></div>
+                    <div class="stat-box"><span class="stat-value">1,24 m/s²</span><span class="stat-label">Grawitacja</span></div>
+                    <div class="stat-box"><span class="stat-value">G. Galileusz (1610)</span><span class="stat-label">Odkrywca</span></div>
+                </div>
+            </div>
+        </section>
         <section class="moon-card triton-card" id="triton-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
@@ -495,7 +530,7 @@
         </section>
 
         <section class="moon-card charon-card" id="charon-card">
-             <div class="moon-visual-wrapper">
+            <div class="moon-visual-wrapper">
                 <div class="moon-visual">
                     <div class="slide-container active"><img src="Charon-Neutral-Bright-Release.jpg" alt="Charon - Zdjęcie 1"></div>
                     <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-2-e1444566526801.jpg" alt="Charon - Zdjęcie 2"></div>
@@ -505,7 +540,6 @@
                     <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-4-e1444566589295.jpg" alt="Charon - Zdjęcie 6"></div>
                     <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-6.jpg" alt="Charon - Zdjęcie 7"></div>
                     <div class="slide-container"><img src="OIP.dJsj0yeueuB57AOHxf9glAHaJt.png" alt="Charon - Zdjęcie 8"></div>
-
                 </div>
                 <div class="slider-controls">
                     <button class="slider-btn btn-prev" onclick="moveSlide('charon-card', -1)">&#10094; Poprzednie</button>
@@ -539,11 +573,12 @@
         const sliderStates = {
             'titan-card': 0,
             'enceladus-card': 0,
-            'dione-card': 0, // Dodany suwak dla Dione
+            'dione-card': 0, 
             'miranda-card': 0,
             'io-card': 0,
             'europa-card': 0,
             'ganymede-card': 0,
+            'callisto-card': 0, // Dodany suwak dla Kallisto
             'triton-card': 0,
             'charon-card': 0 
         };
