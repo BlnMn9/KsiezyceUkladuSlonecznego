@@ -43,7 +43,6 @@
             padding: 0 20px;
         }
 
-        /* Styl sekcji pojedynczego księżyca */
         .moon-card {
             background-color: #141b2d;
             border-radius: 12px;
@@ -61,7 +60,6 @@
             }
         }
 
-        /* Główny kontener lewej strony (zdjęcie + przyciski pod spodem) */
         .moon-visual-wrapper {
             flex: 1;
             display: flex;
@@ -77,7 +75,6 @@
             }
         }
 
-        /* Kontener dla samego zdjęcia */
         .moon-visual {
             width: 100%;
             height: 380px;
@@ -85,7 +82,6 @@
             overflow: hidden;
         }
 
-        /* Stylowanie slajdów */
         .slide-container {
             width: 100%;
             height: 100%;
@@ -108,7 +104,6 @@
             display: block;
         }
 
-        /* Dolny pasek z przyciskami */
         .slider-controls {
             display: flex;
             border-top: 1px solid #1e293b;
@@ -159,6 +154,7 @@
         .europa-card h2 { color: #22d3ee; }
         .ganymede-card h2 { color: #10b981; }
         .triton-card h2 { color: #2dd4bf; }
+        .charon-card h2 { color: #fb7185; }
 
         .planet-tag {
             display: inline-block;
@@ -178,7 +174,6 @@
             font-size: 1.05rem;
         }
 
-        /* Układ siatki parametrów */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -228,6 +223,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header>
@@ -240,35 +236,23 @@
         <section class="moon-card" id="titan-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
-                    <div class="slide-container active">
-                        <img src="Saturns-moon-Titan-14.jpg" alt="Tytan - Zdjęcie 1">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA02145-1200w.jpg" alt="Tytan - Zdjęcie 2">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA07232.jpg" alt="Tytan - Zdjęcie 3">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA08119.jpg" alt="Tytan - Zdjęcie 4">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA21923_CassiniVIMSTitan_MAIN-1200w.jpg" alt="Tytan - Zdjęcie 5">
-                    </div>
+                    <div class="slide-container active"><img src="Saturns-moon-Titan-14.jpg" alt="Tytan - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="PIA02145-1200w.jpg" alt="Tytan - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="PIA07232.jpg" alt="Tytan - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="PIA08119.jpg" alt="Tytan - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="PIA21923_CassiniVIMSTitan_MAIN-1200w.jpg" alt="Tytan - Zdjęcie 5"></div>
                 </div>
                 <div class="slider-controls">
                     <button class="slider-btn btn-prev" onclick="moveSlide('titan-card', -1)">&#10094; Poprzednie</button>
                     <button class="slider-btn btn-next" onclick="moveSlide('titan-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
-
             <div class="moon-info">
                 <span class="planet-tag">Księżyc Saturna</span>
                 <h2>Tytan</h2>
                 <p class="moon-description">
                     Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest to niezwykle fascynujący świat – jako jedyny satelita posiada gęstą atmosferę, w której dominują azot i metan. Co więcej, jest to jedyne ciało niebieskie poza Ziemią, na którego powierzchni odkryto stałe zbiorniki cieczy (jeziora płynnego metanu i etanu). Udowodniono również, że pod lodową skorupą Tytana znajduje się globalny ocean płynnej wody.
                 </p>
-
                 <div class="stats-grid">
                     <div class="stat-box"><span class="stat-value">5150 km</span><span class="stat-label">Średnica</span></div>
                     <div class="stat-box"><span class="stat-value">-179°C</span><span class="stat-label">Temp. powierzchni</span></div>
@@ -283,35 +267,23 @@
         <section class="moon-card enceladus-card" id="enceladus-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
-                    <div class="slide-container active">
-                        <img src="Enceladus (Moon) Facts.jpeg" alt="Enceladus - Zdjęcie 1">
-                    </div>
-                    <div class="slide-container">
-                        <img src="N00165314.jpg" alt="Enceladus - Zdjęcie 2">
-                    </div>
-                    <div class="slide-container">
-                        <img src="N00244792.jpg" alt="Enceladus - Zdjęcie 3">
-                    </div>
-                    <div class="slide-container">
-                        <img src="NASA's Cassini spacecraft zoomed by Saturn's icy moon Enceladus on Oct_ 14, 2015, capturing this stunning image of the moon's north pole. Credits_ NASA_JPL-Caltech_Space Science Institute.jpg" alt="Enceladus - Zdjęcie 4">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA11133.jpg" alt="Enceladus - Zdjęcie 5">
-                    </div>
+                    <div class="slide-container active"><img src="Enceladus (Moon) Facts.jpeg" alt="Enceladus - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="N00165314.jpg" alt="Enceladus - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="N00244792.jpg" alt="Enceladus - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="NASA's Cassini spacecraft zoomed by Saturn's icy moon Enceladus on Oct_ 14, 2015, capturing this stunning image of the moon's north pole. Credits_ NASA_JPL-Caltech_Space Science Institute.jpg" alt="Enceladus - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="PIA11133.jpg" alt="Enceladus - Zdjęcie 5"></div>
                 </div>
                 <div class="slider-controls">
                     <button class="slider-btn btn-prev" onclick="moveSlide('enceladus-card', -1)">&#10094; Poprzednie</button>
                     <button class="slider-btn btn-next" onclick="moveSlide('enceladus-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
-
             <div class="moon-info">
                 <span class="planet-tag">Księżyc Saturna</span>
                 <h2>Enceladus</h2>
                 <p class="moon-description">
                     Enceladus to szósty pod względem wielkości księżyc Saturna, pokryty niemal w całości czystym, lśniącym lodem, który odbija większość światła słonecznego. Pod tą lodową skorupą skrywa się globalny ocean płynnej wody. Najbardziej niezwykłą cechą Enceladusa są aktywne gejzery kriowulkaniczne w okolicach bieguna południowego, które nieustannie wyrzucają w przestrzeń kosmiczną pióropusze pary wodnej, lodu i prostych związków organicznych.
                 </p>
-
                 <div class="stats-grid">
                     <div class="stat-box"><span class="stat-value">504 km</span><span class="stat-label">Średnica</span></div>
                     <div class="stat-box"><span class="stat-value">-201°C</span><span class="stat-label">Temp. powierzchni</span></div>
@@ -326,41 +298,25 @@
         <section class="moon-card miranda-card" id="miranda-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
-                    <div class="slide-container active">
-                        <img src="5cff89f4-7b31-4742-a68a-b8c3bea4c833.jpeg" alt="Miranda - Zdjęcie 1">
-                    </div>
-                    <div class="slide-container">
-                        <img src="miranda.jpg" alt="Miranda - Zdjęcie 2">
-                    </div>
-                    <div class="slide-container">
-                        <img src="Miranda.jpeg" alt="Miranda - Zdjęcie 3">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA00140.jpg" alt="Miranda - Zdjęcie 4">
-                    </div>
-                    <div class="slide-container">
-                        <img src="20241028-Miranda-Voyager2.jpg" alt="Miranda - Zdjęcie 5">
-                    </div>
-                    <div class="slide-container">
-                        <img src="jpegPIA01490.jpg" alt="Miranda - Zdjęcie 6">
-                    </div>
-                    <div class="slide-container">
-                        <img src="020520_miranda2.jpg" alt="Miranda - Zdjęcie 7">
-                    </div>
+                    <div class="slide-container active"><img src="5cff89f4-7b31-4742-a68a-b8c3bea4c833.jpeg" alt="Miranda - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="miranda.jpg" alt="Miranda - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="Miranda.jpeg" alt="Miranda - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="PIA00140.jpg" alt="Miranda - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="20241028-Miranda-Voyager2.jpg" alt="Miranda - Zdjęcie 5"></div>
+                    <div class="slide-container"><img src="jpegPIA01490.jpg" alt="Miranda - Zdjęcie 6"></div>
+                    <div class="slide-container"><img src="020520_miranda2.jpg" alt="Miranda - Zdjęcie 7"></div>
                 </div>
                 <div class="slider-controls">
                     <button class="slider-btn btn-prev" onclick="moveSlide('miranda-card', -1)">&#10094; Poprzednie</button>
                     <button class="slider-btn btn-next" onclick="moveSlide('miranda-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
-
             <div class="moon-info">
                 <span class="planet-tag">Księżyc Urana</span>
                 <h2>Miranda</h2>
                 <p class="moon-description">
                     Miranda to najmniejszy i położony najbliżej planety z pięciu głównych księżyców Urana. Posiada jedną z najbardziej ekstremalnych i zróżnicowanych powierzchni w Układzie Słonecznym. Obok gigantycznych, głębokich kanionów i kraterów znajdują się tam ogromne, owalne struktury zwane „koronami”. Najbardziej imponującym punktem topograficznym jest Verona Rupes – gigantyczny uskok tektoniczny i najwyższy klif w znanym kosmosie, mierzący nawet do 20 km wysokości.
                 </p>
-
                 <div class="stats-grid">
                     <div class="stat-box"><span class="stat-value">471 km</span><span class="stat-label">Średnica</span></div>
                     <div class="stat-box"><span class="stat-value">-213°C</span><span class="stat-label">Temp. powierzchni</span></div>
@@ -375,38 +331,24 @@
         <section class="moon-card io-card" id="io-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
-                    <div class="slide-container active">
-                        <img src="PIA00738~orig.jpg" alt="Io - Zdjęcie 1">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA01223~orig.jpg" alt="Io - Zdjęcie 2">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA01626~orig.jpg" alt="Io - Zdjęcie 3">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA02550~orig.jpg" alt="Io - Zdjęcie 4">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA02599~orig.jpg" alt="Io - Zdjęcie 5">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA01106~orig.jpg" alt="Io - Zdjęcie 6">
-                    </div>
+                    <div class="slide-container active"><img src="PIA00738~orig.jpg" alt="Io - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="PIA01223~orig.jpg" alt="Io - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="PIA01626~orig.jpg" alt="Io - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="PIA02550~orig.jpg" alt="Io - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="PIA02599~orig.jpg" alt="Io - Zdjęcie 5"></div>
+                    <div class="slide-container"><img src="PIA01106~orig.jpg" alt="Io - Zdjęcie 6"></div>
                 </div>
                 <div class="slider-controls">
                     <button class="slider-btn btn-prev" onclick="moveSlide('io-card', -1)">&#10094; Poprzednie</button>
                     <button class="slider-btn btn-next" onclick="moveSlide('io-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
-
             <div class="moon-info">
                 <span class="planet-tag">Księżyc Jowisza</span>
                 <h2>Io</h2>
                 <p class="moon-description">
                     Io to najbardziej wewnętrzny z czterech księżyców galileuszowych Jowisza. Jest to najbardziej aktywne geologicznie ciało w Układzie Słonecznym, posiadające ponad 400 czynnych wulkanów. Ciągłe erupcje uwalniają ogromne ilości siarki i dwutlenku siarki, które pokrywają powierzchnię jaskrawymi odcieniami żółci, czerwieni, czerni i zieleni. Niezwykła aktywność Io jest wynikiem potężnych sił przypływowych generowanych przez grawitację Jowisza oraz sąsiednich księżyców: Europy i Ganimedesa.
                 </p>
-
                 <div class="stats-grid">
                     <div class="stat-box"><span class="stat-value">3643 km</span><span class="stat-label">Średnica</span></div>
                     <div class="stat-box"><span class="stat-value">-143°C</span><span class="stat-label">Temp. powierzchni</span></div>
@@ -421,44 +363,26 @@
         <section class="moon-card europa-card" id="europa-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
-                    <div class="slide-container active">
-                        <img src="europa-full.en.jpg" alt="Europa - Zdjęcie 1">
-                    </div>
-                    <div class="slide-container">
-                        <img src="4965690752_066be059b7_h.jpg" alt="Europa - Zdjęcie 2">
-                    </div>
-                    <div class="slide-container">
-                        <img src="Close-up Images of Jupiter's Frozen Ocean Moon_.jpeg" alt="Europa - Zdjęcie 3">
-                    </div>
-                    <div class="slide-container">
-                        <img src="Europa (2).jpeg" alt="Europa - Zdjęcie 4">
-                    </div>
-                    <div class="slide-container">
-                        <img src="Europa (1).jpeg" alt="Europa - Zdjęcie 5">
-                    </div>
-                    <div class="slide-container">
-                        <img src="Europa.jpeg" alt="Europa - Zdjęcie 6">
-                    </div>
-                    <div class="slide-container">
-                        <img src="Jupiter and its moon Europe.jpeg" alt="Europa - Zdjęcie 7">
-                    </div>
-                    <div class="slide-container">
-                        <img src="pia25695-nasas-juno-mission-captures-images-of-europa.jpg" alt="Europa - Zdjęcie 8">
-                    </div>
+                    <div class="slide-container active"><img src="europa-full.en.jpg" alt="Europa - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="4965690752_066be059b7_h.jpg" alt="Europa - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="Close-up Images of Jupiter's Frozen Ocean Moon_.jpeg" alt="Europa - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="Europa (2).jpeg" alt="Europa - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="Europa (1).jpeg" alt="Europa - Zdjęcie 5"></div>
+                    <div class="slide-container"><img src="Europa.jpeg" alt="Europa - Zdjęcie 6"></div>
+                    <div class="slide-container"><img src="Jupiter and its moon Europe.jpeg" alt="Europa - Zdjęcie 7"></div>
+                    <div class="slide-container"><img src="pia25695-nasas-juno-mission-captures-images-of-europa.jpg" alt="Europa - Zdjęcie 8"></div>
                 </div>
                 <div class="slider-controls">
                     <button class="slider-btn btn-prev" onclick="moveSlide('europa-card', -1)">&#10094; Poprzednie</button>
                     <button class="slider-btn btn-next" onclick="moveSlide('europa-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
-
             <div class="moon-info">
                 <span class="planet-tag">Księżyc Jowisza</span>
                 <h2>Europa</h2>
                 <p class="moon-description">
                     Europa to najmniejszy z czterech księżyców galileuszowych Jowisza i jedno z najbardziej obiecujących miejsc w Układzie Słonecznym w poszukiwaniu życia pozaziemskiego. Jej lodowa powierzchnia jest niezwykle gładka, poprzecinana siecią ciemnych linii i pęknięć. Pod grubą warstwą lodu skrywa się globalny ocean płynnej wody o głębokości mogącej sięgać nawet 100 kilometrów, który pozostaje w stanie ciekłym dzięki ciepłu generowanemu przez siły przypływowe Jowisza.
                 </p>
-
                 <div class="stats-grid">
                     <div class="stat-box"><span class="stat-value">3122 km</span><span class="stat-label">Średnica</span></div>
                     <div class="stat-box"><span class="stat-value">-160°C</span><span class="stat-label">Temp. powierzchni</span></div>
@@ -473,44 +397,26 @@
         <section class="moon-card ganymede-card" id="ganymede-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
-                    <div class="slide-container active">
-                        <img src="ganymede.webp" alt="Ganimedes - Zdjęcie 1">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA00716.jpg" alt="Ganimedes - Zdjęcie 2">
-                    </div>
-                    <div class="slide-container">
-                        <img src="e1_-_pia24682_-_juno_ganymede_sru_-_darkside.png" alt="Ganimedes - Zdjęcie 3">
-                    </div>
-                    <div class="slide-container">
-                        <img src="pia24681-1041.jpg" alt="Ganimedes - Zdjęcie 4">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA02278.jpg" alt="Ganimedes - Zdjęcie 5">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA02282.jpg" alt="Ganimedes - Zdjęcie 6">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA02233.jpg" alt="Ganimedes - Zdjęcie 7">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA00580.jpg" alt="Ganimedes - Zdjęcie 8">
-                    </div>
+                    <div class="slide-container active"><img src="ganymede.webp" alt="Ganimedes - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="PIA00716.jpg" alt="Ganimedes - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="e1_-_pia24682_-_juno_ganymede_sru_-_darkside.png" alt="Ganimedes - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="pia24681-1041.jpg" alt="Ganimedes - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="PIA02278.jpg" alt="Ganimedes - Zdjęcie 5"></div>
+                    <div class="slide-container"><img src="PIA02282.jpg" alt="Ganimedes - Zdjęcie 6"></div>
+                    <div class="slide-container"><img src="PIA02233.jpg" alt="Ganimedes - Zdjęcie 7"></div>
+                    <div class="slide-container"><img src="PIA00580.jpg" alt="Ganimedes - Zdjęcie 8"></div>
                 </div>
                 <div class="slider-controls">
                     <button class="slider-btn btn-prev" onclick="moveSlide('ganymede-card', -1)">&#10094; Poprzednie</button>
                     <button class="slider-btn btn-next" onclick="moveSlide('ganymede-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
-
             <div class="moon-info">
                 <span class="planet-tag">Księżyc Jowisza</span>
                 <h2>Ganimedes</h2>
                 <p class="moon-description">
                     Ganimedes to największy księżyc w całym Układzie Słonecznym – jest większy od planety Merkury i planety karłowatej Pluton. Jako jedyny księżyc posiada własne, dipolowe pole magnetyczne, co świadczy o obecności płynnego żelaznego jądra. Jego powierzchnię pokrywają dwa rodzaje terenu: bardzo stare, ciemne obszary oraz nieco młodsze, jaśniejsze regiony poprzecinane głębokimi bruzdami. Skrywa pod lodem potężny, podpowierzchniowy ocean.
                 </p>
-
                 <div class="stats-grid">
                     <div class="stat-box"><span class="stat-value">5268 km</span><span class="stat-label">Średnica</span></div>
                     <div class="stat-box"><span class="stat-value">-163°C</span><span class="stat-label">Temp. powierzchni</span></div>
@@ -525,35 +431,23 @@
         <section class="moon-card triton-card" id="triton-card">
             <div class="moon-visual-wrapper">
                 <div class="moon-visual">
-                    <div class="slide-container active">
-                        <img src="Triton (maan) - Wikipedia.jpeg" alt="Tryton - Zdjęcie 1">
-                    </div>
-                    <div class="slide-container">
-                        <img src="Triton.jpeg" alt="Tryton - Zdjęcie 2">
-                    </div>
-                    <div class="slide-container">
-                        <img src="50 Interesting Solar System Facts Scientists Have_.jpeg" alt="Tryton - Zdjęcie 3">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA12184.jpg" alt="Tryton - Zdjęcie 4">
-                    </div>
-                    <div class="slide-container">
-                        <img src="PIA02208.jpg" alt="Tryton - Zdjęcie 5">
-                    </div>
+                    <div class="slide-container active"><img src="Triton (maan) - Wikipedia.jpeg" alt="Tryton - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="Triton.jpeg" alt="Tryton - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="50 Interesting Solar System Facts Scientists Have_.jpeg" alt="Tryton - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="PIA12184.jpg" alt="Tryton - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="PIA02208.jpg" alt="Tryton - Zdjęcie 5"></div>
                 </div>
                 <div class="slider-controls">
                     <button class="slider-btn btn-prev" onclick="moveSlide('triton-card', -1)">&#10094; Poprzednie</button>
                     <button class="slider-btn btn-next" onclick="moveSlide('triton-card', 1)">Następne &#10095;</button>
                 </div>
             </div>
-
             <div class="moon-info">
                 <span class="planet-tag">Księżyc Neptuna</span>
                 <h2>Tryton</h2>
                 <p class="moon-description">
                     Tryton to największy naturalny satelita Neptuna i jedyny duży księżyc w Układzie Słonecznym, który porusza się ruchem wstecznym. To silnie sugeruje, że został przechwycony z Pasa Kuipera. Jego lodowa powierzchnia przypomina teksturą skórkę kantalupy, a ekstremalnie niskie temperatury pozwalają na istnienie aktywnych gejzerów kriowulkanicznych, wyrzucających azot na wysokość wielu kilometrów.
                 </p>
-
                 <div class="stats-grid">
                     <div class="stat-box"><span class="stat-value">2707 km</span><span class="stat-label">Średnica</span></div>
                     <div class="stat-box"><span class="stat-value">-235°C</span><span class="stat-label">Temp. powierzchni</span></div>
@@ -564,6 +458,41 @@
                 </div>
             </div>
         </section>
+
+        <section class="moon-card charon-card" id="charon-card">
+            <div class="moon-visual-wrapper">
+                <div class="moon-visual">
+                    <div class="slide-container active"><img src="Charon-Neutral-Bright-Release.jpg" alt="Charon - Zdjęcie 1"></div>
+                    <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-2-e1444566526801.jpg" alt="Charon - Zdjęcie 2"></div>
+                    <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-7.jpg" alt="Charon - Zdjęcie 3"></div>
+                    <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-3-e1444566599175.jpg" alt="Charon - Zdjęcie 4"></div>
+                    <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-5-e1444566580116.jpg" alt="Charon - Zdjęcie 5"></div>
+                    <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-4-e1444566589295.jpg" alt="Charon - Zdjęcie 6"></div>
+                    <div class="slide-container"><img src="Charon-released-10-9-2015-New-Horizons-6.jpg" alt="Charon - Zdjęcie 7"></div>
+                    <div class="slide-container"><img src="OIP.dJsj0yeueuB57AOHxf9gIAHaJt.png" alt="Charon - Zdjęcie 8"></div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn btn-prev" onclick="moveSlide('charon-card', -1)">&#10094; Poprzednie</button>
+                    <button class="slider-btn btn-next" onclick="moveSlide('charon-card', 1)">Następne &#10095;</button>
+                </div>
+            </div>
+            <div class="moon-info">
+                <span class="planet-tag">Księżyc Plutona</span>
+                <h2>Charon</h2>
+                <p class="moon-description">
+                    Charon to największy księżyc planety karłowatej Plutona. Jego średnica to nieco ponad połowa średnicy samego Plutona, a jego relatywnie duża masa sprawia, że środek masy układu znajduje się w otwartej przestrzeni między nimi. Z tego powodu układ Pluton-Charon uważa się niekiedy za układ podwójny. Charon wyróżnia się na tle innych lodowych ciał czerwonawym, ciemnym obszarem przy biegunie północnym, nazywanym nieoficjalnie „Mordorem”, oraz głębokimi rozpadlinami rozciągającymi się wzdłuż równika. Obiega on Plutona w tym samym czasie, w jakim planeta ta rotuje wokół własnej osi, co powoduje, że oba ciała są zawsze zwrócone do siebie tymi samymi stronami.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-box"><span class="stat-value">1212 km</span><span class="stat-label">Średnica</span></div>
+                    <div class="stat-box"><span class="stat-value">-220°C</span><span class="stat-label">Temp. powierzchni</span></div>
+                    <div class="stat-box"><span class="stat-value">6,39 dnia</span><span class="stat-label">Okres obiegu</span></div>
+                    <div class="stat-box"><span class="stat-value">0,00026 M⊕</span><span class="stat-label">Masa (Ziemi)</span></div>
+                    <div class="stat-box"><span class="stat-value">0,288 m/s²</span><span class="stat-label">Grawitacja</span></div>
+                    <div class="stat-box"><span class="stat-value">J. Christy (1978)</span><span class="stat-label">Odkrywca</span></div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer>
@@ -578,7 +507,8 @@
             'io-card': 0,
             'europa-card': 0,
             'ganymede-card': 0,
-            'triton-card': 0
+            'triton-card': 0,
+            'charon-card': 0 // Dodano stan suwaka dla Charona
         };
 
         function moveSlide(cardId, direction) {
