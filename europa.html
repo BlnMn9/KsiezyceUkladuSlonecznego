@@ -5,6 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Europa - Księżyce Układu Słonecznego</title>
     <link rel="stylesheet" href="europa.css">
+    <style>
+        /* Styl dla licznika w prawym górnym rogu */
+        .orbit-timer-top-right {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(20, 27, 45, 0.85);
+            border: 1px solid #1e293b;
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: #2dd4bf;
+            font-size: 0.9rem;
+            font-weight: bold;
+            z-index: 10;
+            backdrop-filter: blur(4px);
+        }
+    </style>
 </head>
 <body>
 
@@ -35,6 +52,8 @@
         <div class="section">
             <h3>Wizualizacja Orbity</h3>
             <div class="orbit-canvas-wrapper">
+                <div id="live-orbit-timer" class="orbit-timer-top-right">0d 0h</div>
+                
                 <div class="orbit-system">
                     <div class="orbit-planet-core"></div>
                     <div class="orbit-path-animator" id="orbit-animator">
@@ -44,7 +63,6 @@
 
                 <div class="orbit-data-panel">
                     <div class="data-metric"><span class="data-value">3.55 d</span><span class="data-label">Okres całkowity</span></div>
-                    <div class="data-metric"><span class="data-value" id="live-orbit-timer" style="color: #2dd4bf;">0d 0h 0m</span><span class="data-label">Bieżący czas obiegu</span></div>
                     <div class="data-metric"><span class="data-value">670k km</span><span class="data-label">Dystans</span></div>
                     <div class="data-metric"><span class="data-value">13.7 km/s</span><span class="data-label">Prędkość</span></div>
                 </div>
@@ -182,14 +200,13 @@
                 const progressRatio = elapsedMs / animationDurationMs;
                 const currentTotalDays = progressRatio * targetDays;
 
-                // Obliczanie dni, godzin i minut z ułamka doby
+                // Obliczanie dni i godzin z ułamka doby
                 const days = Math.floor(currentTotalDays);
                 const remainingHoursTotal = (currentTotalDays - days) * 24;
                 const hours = Math.floor(remainingHoursTotal);
-                const minutes = Math.floor((remainingHoursTotal - hours) * 60);
 
-                // Formatowanie tekstu licznika
-                timerElement.innerText = `${days}d ${hours}h ${minutes}m`;
+                // Formatowanie tekstu licznika (bez minut)
+                timerElement.innerText = `${days}d ${hours}h`;
 
                 requestAnimationFrame(updateOrbitTimer);
             }
