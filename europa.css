@@ -50,6 +50,7 @@ main {
 .moon-hero-img {
     flex: 1;
     min-height: 400px;
+    background-color: #1e293b;
     background-image: url('europa-full.en.jpg');
     background-size: cover;
     background-position: center;
@@ -125,7 +126,10 @@ main {
     padding-bottom: 10px;
 }
 
-/* Orbita CSS */
+/* ============================
+   ZMODYFIKOWANA ORBITA 
+   ============================ */
+
 .orbit-canvas-wrapper {
     position: relative;
     width: 100%;
@@ -134,14 +138,15 @@ main {
     background: radial-gradient(circle at center, #0a0e17 0%, #05070a 100%);
     border: 1px solid #1e293b;
     border-radius: 16px;
-    padding: 40px;
-    overflow: hidden;
+    padding: 30px 15px; /* Mniejszy padding poziomy dla responsywności */
+    overflow: hidden; /* Zapobiega wychodzeniu elementów na zewnątrz */
 }
 
 .orbit-system {
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 100%;
+    max-width: 300px;
+    aspect-ratio: 1; /* Orbita jest zawsze idealnym kołem */
     margin: 0 auto;
     border: 1px solid rgba(56, 189, 248, 0.2);
     border-radius: 50%;
@@ -150,12 +155,23 @@ main {
     align-items: center;
 }
 
+/* Realistyczny Jowisz 3D */
 .orbit-planet-core {
     width: 80px;
     height: 80px;
-    background: radial-gradient(circle at 30% 30%, #fcd34d, #d97706);
+    background: repeating-linear-gradient(
+        0deg,
+        #a38c75 0%,
+        #d3c4b1 10%,
+        #b89c7c 20%,
+        #e1d3c1 35%,
+        #c4a78b 50%,
+        #9e846b 65%,
+        #d3c4b1 80%,
+        #a38c75 100%
+    );
     border-radius: 50%;
-    box-shadow: 0 0 40px rgba(217, 119, 6, 0.4);
+    box-shadow: inset -15px -15px 25px rgba(0, 0, 0, 0.8), 0 0 30px rgba(217, 119, 6, 0.2);
     z-index: 2;
 }
 
@@ -166,15 +182,16 @@ main {
     animation: orbit-rotate 10s linear infinite;
 }
 
+/* Realistyczna Europa 3D */
 .orbit-moon-point {
     position: absolute;
     top: -10px;
-    left: 50%;
+    left: calc(50% - 10px); /* Precyzyjne centrowanie dla okrągłych właściwości */
     width: 20px;
     height: 20px;
-    background: #e2e8f0;
+    background: radial-gradient(circle at 30% 30%, #f4f1ed 0%, #a8a096 100%);
     border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+    box-shadow: inset -4px -4px 6px rgba(0, 0, 0, 0.6), 0 0 10px rgba(255, 255, 255, 0.4);
     z-index: 3;
 }
 
@@ -196,30 +213,7 @@ main {
 .data-value { display: block; color: #38bdf8; font-size: 1.2rem; font-weight: bold; }
 .data-label { font-size: 0.75rem; color: #64748b; text-transform: uppercase; margin-top: 4px; }
 
-.orbit-controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 25px;
-}
-
-.orbit-controls button {
-    background-color: #1e293b;
-    color: #38bdf8;
-    border: 1px solid #38bdf8;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-.orbit-controls button:hover {
-    background-color: #38bdf8;
-    color: #0b0f19;
-}
-
-/* Tabele */
+/* Reszta stylów strony... */
 .extended-table {
     width: 100%;
     border-collapse: collapse;
@@ -231,17 +225,14 @@ main {
 .extended-table td:first-child { color: #94a3b8; width: 40%; }
 .extended-table td:last-child { color: #f8fafc; font-weight: bold; text-align: right; }
 
-/* Porównania */
 .comparison-item { margin-bottom: 20px; }
 .comparison-label { display: flex; justify-content: space-between; margin-bottom: 5px; font-size: 0.95rem; }
 .progress-bg { background: #0b0f19; height: 14px; border-radius: 7px; overflow: hidden; border: 1px solid #1e293b; }
 .progress-fill { background: #38bdf8; height: 100%; border-radius: 7px; }
 
-/* Astrobiologia */
 .astro-rating { font-size: 1.3rem; margin-bottom: 15px; }
 .stars { color: #fbbf24; letter-spacing: 2px; }
 
-/* Tekst Grid */
 .text-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -256,7 +247,6 @@ main {
     font-size: 0.95rem;
 }
 
-/* Galeria, misje, ciekawostki */
 .grid-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -271,26 +261,6 @@ main {
 .card h4 { color: #fbbf24; margin-bottom: 5px; }
 .agency { font-size: 0.8rem; color: #94a3b8; margin-bottom: 10px; display: block; }
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px;
-}
-.gallery-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid #1e293b;
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-.gallery-img:hover {
-    transform: scale(1.03);
-    border-color: #38bdf8;
-}
-
-/* Podobne obiekty */
 .related-card {
     text-align: center;
     cursor: pointer;
