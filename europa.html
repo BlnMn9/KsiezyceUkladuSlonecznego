@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Europa - Księżyce Układu Słonecznego</title>
     <link rel="stylesheet" href="europa.css">
-
 </head>
 <body>
 
@@ -61,7 +60,7 @@
             <div class="text-grid">
                 <div class="text-box">
                     <h4>Historia odkrycia</h4>
-                    <p>Europa została odkryta przez Galileusza w styczniu 1610 roku przy pomocy jednego z pierwszych teleskopów. Jej odkrycie zrewolucjonizowało ówczesną astronomię, udowadniając, że nie wszystkie ciała niebieskie krążą wokół Ziemi.</p>
+                    <p>Europa została odkryta przez Galileusza w styczniu 1610 roku. Choć teoria heliocentryczna Kopernika była już znana, to właśnie bezpośrednia obserwacja księżyców Jowisza dostarczyła pierwszego, namacalnego dowodu, że istnieją ciała niebieskie krążące wokół innego centrum niż Ziemia, zadając potężny cios ówczesnemu modelowi geocentrycznemu.</p>
                 </div>
                 <div class="text-box">
                     <h4>Charakterystyka</h4>
@@ -87,6 +86,7 @@
         <div class="section">
             <h3>Parametry fizyczne</h3>
             <table class="extended-table">
+                <tr><td>Masa całkowita</td><td>~4,80 × 10<sup>19</sup> ton (48 trylionów ton)</td></tr>
                 <tr><td>Promień równikowy</td><td>1560,8 km</td></tr>
                 <tr><td>Gęstość</td><td>3,013 g/cm³</td></tr>
                 <tr><td>Atmosfera</td><td>Niezwykle cienka</td></tr>
@@ -194,7 +194,6 @@
                 timerElement.innerText = `${days}d ${hours}h`;
 
                 // 2. Synchronizacja obrotu animacji
-                // Kąt obrotu od 0 do 360 stopni na podstawie upływu czasu
                 const degrees = progressRatio * 360;
                 animatorElement.style.transform = `rotate(${degrees}deg)`;
 
@@ -204,7 +203,6 @@
             requestAnimationFrame(updateOrbitTimer);
         });
     </script>
-
 
 </body>
 </html>
