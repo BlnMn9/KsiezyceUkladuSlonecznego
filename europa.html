@@ -187,6 +187,13 @@
             </div>
         </div>
 
+        <div id="gallery-modal" class="modal">
+            <span class="close-modal">&times;</span>
+            <a class="prev-slide">&#10094;</a>
+            <img class="modal-content" id="modal-img" alt="Powiększone zdjęcie">
+            <a class="next-slide">&#10095;</a>
+        </div>
+
     </main>
 
     <footer>
@@ -195,35 +202,87 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
+            // --- LOGIKA ORBITY (pozostaje bez zmian) ---
             const timerElement = document.getElementById("live-orbit-timer");
             const animatorElement = document.getElementById("orbit-animator");
             
-            if (!timerElement || !animatorElement) return;
+            if (timerElement && animatorElement) {
+                const targetDays = 3.551;
+                const animationDurationMs = 12000;
+                const startTime = Date.now();
 
-            const targetDays = 3.551; // Pełny czas obiegu
-            const animationDurationMs = 12000; // Cykl trwa 12 sekund
-            const startTime = Date.now();
+                function updateOrbitTimer() {
+                    const elapsedMs = (Date.now() - startTime) % animationDurationMs;
+                    const progressRatio = elapsedMs / animationDurationMs;
+                    
+                    const currentTotalDays = progressRatio * targetDays;
+                    const days = Math.floor(currentTotalDays);
+                    const remainingHoursTotal = (currentTotalDays - days) * 24;
+                    const hours = Math.floor(remainingHoursTotal);
 
-            function updateOrbitTimer() {
-                const elapsedMs = (Date.now() - startTime) % animationDurationMs;
-                const progressRatio = elapsedMs / animationDurationMs;
-                
-                // 1. Obliczanie czasu na liczniku
-                const currentTotalDays = progressRatio * targetDays;
-                const days = Math.floor(currentTotalDays);
-                const remainingHoursTotal = (currentTotalDays - days) * 24;
-                const hours = Math.floor(remainingHoursTotal);
+                    timerElement.innerText = `${days}d ${hours}h`;
 
-                timerElement.innerText = `${days}d ${hours}h`;
+                    const degrees = progressRatio * 360;
+                    animatorElement.style.transform = `rotate(${degrees}deg)`;
 
-                // 2. Synchronizacja obrotu animacji
-                const degrees = progressRatio * 360;
-                animatorElement.style.transform = `rotate(${degrees}deg)`;
-
+                    requestAnimationFrame(updateOrbitTimer);
+                }
                 requestAnimationFrame(updateOrbitTimer);
             }
 
-            requestAnimationFrame(updateOrbitTimer);
+            // --- NOWA LOGIKA GALERII (LIGHTBOX) ---
+            const modal = document.getElementById("gallery-modal");
+            const modalImg = document.getElementById("modal-img");
+            const closeBtn = document.querySelector(".close-modal");
+            const prevBtn = document.querySelector(".prev-slide");
+            const nextBtn = document.querySelector(".next-slide");
+            
+            // Pobieramy wszystkie obrazki z galerii (ale nie z innych miejsc!)
+            const galleryImages = document.querySelectorAll(".gallery-wrapper img");
+            let currentIndex = 0;
+
+            // 1. Otwieranie modala po kliknięciu w obrazek
+            galleryImages.forEach((img, index) => {
+                img.addEventListener("click", function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src; // Kopiujemy ścieżkę do klikniętego zdjęcia
+                    currentIndex = index;    // Zapisujemy, które to zdjęcie z kolei
+                });
+            });
+
+            // 2. Zamykanie modala (krzyżykiem lub klikając w puste czarne tło)
+            closeBtn.onclick = () => modal.style.display = "none";
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            };
+
+            // 3. Przełączanie zdjęć strzałkami
+            function changeSlide(step) {
+                currentIndex += step;
+                
+                // Jeśli wyjdziemy poza zakres, zapętlamy galerię
+                if (currentIndex >= galleryImages.length) {
+                    currentIndex = 0;
+                } else if (currentIndex < 0) {
+                    currentIndex = galleryImages.length - 1;
+                }
+                
+                modalImg.src = galleryImages[currentIndex].src;
+            }
+
+            prevBtn.onclick = () => changeSlide(-1);
+            nextBtn.onclick = () => changeSlide(1);
+
+            // 4. Obsługa klawiatury (fajny dodatek)
+            document.addEventListener('keydown', function(e) {
+                if (modal.style.display === "block") {
+                    if (e.key === "ArrowLeft") changeSlide(-1);
+                    if (e.key === "ArrowRight") changeSlide(1);
+                    if (e.key === "Escape") modal.style.display = "none";
+                }
+            });
         });
     </script>
 
