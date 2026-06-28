@@ -306,3 +306,36 @@ footer {
 #orbit-animator {
     animation: none !important;
 }
+
+/* ============================
+   GALERIA ZDJĘĆ
+   ============================ */
+
+.gallery-wrapper {
+    /* Tworzy nowoczesną siatkę */
+    display: grid;
+    /* Automatycznie dopasowuje kolumny (minimalna szerokość to 200px, maksymalna to 1 część dostępnej przestrzeni) */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px; /* Odstępy między zdjęciami */
+    margin-top: 20px;
+}
+
+.slide-container {
+    border-radius: 8px;
+    overflow: hidden; /* Przycina rogi obrazków, żeby pasowały do zaokrąglonej ramki */
+    border: 1px solid #1e293b;
+    background-color: #0b0f19;
+}
+
+.slide-container img {
+    width: 100%; /* Obrazek zajmuje równe 100% szerokości swojej komórki */
+    height: 200px; /* Ustawia stałą wysokość, żeby wszystkie obrazki wyglądały równo */
+    object-fit: cover; /* Sprawia, że obrazek ładnie wypełnia przestrzeń bez zniekształceń (kadruje go) */
+    display: block;
+    transition: transform 0.3s ease; /* Płynna animacja przy najechaniu */
+}
+
+/* Dodatkowy efekt: delikatne powiększenie zdjęcia po najechaniu myszką */
+.slide-container img:hover {
+    transform: scale(1.05);
+}
