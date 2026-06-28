@@ -396,13 +396,14 @@ footer {
 
 .prev-slide { 
     left: 5px; 
-    border-radius: 0 8px 8px 0;
+    border-radius: 8px; /* Zaokrąglenie 8px z każdej strony */
 }
 
 .next-slide { 
     right: 5px; 
-    border-radius: 8px 0 0 8px;
+    border-radius: 8px; /* Zaokrąglenie 8px z każdej strony */
 }
+
 
 .prev-slide:hover, .next-slide:hover {
     background-color: #38bdf8;
