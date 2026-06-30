@@ -327,22 +327,34 @@
                 requestAnimationFrame(updateOrbitTimer);
             }
 
-// --- LOGIKA GALERII (ZAKTUALIZOWANA) ---
+// --- LOGIKA GALERII (ZAKTUALIZOWANA - ZAPĘTLENIE W GRUPACH) ---
             const modal = document.getElementById("gallery-modal");
             const modalImg = document.getElementById("modal-img");
             const closeBtn = document.querySelector(".close-modal");
             const prevBtn = document.querySelector(".prev-slide");
             const nextBtn = document.querySelector(".next-slide");
             
-            const galleryImages = document.querySelectorAll(".gallery-wrapper img, .gallery img");
+            // Łapiemy wszystkie zdjęcia z obu typów galerii, by dodać nasłuchiwanie kliknięć
+            const allImages = document.querySelectorAll(".gallery-wrapper img, .gallery img");
+            
+            // Te zmienne będą trzymać tylko zdjęcia z aktualnie otwartej podsekcji
+            let currentGalleryGroup = [];
             let currentIndex = 0;
 
-            // 1. Otwieranie modala jako FLEX (żeby zadziałało centrowanie pionowe)
-            galleryImages.forEach((img, index) => {
+            // 1. Otwieranie modala
+            allImages.forEach((img) => {
                 img.addEventListener("click", function() {
-                    modal.style.display = "flex"; // Zmieniono z "block" na "flex"
+                    // Znajdujemy kontener, w którym znajduje się kliknięte zdjęcie
+                    const parentContainer = this.closest('.gallery, .gallery-wrapper');
+                    
+                    // Pobieramy TYLKO obrazki z tego konkretnego kontenera
+                    currentGalleryGroup = Array.from(parentContainer.querySelectorAll('img'));
+                    
+                    // Ustalamy indeks klikniętego zdjęcia w jego własnej grupie
+                    currentIndex = currentGalleryGroup.indexOf(this);
+                    
+                    modal.style.display = "flex";
                     modalImg.src = this.src;
-                    currentIndex = index;
                 });
             });
 
@@ -354,17 +366,20 @@
                 }
             };
 
-            // 3. Przełączanie zdjęć strzałkami
+            // 3. Przełączanie zdjęć strzałkami w obrębie wyizolowanej grupy
             function changeSlide(step) {
+                if (currentGalleryGroup.length === 0) return;
+
                 currentIndex += step;
                 
-                if (currentIndex >= galleryImages.length) {
+                // Zapętlanie we własnej sekcji
+                if (currentIndex >= currentGalleryGroup.length) {
                     currentIndex = 0;
                 } else if (currentIndex < 0) {
-                    currentIndex = galleryImages.length - 1;
+                    currentIndex = currentGalleryGroup.length - 1;
                 }
                 
-                modalImg.src = galleryImages[currentIndex].src;
+                modalImg.src = currentGalleryGroup[currentIndex].src;
             }
 
             prevBtn.onclick = () => changeSlide(-1);
@@ -372,13 +387,13 @@
 
             // 4. Obsługa klawiatury
             document.addEventListener('keydown', function(e) {
-                // Sprawdzamy czy modal jest otwarty (ma przypisany flex)
                 if (modal.style.display === "flex") { 
                     if (e.key === "ArrowLeft") changeSlide(-1);
                     if (e.key === "ArrowRight") changeSlide(1);
                     if (e.key === "Escape") modal.style.display = "none";
                 }
             });
+
         });
     </script>
 
