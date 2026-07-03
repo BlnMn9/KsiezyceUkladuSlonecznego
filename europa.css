@@ -303,15 +303,11 @@ footer {
     animation: none !important;
 }
 
-/* ============================
-   WYKRES SKŁADU CHEMICZNEGO
-   ============================ */
-
-/* Wyśrodkowanie całego kontenera i jego zawartości */
+/* ============================ WYKRES SKŁADU CHEMICZNEGO ============================ */
 .chart-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center; /* WYMUSZENIE: Środkuje wykres i legendę w poziomie */
+    justify-content: center; 
     align-items: center;
     gap: 30px;
     background: #0b0f19;
@@ -321,38 +317,36 @@ footer {
     margin-top: 25px;
 }
 
-/* Wyśrodkowanie bloku z tytułem */
 .chart-info {
-    flex: 1 1 100%;
-    margin-bottom: 10px;
-    display: flex;           /* Zmiana na flex, aby kontrolować pozycję nagłówka */
-    justify-content: center; /* Środkuje nagłówek w obrębie całego paska */
+    width: 100%;       /* Wymusza 100% szerokości kontenera */
+    flex: 0 0 100%;    /* Blokuje błędy interpretacji flex na Safari/Chrome */
+    text-align: center;
+    margin-bottom: 15px;
 }
 
-/* Wyśrodkowanie samego tekstu nagłówka */
 .chart-info h4 {
     color: #fbbf24;
-    margin-bottom: 5px;
     font-size: 1.1rem;
-    text-align: center;      /* Bezpośrednie i ostateczne wyśrodkowanie tekstu */
+    margin-bottom: 5px;
+    text-align: center;
     width: 100%;
 }
-
-/* Korekta legendy, aby nie rozpychała się niesymetrycznie w prawo */
-.chart-legend {
-    flex: 0 1 250px;         /* Zmiana z flex: 1 1 na flex: 0 1 zapobiega uciekaniu wykresu w lewo */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
 
 .donut-wrapper {
     flex: 0 0 auto;
     display: flex;
     justify-content: center;
-    margin: 0 auto;
+    margin: 0;         /* ZMIANA: Usunięto 'auto', które niszczyło wyśrodkowanie flexa */
 }
+
+.chart-legend {
+    flex: 0 1 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;  /* Tekst legendy wyrównany od lewej, ale cały blok wyśrodkowany */
+}
+
 
 /* Tworzenie wykresu za pomocą gradientu stożkowego */
 .donut-chart {
