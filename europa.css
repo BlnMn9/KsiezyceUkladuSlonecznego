@@ -322,6 +322,7 @@ footer {
 .chart-info {
     flex: 1 1 100%;
     margin-bottom: 10px;
+    text-align: center; /* Dodana linijka centrująca tekst */
 }
 
 .chart-info h4 {
