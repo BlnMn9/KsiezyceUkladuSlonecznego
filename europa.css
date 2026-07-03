@@ -307,9 +307,11 @@ footer {
    WYKRES SKŁADU CHEMICZNEGO
    ============================ */
 
+/* Wyśrodkowanie całego kontenera i jego zawartości */
 .chart-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center; /* WYMUSZENIE: Środkuje wykres i legendę w poziomie */
     align-items: center;
     gap: 30px;
     background: #0b0f19;
@@ -319,17 +321,31 @@ footer {
     margin-top: 25px;
 }
 
+/* Wyśrodkowanie bloku z tytułem */
 .chart-info {
     flex: 1 1 100%;
     margin-bottom: 10px;
-    text-align: center; /* Dodana linijka centrująca tekst */
+    display: flex;           /* Zmiana na flex, aby kontrolować pozycję nagłówka */
+    justify-content: center; /* Środkuje nagłówek w obrębie całego paska */
 }
 
+/* Wyśrodkowanie samego tekstu nagłówka */
 .chart-info h4 {
     color: #fbbf24;
     margin-bottom: 5px;
     font-size: 1.1rem;
+    text-align: center;      /* Bezpośrednie i ostateczne wyśrodkowanie tekstu */
+    width: 100%;
 }
+
+/* Korekta legendy, aby nie rozpychała się niesymetrycznie w prawo */
+.chart-legend {
+    flex: 0 1 250px;         /* Zmiana z flex: 1 1 na flex: 0 1 zapobiega uciekaniu wykresu w lewo */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
 
 .donut-wrapper {
     flex: 0 0 auto;
@@ -371,13 +387,6 @@ footer {
     font-size: 0.75rem;
     color: #64748b;
     margin-top: 2px;
-}
-
-.chart-legend {
-    flex: 1 1 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
 }
 
 .legend-item {
