@@ -44,9 +44,11 @@ main {
     gap: 30px;
     margin-bottom: 40px;
 }
-@media (min-width: 768px) {
+
+@media (min-width: 992px) {
     .moon-header { flex-direction: row; }
 }
+
 .moon-hero-img {
     flex: 1;
     min-height: 400px;
