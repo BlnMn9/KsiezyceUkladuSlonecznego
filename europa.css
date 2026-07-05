@@ -373,13 +373,13 @@ footer {
 
 /* Legenda - elastyczna, dopasowująca się na telefonach */
 .chart-legend {
-    flex: 1 1 250px;
-    max-width: none;
+    flex: 0 1 auto;      /* NAPRAWA: Zamiast 1 1, dajemy 0 1. Legenda nie rozpycha się już na siłę */
+    max-width: 450px;    /* NAPRAWA: Zamiast none, dajemy 450px. Tekst się zmieści w jednej linii, a centrowanie wróci */
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    min-width: 0;
+    min-width: 0;        
 }
 
 /* Pojedynczy wiersz legendy */
