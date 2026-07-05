@@ -349,7 +349,6 @@ footer {
     width: 180px;
     height: 180px;
     border-radius: 50%;
-    /* Skład procentowy: jądro (6%, żółty), skały (84%, szary), lodowa skorupa (10%, niebieski) */
     background: conic-gradient(
         #94a3b8 0% 78%,   
         #fbbf24 78% 92%,  
