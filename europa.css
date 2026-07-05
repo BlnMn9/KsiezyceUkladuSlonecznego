@@ -306,62 +306,15 @@ footer {
 }
 
 /* ============================ WYKRES SKŁADU CHEMICZNEGO ============================ */
+/* Główny kontener - elastyczny i dopasowany do małych ekranów */
 .chart-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     background: #0b0f19;
-    padding: 25px;
-    border-radius: 8px;
-    border: 1px solid #1e293b;
-    margin-top: 25px;
-}
-
-.chart-info {
-    width: 100%;       /* Wymusza 100% szerokości kontenera */
-    flex: 0 0 100%;    /* Blokuje błędy interpretacji flex na Safari/Chrome */
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.chart-info h4 {
-    color: #fbbf24;
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    text-align: center;
-    width: 100%;
-}
-
-.donut-wrapper {
-    flex: 0 0 auto;
-    display: flex;
-    justify-content: center;
-    margin: 0;         /* ZMIANA: Usunięto 'auto', które niszczyło wyśrodkowanie flexa */
-}
-
-.chart-legend {
-    flex: 0 0 auto; /* ZMIANA: Zamiast sztywnych 250px, legenda zajmuje dokładnie tyle miejsca, ile potrzebuje tekst */
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    text-align: left;
-}
-
-
-/* ============================ WYKRES SKŁADU CHEMICZNEGO ============================ */
-
-/* Kontener wykresu - elastyczny i dopasowany do telefonów */
-
-.chart-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; 
-    align-items: center;
-    gap: 20px;           /* Zmniejszono odstęp na mobilkach z 30px na 20px */
-    background: #0b0f19;
-    padding: 20px;       /* Zmniejszono padding z 25px na 20px, aby dać tekstowi więcej miejsca */
+    padding: 20px;
     border-radius: 8px;
     border: 1px solid #1e293b;
     margin-top: 25px;
@@ -369,14 +322,13 @@ footer {
     width: 100%;
 }
 
-/* Wyśrodkowanie bloku z tytułem */
+/* Wyśrodkowanie nagłówka na całą szerokość */
 .chart-info {
     flex: 1 1 100%;
     margin-bottom: 10px;
     text-align: center;
 }
 
-/* Wyśrodkowanie samego tekstu nagłówka */
 .chart-info h4 {
     color: #fbbf24;
     margin-bottom: 5px;
@@ -385,47 +337,83 @@ footer {
     width: 100%;
 }
 
+/* Kontener samego okrągłego wykresu */
 .donut-wrapper {
     flex: 0 0 auto;
     display: flex;
     justify-content: center;
 }
 
-/* Legenda - elastyczna na telefonie, zablokowana na desktopie */
+.donut-chart {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #94a3b8 0% 78%,   
+        #fbbf24 78% 92%,  
+        #38bdf8 92% 100%  
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.donut-hole {
+    width: 110px;
+    height: 110px;
+    background-color: #0b0f19;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Legenda - elastyczna, dopasowująca się na telefonach */
 .chart-legend {
-    flex: 1 1 250px;     /* Pozwala legendzie dopasować się do szerokości ekranu */
-    max-width: 320px;    /* Zapobiega brzydkiemu rozciąganiu na dużych monitorach */
+    flex: 1 1 250px;
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     gap: 12px;
     width: 100%;
-    min-width: 0;        /* KLUCZOWE: Wyłącza glitch Flexboxa i pozwala elementowi się kurczyć */
+    min-width: 0;
 }
 
-/* Elementy legendy - bezpieczne, automatyczne zawijanie tekstu */
+/* Pojedynczy wiersz legendy */
 .legend-item {
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* ZMIANA: Zabezpiecza układ, gdy tekst zawija się do nowej linii */
     font-size: 0.95rem;
     color: #cbd5e1;
     line-height: 1.4;
     width: 100%;
-    min-width: 0;        /* KLUCZOWE: Wymusza zawijanie tekstu wewnątrz linii zamiast wypychania */
-    overflow-wrap: break-word; /* Zabezpieczenie na wypadek braku spacji w tekście */
+    min-width: 0;
 }
 
+/* Kolorowy kwadracik */
 .legend-color {
     width: 16px;
     height: 16px;
     border-radius: 4px;
-    margin-right: 12px;  /* Minimalnie zmniejszony margines dla zyskania pikseli */
-    flex-shrink: 0;      /* Blokuje zniekształcenie kolorowego kwadracika */
+    margin-right: 12px;
+    margin-top: 2px;         /* Dopasowanie kwadracika do pierwszej linii tekstu */
+    flex-shrink: 0;          /* Blokuje deformację kwadratu */
 }
 
+/* KLUCZOWA NAPRAWA: Wymuszenie na wewnętrznym tagu span bezwzględnego zawijania tekstu */
+.legend-item span {
+    flex: 1;
+    min-width: 0;
+    word-break: break-word;  /* Dodatkowa ochrona dla bardzo wąskich ekranów */
+}
 
 .color-rock { background: #94a3b8; }
 .color-core { background: #fbbf24; }
 .color-water { background: #38bdf8; }
+
 
 
 
