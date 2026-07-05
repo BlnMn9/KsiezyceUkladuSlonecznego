@@ -311,9 +311,9 @@ footer {
     flex-wrap: wrap;
     justify-content: center; 
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     background: #0b0f19;
-    padding: 20px;
+    padding: 25px;
     border-radius: 8px;
     border: 1px solid #1e293b;
     margin-top: 25px;
@@ -330,15 +330,45 @@ footer {
 .chart-info h4 {
     color: #fbbf24;
     margin-bottom: 5px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     text-align: center;
     width: 100%;
 }
 
+/* Kontener dla wykresu kołowego */
 .donut-wrapper {
     flex: 0 0 auto;
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Sam wykres kołowy (CSS Donut Chart) */
+.donut-chart {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    /* Skład procentowy: jądro (6%, żółty), skały (84%, szary), lodowa skorupa (10%, niebieski) */
+    background: conic-gradient(
+        #fbbf24 0% 6%, 
+        #94a3b8 6% 90%, 
+        #38bdf8 90% 100%
+    );
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Środek wykresu (wycięcie, tworzące efekt obwarzanka/donuta) */
+.chart-center {
+    width: 110px;
+    height: 110px;
+    background-color: #0b0f19;
+    border-radius: 50%;
+    position: absolute;
 }
 
 /* Legenda - domyślnie elastyczna (dla telefonów) */
@@ -370,18 +400,19 @@ footer {
     flex-shrink: 0;
 }
 
-.color-rock { background: #94a3b8; }
+/* Kolory legendy */
 .color-core { background: #fbbf24; }
+.color-rock { background: #94a3b8; }
 .color-water { background: #38bdf8; }
 
-/* KULOODPORNA GWARANCJA DLA KOMPUTERÓW */
+/* KULOODPORNA GWARANCJA DLA KOMPUTERÓW I TABLETÓW */
 @media (min-width: 768px) {
     .chart-legend {
-        flex: 0 0 auto;      /* Zatrzymujemy rozciąganie/kurczenie, legenda trzyma wymiar tekstu */
+        flex: 0 0 auto;      /* Legenda nie rozpycha się na całą stronę */
         width: auto;
     }
     .legend-item {
-        white-space: nowrap; /* ABSOLUTNY zakaz łamania tekstu - musi być w jednej linii */
+        white-space: nowrap; /* Tekst legendy ZAWSZE w jednej linii na komputerze */
         width: auto;
     }
 }
