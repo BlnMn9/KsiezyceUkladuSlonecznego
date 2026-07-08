@@ -49,24 +49,25 @@ main {
     .moon-header { flex-direction: row; }
 }
 
-/* Wygląd zdjęcia na telefonach i tabletach w pionie */
 .moon-hero-img {
     flex: 1;
-    aspect-ratio: 4 / 3; /* ZMIANA: Zastępuje sztywne 400px elastycznymi proporcjami */
-    min-height: 300px;   /* Bezpieczne minimum dla najmniejszych ekranów */
+    aspect-ratio: 1 / 1; /* NAPRAWA: Ramka jest teraz idealnym kwadratem, więc kwadratowe zdjęcie nie będzie ucinane */
+    max-height: 500px;   /* Bezpiecznik: zapobiega zbytniemu rozrostowi zdjęcia na dużych tabletach */
     background-color: #1e293b;
     background-image: url('europa-full.en.jpg');
     background-size: cover;
     background-position: center;
     border-radius: 12px;
     border: 1px solid #1e293b;
+    margin: 0 auto;
+    width: 100%;
 }
 
-/* Gwarancja idealnego układu na komputerach i poziomych tabletach */
 @media (min-width: 992px) {
     .moon-hero-img {
-        aspect-ratio: auto; /* Wyłącza proporcje, pozwala działać flexboxowi */
-        min-height: 100%;   /* Rozciąga zdjęcie, by zrównało się wysokością z tekstem obok */
+        aspect-ratio: auto;
+        min-height: 100%;
+        max-height: none;
     }
 }
 
