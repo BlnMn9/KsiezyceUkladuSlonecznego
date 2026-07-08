@@ -51,23 +51,21 @@ main {
 
 .moon-hero-img {
     flex: 1;
-    aspect-ratio: 1 / 1; /* NAPRAWA: Ramka jest teraz idealnym kwadratem, więc kwadratowe zdjęcie nie będzie ucinane */
-    max-height: 500px;   /* Bezpiecznik: zapobiega zbytniemu rozrostowi zdjęcia na dużych tabletach */
+    min-height: 400px;   /* Przywracamy solidną wysokość dla tabletu */
     background-color: #1e293b;
     background-image: url('europa-full.en.jpg');
-    background-size: cover;
+    background-size: contain;      /* KLUCZOWA ZMIANA: Zdjęcie musi zmieścić się w całości bez ucinania! */
+    background-repeat: no-repeat;  /* Zapobiega powielaniu zdjęcia jak kafelków */
     background-position: center;
     border-radius: 12px;
     border: 1px solid #1e293b;
-    margin: 0 auto;
-    width: 100%;
 }
 
+/* Gwarancja idealnego układu na komputerach */
 @media (min-width: 992px) {
     .moon-hero-img {
-        aspect-ratio: auto;
+        background-size: cover;    /* Na dużym monitorze wracamy do wypełniania całej lewej kolumny */
         min-height: 100%;
-        max-height: none;
     }
 }
 
