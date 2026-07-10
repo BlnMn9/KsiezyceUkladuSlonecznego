@@ -1,0 +1,194 @@
+{
+  "tytan": {
+    "name": "Tytan",
+    "planetTag": "Księżyc Saturna",
+    "heroImage": "titan-full.en.jpg",
+    "description": "Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest jedynym znanym satelitą posiadającym gęstą atmosferę oraz jedynym ciałem niebieskim poza Ziemią, na powierzchni którego odkryto stałe zbiorniki cieczy.",
+    
+    "quickStats": [
+      { "value": "5150 km", "label": "Średnica" },
+      { "value": "0,0225 M⊕", "label": "Masa" },
+      { "value": "-179°C", "label": "Temperatura" },
+      { "value": "1,35 m/s²", "label": "Grawitacja" },
+      { "value": "1 221 870 km", "label": "Odległość" },
+      { "value": "1655 r.", "label": "Odkrycie" }
+    ],
+
+    "orbit": {
+      "targetDays": 15.945,
+      "metrics": [
+        { "value": "15.95 d", "label": "Okres całkowity" },
+        { "value": "1.22 mln km", "label": "Dystans" },
+        { "value": "5.57 km/s", "label": "Prędkość" }
+      ],
+      "summaryText": "Jedno okrążenie wokół Saturna trwa 15,95 dnia. Średni dystans to 1 221 870 km przy prędkości orbitalnej wynoszącej 5,57 km/s."
+    },
+
+    "detailedProfile": [
+      {
+        "title": "Historia odkrycia",
+        "content": "Tytana odkrył holenderski astronom Christiaan Huygens w marcu 1655 roku. Zainspirowany odkryciem księżyców Jowisza przez Galileusza, Huygens skierował własnoręcznie zbudowany, potężny teleskop w stronę Saturna. Był to szósty zaobserwowany przez ludzkość naturalny satelita, a jego odkrycie zapoczątkowało erę intensywnych badań nad układem pierścieni i księżyców gazowego olbrzyma."
+      },
+      {
+        "title": "Charakterystyka",
+        "content": "Tytan to gigantyczny glob – rozmiarem przewyższa planetę Merkury, a ustępuje jedynie jowiszowemu Ganimedesowi. Jego najbardziej uderzającą cechą jest nieprzezroczysta, gruba powłoka atmosferyczna o charakterystycznym pomarańczowym zabarwieniu. Ta smogowa zasłona przez ponad trzysta lat skutecznie uniemożliwiała ziemskim astronomom podejrzenie, jak wygląda rzeźba terenu tego fascynującego świata."
+      },
+      {
+        "title": "Powierzchnia",
+        "content": "Krajobraz Tytana jest zaskakująco podobny do ziemskiego, choć ukształtowany przez zupełnie inne związki chemiczne. Zamiast krzemianowego piasku występują tu ciemne wydmy z organicznego pyłu, a rolę skał pełni lód wodny zamarznięty do twardości granitu. Powierzchnia jest geologicznie młoda i stale rzeźbiona przez wiatry oraz opady płynnych węglowodorów, które tworzą unikalne systemy rzeczne."
+      },
+      {
+        "title": "Wnętrze",
+        "content": "Pod względem budowy wewnętrznej Tytan składa się w około połowie z lodu wodnego i w połowie z materiałów skalnych. Pod twardą jak skała lodową skorupą zewnętrzną, na głębokości kilkudziesięciu kilometrów, znajduje się globalny ocean płynnej wody z dużą domieszką amoniaku. Głęboko w sercu księżyca mieści się natomiast gęste jądro złożone z krzemianów i odwodnionych skał."
+      },
+      {
+        "title": "Obrót synchroniczny",
+        "content": "Tytan jest grawitacyjnie zablokowany przez potężne pole Saturna, co oznacza, że znajduje się w rotacji synchronicznej. Czas jego obrotu wokół własnej osi wynosi dokładnie tyle samo, ile pełne okrążenie planety – niemal 16 ziemskich dni. W rezultacie satelita jest stale zwrócony ku Saturnowi tą samą półkulą, podczas gdy druga strona bez przerwy spogląda w głęboką przestrzeń kosmiczną."
+      },
+      {
+        "title": "Widoczność z Ziemi",
+        "content": "Dzięki swoim potężnym rozmiarom, Tytan jest najjaśniejszym księżycem Saturna i bez trudu można go dostrzec z Ziemi. Przy jasności obserwowanej oscylującej wokół 8 magnitudo, jest widoczny jako wyraźny punkt już przez niewielkie teleskopy amatorskie, a nawet za pomocą dobrej jakości lornetki. Na nocnym niebie jawi się jako mała, żółtawa gwiazdka wiernie towarzysząca tarczy Saturna."
+      }
+    ],
+
+    "astrobiology": {
+      "stars": "★★★★☆",
+      "description": "Tytan to gigantyczne laboratorium chemii prebiotycznej. Choć ekstremalne zimno (-179°C) spowalnia reakcje metaboliczne, obecność gęstego smogu organicznego, powierzchniowych jezior metanowych oraz ukrytego pod lodem oceanu wodno-amoniakowego czyni go jednym z najbardziej fascynujących i priorytetowych miejsc w poszukiwaniu alternatywnych form życia."
+    },
+
+    "physicalParameters": [
+      { "label": "Masa całkowita", "value": "~1,345 × 10²³ kg (ok. 134 tryliony ton)" },
+      { "label": "Promień równikowy", "value": "2574,7 km" },
+      { "label": "Gęstość", "value": "1,88 g/cm³" },
+      { "label": "Atmosfera", "value": "Bardzo gęsta (ciśnienie 1,45 atm)" },
+      { "label": "Skład atmosfery", "value": "98,4% Azot (N2), 1,4% Metan (CH4)" },
+      { "label": "Prędkość ucieczki", "value": "2,639 km/s" },
+      { "label": "Albedo", "value": "0,22 (umiarkowane pochłanianie)" },
+      { "label": "Nachylenie orbity", "value": "0,348° do równika Saturna" }
+    ],
+
+    "geologyChemistry": {
+      "textBlocks": [
+        {
+          "title": "Potężna, azotowa atmosfera",
+          "content": "Tytan jest jedynym księżycem w Układzie Słonecznym posiadającym rozwiniętą atmosferę, która na dodatek jest gęstsza od ziemskiej. Słup powietrza wywiera przy powierzchni ciśnienie o 45% wyższe niż na Ziemi. Składa się ona głównie z azotu cząsteczkowego, co upodabnia ją do pierwotnego składu chemicznego wczesnej Ziemi przed pojawieniem się życia."
+        },
+        {
+          "title": "Cykl hydrologiczny metanu",
+          "content": "Na tym mroźnym globie metan i etan zachowują się dokładnie tak, jak woda na Ziemi. Istnieje tu kompletny cykl klimatyczny: gazowy metan skrapla się w chmurach, generuje gwałtowne burze, a spadający deszcz żłobi koryta rzeczne i zasila rozległe, polarne zbiorniki ciekłych węglowodorów, po czym ponownie paruje do atmosfery."
+        },
+        {
+          "title": "Tholiny i organiczny opad",
+          "content": "Górne warstwy atmosfery Tytana są nieustannie bombardowane światłem ultrafioletowym. Promieniowanie to rozbija cząsteczki metanu i azotu, które następnie łączą się w złożone związki organiczne zwane tholinami. Tworzą one gęstą, pomarańczową mgłę, a po skondensowaniu powoli opadają na powierzchnię w postaci lepkiego, organicznego pyłu."
+        },
+        {
+          "title": "Pola wydm organicznych",
+          "content": "W strefach równikowych Tytana dominują gigantyczne, ciemne pustynie usiane polami wydmowymi, które ciągną się przez setki kilometrów. Co fascynujące, ziarna tworzące te wydmy nie powstały z erozji skał krzemianowych, lecz są drobnym, zamarzniętym plastikiem organicznym (tholinami), uformowanym przez wiejące wiatry pasatowe."
+        },
+        {
+          "title": "Kriowulkanizm metanowy",
+          "content": "Zamiast gorącej, płynnej magmy skalnej znanej z Ziemi, wulkany na Tytanie (tzw. kriowulkany) wyrzucają lodowatą mieszaninę wody, amoniaku i metanu. Struktury takie jak Sotra Patera są namacalnym dowodem na to, że wnętrze księżyca wciąż jest aktywne termicznie, a procesy te stale uzupełniają zapasy metanu w atmosferze."
+        },
+        {
+          "title": "Erozja węglowodorowa",
+          "content": "Ukształtowanie terenu Tytana wykazuje zadziwiająco małą liczbę kraterów meteorytowych. Wynika to z niezwykle intensywnych procesów erozyjnych. Rzeki płynnego metanu oraz wiatry eoliczne w relatywnie krótkim czasie geologicznym niszczą ślady uderzeń, bezustannie wygładzając i modelując krajobraz lodowego księżyca."
+        }
+      ],
+      "compositionChart": {
+        "title": "Szacunkowy skład masowy Tytana",
+        "segments": [
+          { "percentage": "55%", "color": "color-rock", "text": "płaszcz skalny i jądro (krzemiany i żelazo)" },
+          { "percentage": "40%", "color": "color-water", "text": "gruba, zewnętrzna skorupa z lodu wodnego" },
+          { "percentage": "5%", "color": "color-core", "text": "głęboki, podpowierzchniowy ocean (woda i amoniak)" }
+        ]
+      }
+    },
+
+    "anomalies": [
+      {
+        "title": "Morza i jeziora metanowe (Kraken Mare)",
+        "content": "Bieguny Tytana skrywają gigantyczne, stałe zbiorniki płynnych węglowodorów. Największe z nich, Kraken Mare, rozciąga się na przestrzeni ponad 400 tysięcy kilometrów kwadratowych, co czyni je większym od ziemskiego Morza Kaspijskiego. Ciecz ta składa się z ultraczystej mieszaniny metanu i etanu. Radar sondy Cassini wykazał, że w centralnych częściach głębokość tego morza przekracza 150 metrów, a jego powierzchnia jest idealnie gładka, niemal pozbawiona fal.",
+        "images": ["KrakenMare1.jpeg", "KrakenRadar.jpg", "titan-seas.jpg"]
+      },
+      {
+        "title": "Ciemne pustynie eoliczne (Wydmy Belet)",
+        "content": "Wzdłuż równika Tytana rozciąga się gigantyczny, ciemny obszar zwany Belet. Jest to bezkresna pustynia pokryta pasmami liniowych wydm węglowodorowych o wysokości dochodzącej do 100 metrów. Struktury te powstają w wyniku skomplikowanych cykli wiatrów monsunowych. Są one idealnym, ciemnym rezerwuarem dla opadających z atmosfery cząstek organicznych, upodabniając krajobraz Tytana do afrykańskiej pustyni Namib.",
+        "images": ["BeletDunes1.webp", "TitanDunesRadar.png", "belet-organic.jpg", "dunes-cassini.webp"]
+      },
+      {
+        "title": "Kaniony i Labirynty Sikun (Sikun Labyrinths)",
+        "content": "Sikun Labyrinths to spektakularny region wyżynny, który został doszczętnie pocięty przez procesy erozji kwasowej i deszczowej. Ciecze węglowodorowe przez miliony lat wyżłobiły w twardym lodzie wodnym niezwykle gęstą i głęboką sieć splątanych dolin, ślepych kanionów oraz krasowych korytarzy. Z lotu ptaka formacje te przypominają unikalne struktury wapienne niszczone przez wodę w południowych Chinach.",
+        "images": ["SikunLab1.jpg", "SikunErosion.webp", "titan-canyons.webp"]
+      },
+      {
+        "title": "Struktura uderzeniowa Menrva",
+        "content": "Z racji gęstej atmosfery, która spala mniejsze meteoryty, oraz silnej erozji, kratery na Tytanie są anomalną rzadkością. Menrva to największa, potężna struktura uderzeniowa o średnicy aż 392 kilometrów. Jest to krater wielopierścieniowy, którego dno zostało zalane przez późniejsze osady organiczne, a jego krawędzie są poprzecinane wyschniętymi dziś korytami dawnych rzek metanowych, co dowodzi bogatej historii klimatycznej.",
+        "images": ["Menrva1.jpg", "MenrvaRadar.webp", "menrva-crater.webp", "titan-impact.jpg", "menrva-topography.jpg"]
+      }
+    ],
+
+    "comparison": {
+      "title": "Analiza Porównawcza",
+      "subtitle": "Zestawienie kluczowych wskaźników fizycznych Tytana w relacji do obiektów referencyjnych (Ziemi oraz Księżyca):",
+      "items": [
+        { "label": "Średnica równikowa (w odniesieniu do Księżyca Ziemi)", "percentage": "148%" },
+        { "label": "Stosunek grawitacji powierzchniowej (względem Ziemi)", "percentage": "13.8%" },
+        { "label": "Szacowana objętość płynnych węglowodorów na powierzchni (w stosunku do rezerw ropy na Ziemi)", "percentage": "100%" }
+      ],
+      "summaryBox": "Bilans zasobów węglowodorowych i wodnych: Choć Tytan jest znacznie mniejszy od Ziemi, panujące na nim niskie temperatury pozwoliły na zgromadzenie setek razy więcej płynnych paliw organicznych w postaci jezior niż wynoszą wszystkie udokumentowane rezerwy ropy i gazu na naszej planecie. Dodatkowo jego ukryty ocean wodny drastycznie przewyższa objętość ziemskiej hydrosfery."
+    },
+
+    "missions": [
+      {
+        "name": "Sonda Cassini-Huygens",
+        "agency": "NASA / ESA | 1997–2017",
+        "description": "Najbardziej udana misja w historii eksploracji zewnętrznego Układu Słonecznego. Sonda Cassini przez 13 lat krążyła wokół Saturna, wykonując ponad 120 bliskich przelotów nad Tytanem i mapując jego powierzchnię za pomocą radaru. W styczniu 2005 roku odłączył się od niej europejski lądownik Huygens, który pomyślnie osiadł na pomarańczowej powierzchni księżyca, przesyłając pierwsze w historii, legendarne zdjęcia otoczaków z lodu wodnego."
+      },
+      {
+        "name": "Dragonfly",
+        "agency": "NASA | Planowane wystrzelenie: 2027/2028 r.",
+        "description": "Przełomowa, nadchodząca misja wirnikowca (quadcoptera) wielkości łazika marsjańskiego. Z uwagi na gęstą atmosferę i niską grawitację Tytana, Dragonfly będzie w stanie przemieszczać się drogą powietrzną, wykonując kilkukilometrowe skoki nad powierzchnią księżyca. Sonda wyląduje w rejonie wydm Belet oraz krateru Menrva, bezpośrednio badając skład chemiczny organicznego gruntu w poszukiwaniu śladów biologii."
+      },
+      {
+        "name": "Sonda Voyager 1",
+        "agency": "NASA | Przelot: 1980 r.",
+        "description": "Pierwszy ziemski aparat, który z bliska zbadał Tytana. Choć kamery optyczne Voyagera nie zdołały spenetrować nieprzeniknionego, pomarańczowego smogu atmosferycznego, to precyzyjne pomiary radiowe i podczerwone po raz pierwszy w historii ujawniły dokładną masę, temperaturę oraz ogromną gęstość azotowej atmosfery, dając naukowcom podwaliny pod hipotezy o istnieniu metanowych mórz."
+      }
+    ],
+
+    "gallery": [
+      "titan-full.en.jpg",
+      "titan-atmosphere-layers.jpg",
+      "huygens-surface-raw.jpeg",
+      "titan-methane-clouds.jpg",
+      "titan-sunglint-seas.jpg",
+      "cassini-titan-infrared.jpg",
+      "titan-saturn-background.jpeg",
+      "dragonfly-concept.jpg",
+      "huygens-descent.png",
+      "titan-polar-vortex.jpg",
+      "titan-global-radar.webp",
+      "titan-shorelines.jpg",
+      "sotra-patera-cryovolcano.webp",
+      "titan-belet-dunes.jpeg",
+      "kraken-mare-depth.webp",
+      "titan-organic-dust.webp",
+      "titan-canyons-grid.jpg",
+      "huygens-landing-site.jpg",
+      "titan-clouds-vims.jpg",
+      "titan-atmosphere-blue.webp",
+      "KrakenMare1.jpeg",
+      "KrakenRadar.jpg",
+      "BeletDunes1.webp",
+      "TitanDunesRadar.png",
+      "SikunLab1.jpg",
+      "SikunErosion.webp",
+      "Menrva1.jpg",
+      "MenrvaRadar.webp",
+      "menrva-crater.webp",
+      "titan-impact.jpg",
+      "menrva-topography.jpg",
+      "titan-historical-huygens.jpg"
+    ]
+  }
+}
