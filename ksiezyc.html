@@ -164,7 +164,7 @@
     if (!moonId) {
         document.body.innerHTML = "<h1>Błąd: Nie wybrano żadnego obiektu.</h1>";
     } else {
-        fetch('moons.json')
+        fetch('moon.json')
             .then(res => res.json())
             .then(data => {
                 const moon = data[moonId];
