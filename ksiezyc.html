@@ -166,11 +166,20 @@ header h1 {
     </style>
 </head>
 <body>
+    <!-- 1. Dodajemy nowy nagłówek na samej górze -->
+    <header>
+        <h1>Księżyce Układu Słonecznego</h1>
+    </header>
 
+    <!-- 2. Wszystko co było wcześniej, wkładamy do kontenera -->
     <div class="container" id="main-container">
         
-        <!-- NAGŁÓWEK / HERO -->
-        <header class="hero">
+        <!-- 3. Przycisk powrotu -->
+        <a href="index.html" class="back-link">&#10094; Wróć do listy księżyców</a>
+
+        <!-- NAGŁÓWEK / HERO (zmieniamy klasę z "hero" na "hero-section", 
+             aby nie gryzła się ze stylem nagłówka globalnego) -->
+        <section class="hero" id="moon-hero">
             <div class="hero-img" id="moon-hero-img"></div>
             <div class="hero-content">
                 <span class="tag" id="moon-tag"></span>
@@ -179,27 +188,26 @@ header h1 {
                 
                 <div class="stats-grid" id="moon-stats"></div>
             </div>
-        </header>
+        </section>
 
-        <!-- SEKCJA: PROFIL SZCZEGÓŁOWY -->
+        <!-- (Pozostała część Twojego kodu pozostaje bez zmian, 
+             tylko upewnij się, że zamykasz wszystkie divy tak jak były) -->
         <section class="section" id="sec-profile">
             <h2 class="section-title" id="title-profile"></h2>
             <div class="grid-2" id="content-profile"></div>
         </section>
 
-        <!-- SEKCJA: ANOMALIE -->
         <section class="section" id="sec-anomalies">
             <h2 class="section-title" id="title-anomalies"></h2>
             <div class="grid-2" id="content-anomalies"></div>
         </section>
 
-        <!-- SEKCJA: GALERIA -->
         <section class="section" id="sec-gallery">
             <h2 class="section-title" id="title-gallery"></h2>
             <div class="gallery" id="content-gallery"></div>
         </section>
-
     </div>
+
 
 <!-- --- ZAKTUALIZOWANY FRAGMENT JS: MÓZG SYSTEMU --- -->
 <script>
