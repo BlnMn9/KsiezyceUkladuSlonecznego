@@ -166,19 +166,14 @@ header h1 {
     </style>
 </head>
 <body>
-    <!-- 1. Dodajemy nowy nagłówek na samej górze -->
     <header>
         <h1>Księżyce Układu Słonecznego</h1>
     </header>
 
-    <!-- 2. Wszystko co było wcześniej, wkładamy do kontenera -->
     <div class="container" id="main-container">
         
-        <!-- 3. Przycisk powrotu -->
         <a href="index.html" class="back-link">&#10094; Wróć do listy księżyców</a>
 
-        <!-- NAGŁÓWEK / HERO (zmieniamy klasę z "hero" na "hero-section", 
-             aby nie gryzła się ze stylem nagłówka globalnego) -->
         <section class="hero" id="moon-hero">
             <div class="hero-img" id="moon-hero-img"></div>
             <div class="hero-content">
@@ -190,16 +185,61 @@ header h1 {
             </div>
         </section>
 
-        <!-- (Pozostała część Twojego kodu pozostaje bez zmian, 
-             tylko upewnij się, że zamykasz wszystkie divy tak jak były) -->
+        <section class="section" id="sec-orbit">
+            <h2 class="section-title">Wizualizacja Orbity</h2>
+            <div class="grid-2" id="content-orbit-metrics"></div>
+            <p id="content-orbit-summary" style="text-align: center; color: var(--text-muted); margin-top: 15px; font-size: 0.95rem;"></p>
+        </section>
+
         <section class="section" id="sec-profile">
             <h2 class="section-title" id="title-profile"></h2>
             <div class="grid-2" id="content-profile"></div>
         </section>
 
+        <section class="section" id="sec-astrobiology">
+            <h2 class="section-title">Możliwość istnienia życia</h2>
+            <div class="card">
+                <div style="font-weight: bold; margin-bottom: 10px;">Potencjał astrobiologiczny: <span id="astro-stars" style="color: gold; letter-spacing: 2px;"></span></div>
+                <p id="astro-desc" style="color: var(--text-muted); line-height: 1.5; margin: 0;"></p>
+            </div>
+        </section>
+
+        <section class="section" id="sec-physical">
+            <h2 class="section-title">Parametry fizyczne</h2>
+            <div class="card">
+                <table class="extended-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <tbody id="content-physical"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="sec-geology">
+            <h2 class="section-title">Geologia i Skład Chemiczny</h2>
+            <div class="grid-2" id="content-geology-text"></div>
+            
+            <div class="card" style="margin-top: 20px;" id="content-geology-chart-container">
+                <h4 id="geology-chart-title"></h4>
+                <ul id="geology-chart-legend" style="list-style: none; padding: 0; line-height: 1.8;"></ul>
+            </div>
+        </section>
+
         <section class="section" id="sec-anomalies">
             <h2 class="section-title" id="title-anomalies"></h2>
             <div class="grid-2" id="content-anomalies"></div>
+        </section>
+
+        <section class="section" id="sec-comparison">
+            <h2 class="section-title" id="title-comparison"></h2>
+            <p id="subtitle-comparison" style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;"></p>
+            <div id="content-comparison-items"></div>
+            <div class="card" style="margin-top: 25px; border-left: 4px solid var(--main-color);">
+                <p id="summary-comparison" style="margin: 0; line-height: 1.5; font-size: 0.9rem;"></p>
+            </div>
+        </section>
+
+        <section class="section" id="sec-missions">
+            <h2 class="section-title">Misje Kosmiczne</h2>
+            <div class="grid-2" id="content-missions"></div>
         </section>
 
         <section class="section" id="sec-gallery">
@@ -208,101 +248,186 @@ header h1 {
         </section>
     </div>
 
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const moonId = urlParams.get('id');
 
-<!-- --- ZAKTUALIZOWANY FRAGMENT JS: MÓZG SYSTEMU --- -->
-<script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const moonId = urlParams.get('id');
-
-    if (!moonId) {
-        document.body.innerHTML = "<h1>Błąd: Nie wybrano żadnego obiektu.</h1>";
-    } else {
-        fetch('moon.json')
-            .then(res => res.json())
-            .then(data => {
-                const moon = data[moonId];
-                if (!moon) {
-                    document.body.innerHTML = "<h1>Obiekt nie istnieje w bazie danych.</h1>";
-                    return;
-                }
-
-                renderPage(moon);
-            })
-            .catch(err => console.error("Błąd pobierania bazy JSON:", err));
-    }
-
-    function renderPage(data) {
-        // 1. Motyw i Tytuł strony
-        if (data.themeColor) document.documentElement.style.setProperty('--main-color', data.themeColor);
-        document.title = data.name;
-        document.getElementById('moon-name').innerText = data.name;
-        document.getElementById('moon-tag').innerText = data.planetTag;
-        document.getElementById('moon-desc').innerText = data.description;
-        document.getElementById('moon-hero-img').style.backgroundImage = `url('${data.heroImage}')`;
-
-        // 2. Szybkie Statystyki (Dostosowane do struktury tablicy obiektów w Twoim JSON)
-        const statsContainer = document.getElementById('moon-stats');
-        statsContainer.innerHTML = ''; 
-        data.quickStats.forEach(stat => {
-            statsContainer.innerHTML += `
-                <div class="stat-box">
-                    <span class="stat-val">${stat.value}</span>
-                    <span class="stat-lbl">${stat.label}</span>
-                </div>`;
-        });
-
-        // 3. Profil szczegółowy (Mapowanie na klucz "detailedProfile")
-        renderFlexSection('sec-profile', 'title-profile', 'content-profile', 'Profil Szczegółowy', data.detailedProfile);
-
-        // 4. Anomalie (Mapowanie na klucz "anomalies")
-        renderFlexSection('sec-anomalies', 'title-anomalies', 'content-anomalies', 'Anomalie i Cechy Charakterystyczne', data.anomalies);
-
-        // 5. Główna Galeria
-        const secGallery = document.getElementById('sec-gallery');
-        if (data.gallery && data.gallery.length > 0) {
-            secGallery.style.display = 'block';
-            document.getElementById('title-gallery').innerText = data.galleryTitle || "Galeria";
-            const galContainer = document.getElementById('content-gallery');
-            galContainer.innerHTML = '';
-            data.gallery.forEach(imgUrl => {
-                galContainer.innerHTML += `<img src="${imgUrl}" alt="Zdjęcie obiektu">`;
-            });
+        if (!moonId) {
+            document.body.innerHTML = "<h1 style='text-align:center; padding: 50px;'>Błąd: Nie wybrano żadnego obiektu.</h1>";
+        } else {
+            fetch('moon.json')
+                .then(res => res.json())
+                .then(data => {
+                    const moon = data[moonId];
+                    if (!moon) {
+                        document.body.innerHTML = "<h1 style='text-align:center; padding: 50px;'>Obiekt nie istnieje w bazie danych.</h1>";
+                        return;
+                    }
+                    renderPage(moon);
+                })
+                .catch(err => console.error("Błąd pobierania bazy JSON:", err));
         }
 
-        // Płynne pokazanie gotowej strony
-        document.getElementById('main-container').style.opacity = '1';
-    }
+        function renderPage(data) {
+            // 1. Główne dane i Hero
+            if (data.themeColor) document.documentElement.style.setProperty('--main-color', data.themeColor);
+            document.title = data.name;
+            document.getElementById('moon-name').innerText = data.name;
+            document.getElementById('moon-tag').innerText = data.planetTag;
+            document.getElementById('moon-desc').innerText = data.description;
+            document.getElementById('moon-hero-img').style.backgroundImage = `url('${data.heroImage}')`;
 
-    // Uniwersalna funkcja dopasowana do kluczy "title" i "content" z Twojego pliku JSON
-    function renderFlexSection(sectionId, titleId, contentId, titleText, itemsArray) {
-        const section = document.getElementById(sectionId);
-        if (itemsArray && itemsArray.length > 0) {
-            section.style.display = 'block';
-            document.getElementById(titleId).innerText = titleText;
-            const container = document.getElementById(contentId);
-            container.innerHTML = '';
-            
-            itemsArray.forEach(item => {
-                // Opcjonalne renderowanie mini-obrazków wewnątrz anomalii
-                let subImagesHtml = '';
-                if (item.images && item.images.length > 0) {
-                    subImagesHtml = `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); gap: 8px; margin-top: 12px;">`;
-                    item.images.forEach(img => {
-                        subImagesHtml += `<img src="${img}" style="width: 100%; height: 50px; object-fit: cover; border-radius: 4px;">`;
-                    });
-                    subImagesHtml += `</div>`;
-                }
+            // 2. Szybkie Statystyki
+            const statsContainer = document.getElementById('moon-stats');
+            statsContainer.innerHTML = ''; 
+            if(data.quickStats) {
+                data.quickStats.forEach(stat => {
+                    statsContainer.innerHTML += `
+                        <div class="stat-box">
+                            <span class="stat-val">${stat.value}</span>
+                            <span class="stat-lbl">${stat.label}</span>
+                        </div>`;
+                });
+            }
 
-                container.innerHTML += `
+            // 3. Orbita
+            if(data.orbit) {
+                document.getElementById('sec-orbit').style.display = 'block';
+                const metricsContainer = document.getElementById('content-orbit-metrics');
+                metricsContainer.innerHTML = data.orbit.metrics.map(m => `
+                    <div class="card" style="text-align: center;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: bold; color: var(--main-color);">${m.value}</span>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">${m.label}</span>
+                    </div>
+                `).join('');
+                document.getElementById('content-orbit-summary').innerHTML = data.orbit.summaryText;
+            }
+
+            // 4. Profil szczegółowy
+            renderFlexSection('sec-profile', 'title-profile', 'content-profile', 'Szczegółowy Profil', data.detailedProfile);
+
+            // 5. Astrobiologia
+            if(data.astrobiology) {
+                document.getElementById('sec-astrobiology').style.display = 'block';
+                document.getElementById('astro-stars').innerText = data.astrobiology.stars;
+                document.getElementById('astro-desc').innerText = data.astrobiology.description;
+            }
+
+            // 6. Parametry fizyczne
+            if(data.physicalParameters) {
+                document.getElementById('sec-physical').style.display = 'block';
+                const physContainer = document.getElementById('content-physical');
+                physContainer.innerHTML = data.physicalParameters.map(p => `
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 0; color: var(--text-muted);">${p.label}</td>
+                        <td style="padding: 12px 0; font-weight: bold; text-align: right;">${p.value}</td>
+                    </tr>
+                `).join('');
+            }
+
+            // 7. Geologia i Chemia
+            if(data.geologyChemistry) {
+                document.getElementById('sec-geology').style.display = 'block';
+                const textContainer = document.getElementById('content-geology-text');
+                textContainer.innerHTML = data.geologyChemistry.textBlocks.map(block => `
                     <div class="card">
-                        <h3>${item.title}</h3>
-                        <p style="color: var(--text-muted); line-height: 1.5; margin-bottom: 0;">${item.content}</p>
-                        ${subImagesHtml}
-                    </div>`;
-            });
-        }
-    }
-</script>
+                        <h3>${block.title}</h3>
+                        <p style="color: var(--text-muted); line-height: 1.5; margin-bottom: 0;">${block.content}</p>
+                    </div>
+                `).join('');
 
+                if(data.geologyChemistry.compositionChart) {
+                    document.getElementById('geology-chart-title').innerText = data.geologyChemistry.compositionChart.title;
+                    const legend = document.getElementById('geology-chart-legend');
+                    legend.innerHTML = data.geologyChemistry.compositionChart.segments.map(seg => `
+                        <li><strong style="color: var(--main-color);">${seg.percentage}</strong> - ${seg.text}</li>
+                    `).join('');
+                } else {
+                    document.getElementById('content-geology-chart-container').style.display = 'none';
+                }
+            }
+
+            // 8. Anomalie (Klucz z JSON: anomalies)
+            renderFlexSection('sec-anomalies', 'title-anomalies', 'content-anomalies', 'Anomalie Geologiczne', data.anomalies);
+
+            // 9. Analiza porównawcza
+            if(data.comparison) {
+                document.getElementById('sec-comparison').style.display = 'block';
+                document.getElementById('title-comparison').innerText = data.comparison.title;
+                document.getElementById('subtitle-comparison').innerText = data.comparison.subtitle;
+                document.getElementById('summary-comparison').innerHTML = `<strong>Podsumowanie:</strong> ${data.comparison.summaryBox}`;
+                
+                const compItems = document.getElementById('content-comparison-items');
+                compItems.innerHTML = data.comparison.items.map(item => `
+                    <div style="margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px;">
+                            <span>${item.label}</span>
+                            <span style="font-weight: bold; color: var(--main-color);">${item.percentage}</span>
+                        </div>
+                        <div style="width: 100%; background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px;">
+                            <div style="width: ${item.percentage}; height: 100%; background: var(--main-color); border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            // 10. Misje Kosmiczne
+            if(data.missions) {
+                document.getElementById('sec-missions').style.display = 'block';
+                const missionsContainer = document.getElementById('content-missions');
+                missionsContainer.innerHTML = data.missions.map(mission => `
+                    <div class="card">
+                        <h4 style="margin: 0 0 5px 0;">${mission.name}</h4>
+                        <span style="font-size: 0.8rem; font-weight: bold; color: var(--main-color); text-transform: uppercase;">${mission.agency}</span>
+                        <p style="color: var(--text-muted); line-height: 1.5; font-size: 0.9rem; margin-top: 10px;">${mission.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            // 11. Główna Galeria
+            const secGallery = document.getElementById('sec-gallery');
+            if (data.gallery && data.gallery.length > 0) {
+                secGallery.style.display = 'block';
+                document.getElementById('title-gallery').innerText = data.galleryTitle || "Galeria zdjęć";
+                const galContainer = document.getElementById('content-gallery');
+                galContainer.innerHTML = '';
+                data.gallery.forEach(imgUrl => {
+                    galContainer.innerHTML += `<img src="${imgUrl}" alt="Zdjęcie obiektu">`;
+                });
+            }
+
+            // Pokazanie załadowanego kontenera
+            document.getElementById('main-container').style.opacity = '1';
+        }
+
+        // Uniwersalna funkcja do ładowania kafelków (Profil / Anomalie)
+        function renderFlexSection(sectionId, titleId, contentId, titleText, itemsArray) {
+            const section = document.getElementById(sectionId);
+            if (itemsArray && itemsArray.length > 0) {
+                section.style.display = 'block';
+                document.getElementById(titleId).innerText = titleText;
+                const container = document.getElementById(contentId);
+                container.innerHTML = '';
+                
+                itemsArray.forEach(item => {
+                    let subImagesHtml = '';
+                    if (item.images && item.images.length > 0) {
+                        subImagesHtml = `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); gap: 8px; margin-top: 15px;">`;
+                        item.images.forEach(img => {
+                            subImagesHtml += `<img src="${img}" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1);">`;
+                        });
+                        subImagesHtml += `</div>`;
+                    }
+
+                    container.innerHTML += `
+                        <div class="card">
+                            <h3 style="margin-top:0;">${item.title}</h3>
+                            <p style="color: var(--text-muted); line-height: 1.5; margin-bottom: 0; font-size: 0.95rem;">${item.content}</p>
+                            ${subImagesHtml}
+                        </div>`;
+                });
+            }
+        }
+    </script>
 </body>
 </html>
