@@ -30,27 +30,45 @@
             transition: opacity 0.3s ease-in-out;
         }
 
-        /* Sekcja Hero */
+        /* Sekcja Hero - Domyślny układ dla telefonów (jedno pod drugim) */
         .hero {
             display: flex;
-            gap: 40px;
+            flex-direction: column; /* Ustawia zdjęcie nad tekstem */
             margin-bottom: 40px;
             background: var(--bg-card);
             border-radius: 12px;
             overflow: hidden;
         }
 
+        /* Zdjęcie na telefonie - pełna szerokość i idealny kwadrat */
         .hero-img {
-            width: 40%;
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Wymusza proporcje kwadratu, zapobiega ucinaniu */
             background-size: cover;
             background-position: center;
-            min-height: 300px;
         }
 
         .hero-content {
             padding: 30px;
             flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
+
+        /* Układ obok siebie aktywowany dopiero na większych ekranach (komputery) */
+        @media (min-width: 992px) {
+            .hero {
+                flex-direction: row; /* Przywraca układ lewo-prawo */
+                gap: 40px;
+            }
+            .hero-img {
+                width: 45%; /* Na komputerze zdjęcie zajmuje 45% szerokości */
+                aspect-ratio: auto; /* Wyłącza wymuszony kwadrat */
+                min-height: 100%; /* Rozciąga zdjęcie w dół, by dopasować się do bloku tekstu */
+            }
+        }
+
 
         .tag {
             color: var(--main-color);
