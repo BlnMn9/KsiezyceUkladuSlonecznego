@@ -7,414 +7,346 @@
     <link rel="stylesheet" href="europa.css">
 </head>
 <body>
-
     <header>
         <h1>Księżyce Układu Słonecznego</h1>
     </header>
 
-    <main>
+    <div class="container" id="main-container">
+        
         <a href="index.html" class="back-link">&#10094; Wróć do listy księżyców</a>
 
-        <div class="moon-header">
-            <div class="moon-hero-img"></div>
-            <div class="moon-hero-info">
-                <span class="planet-tag">Księżyc Jowisza</span>
-                <h2>Europa</h2>
-                <p class="moon-desc">Europa to najmniejszy z czterech księżyców galileuszowych Jowisza i jedno z najbardziej obiecujących miejsc w Układzie Słonecznym w poszukiwaniu życia pozaziemskiego.</p>
-                <div class="quick-stats">
-                    <div class="stat-box"><span class="stat-value">3122 km</span><span class="stat-label">Średnica</span></div>
-                    <div class="stat-box"><span class="stat-value">0,0080 M⊕</span><span class="stat-label">Masa</span></div>
-                    <div class="stat-box"><span class="stat-value">-160°C</span><span class="stat-label">Temperatura</span></div>
-                    <div class="stat-box"><span class="stat-value">1,31 m/s²</span><span class="stat-label">Grawitacja</span></div>
-                    <div class="stat-box"><span class="stat-value">670 900 km</span><span class="stat-label">Odległość</span></div>
-                    <div class="stat-box"><span class="stat-value">1610 r.</span><span class="stat-label">Odkrycie</span></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>Wizualizacja Orbity</h3>
-            <div class="orbit-canvas-wrapper">
-                <div id="live-orbit-timer" class="orbit-timer-top-right">0d 0h</div>
+        <section class="hero" id="moon-hero">
+            <div class="hero-img" id="moon-hero-img"></div>
+            <div class="hero-content">
+                <span class="tag" id="moon-tag"></span>
+                <h1 id="moon-name" style="margin: 10px 0;"></h1>
+                <p id="moon-desc" style="color: var(--text-muted); line-height: 1.6;"></p>
                 
-                <div class="orbit-system">
-                    <div class="orbit-planet-core"></div>
-                    <div class="orbit-path-animator" id="orbit-animator">
-                        <div class="orbit-moon-point"></div>
-                    </div>
-                </div>
-
-                <div class="orbit-data-panel">
-                    <div class="data-metric"><span class="data-value">3.55 d</span><span class="data-label">Okres całkowity</span></div>
-                    <div class="data-metric"><span class="data-value">670k km</span><span class="data-label">Dystans</span></div>
-                    <div class="data-metric"><span class="data-value">13.7 km/s</span><span class="data-label">Prędkość</span></div>
-                </div>
+                <div class="stats-grid" id="moon-stats"></div>
             </div>
-            <p style="text-align: center; color: #cbd5e1; margin-top: 15px; font-size: 0.95rem;">
-                Jedno okrążenie wokół Jowisza trwa <b>3,55 dnia</b>. Średni dystans to <b>670 900 km</b> przy prędkości <b>13,74 km/s</b>.
-            </p>
-        </div>
+        </section>
 
-<div class="section">
-    <h3>Szczegółowy Profil</h3>
-    <div class="text-grid">
-        <div class="text-box">
-            <h4>Historia odkrycia</h4>
-            <p>Europę odkrył Galileusz w styczniu 1610 roku, kierując ku Jowiszowi jeden z pierwszych w historii teleskopów. To przełomowe wydarzenie dostarczyło niepodważalnego dowodu, że nie wszystkie ciała niebieskie krążą wokół Ziemi. Odkrycie to ostatecznie przypieczętowało upadek przestarzałego modelu geocentrycznego na rzecz spopularyzowanej przez Kopernika teorii heliocentrycznej, zmieniając nasze postrzeganie miejsca ludzkości w kosmosie.</p>
-        </div>
-        <div class="text-box">
-            <h4>Charakterystyka</h4>
-            <p>Europa to obiekt o rozmiarach zbliżonych do ziemskiego Księżyca – jej średnica wynosi około 3122 km. Co niezwykłe, jej powierzchnia jest najgładszą w całym Układzie Słonecznym, pozbawioną wysokich gór czy głębokich dolin; najwyższe wzniesienia mają zaledwie kilkaset metrów. Ta gładkość wynika z faktu, że powierzchnia księżyca składa się głównie z zamarzniętej wody, która podlega ciągłym procesom wyrównywania.</p>
-        </div>
-        <div class="text-box">
-            <h4>Powierzchnia</h4>
-            <p>Skorupa Europy zbudowana jest z grubego lodu wodnego, który tworzy spektakularną, pociętą sieć ciemnych linii zwanych <i>lineae</i>. Są to gigantyczne szczeliny i pęknięcia wywołane siłami pływowymi Jowisza. Na powierzchni niezwykle rzadko występują kratery uderzeniowe, co świadczy o tym, że pokrywa lodowa jest stale i aktywnie odnawiana przez procesy geologiczne, które "zalewają" starsze struktury świeżym lodem.</p>
-        </div>
-        <div class="text-box">
-            <h4>Wnętrze</h4>
-            <p>Pod lodową skorupą o grubości kilkunastu kilometrów znajduje się globalny ocean słonej, ciekłej wody, którego głębokość może sięgać nawet 100 kilometrów. Dzięki oddziaływaniom grawitacyjnym Jowisza woda ta pozostaje w stanie ciekłym, co stanowi o jej unikalności. Głębiej pod oceanem znajduje się skalisty płaszcz, a w samym centrum księżyca prawdopodobnie mieści się żelazne jądro, generujące pole magnetyczne.</p>
-        </div>
-        <div class="text-box">
-            <h4>Obrót synchroniczny</h4>
-            <p>Podobnie jak ziemski Księżyc, Europa znajduje się w tzw. rotacji synchronicznej ze swoją planetą macierzystą. Oznacza to, że jest zwrócona do Jowisza zawsze tą samą półkulą. Zjawisko to jest wynikiem potężnego oddziaływania grawitacyjnego gazowego olbrzyma, które na przestrzeni miliardów lat zsynchronizowało czas obrotu księżyca wokół własnej osi z czasem jego obiegu po orbicie. W rezultacie Europa zawsze "patrzy" na Jowisza jednym okiem.</p>
-        </div>
-        <div class="text-box">
-            <h4>Widoczność z Ziemi</h4>
-            <p>Dzięki wysokiemu albedo – czyli jasnej, lodowej powierzchni silnie odbijającej światło słoneczne – Europa jest obiektem relatywnie łatwym do obserwacji. Przy sprzyjających warunkach można ją dostrzec nawet przy pomocy zwykłej, amatorskiej lornetki. Tworzy wtedy, wraz z Io, Ganimedesem i Kallisto, charakterystyczną, zmieniającą się z nocy na noc linię jasnych punktów, co było pierwszym w historii dowodem na istnienie układu satelitów krążących wokół innej planety.</p>
-        </div>
+        <section class="section" id="sec-orbit">
+            <h2 class="section-title">Wizualizacja Orbity</h2>
+            
+            <div id="orbit-visual-container" style="display: flex; justify-content: center; align-items: center; padding: 30px 20px; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 25px;"></div>
+            
+            <div class="grid-2" id="content-orbit-metrics"></div>
+            <p id="content-orbit-summary" style="text-align: center; color: var(--text-muted); margin-top: 15px; font-size: 0.95rem;"></p>
+        </section>
+
+        <section class="section" id="sec-profile">
+            <h2 class="section-title" id="title-profile"></h2>
+            <div class="grid-2" id="content-profile"></div>
+        </section>
+
+        <section class="section" id="sec-astrobiology">
+            <h2 class="section-title">Możliwość istnienia życia</h2>
+            <div class="card">
+                <div style="font-weight: bold; margin-bottom: 10px;">Potencjał astrobiologiczny: <span id="astro-stars" style="color: gold; letter-spacing: 2px;"></span></div>
+                <p id="astro-desc" style="color: var(--text-muted); line-height: 1.5; margin: 0;"></p>
+            </div>
+        </section>
+
+        <section class="section" id="sec-physical">
+            <h2 class="section-title">Parametry fizyczne</h2>
+            <div class="card">
+                <table class="extended-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <tbody id="content-physical"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="section" id="sec-geology">
+            <h2 class="section-title">Geologia i Skład Chemiczny</h2>
+            <div class="grid-2" id="content-geology-text"></div>
+            
+            <div class="card" style="margin-top: 20px;" id="content-geology-chart-container">
+                <h4 id="geology-chart-title"></h4>
+                <ul id="geology-chart-legend" style="list-style: none; padding: 0; line-height: 1.8;"></ul>
+            </div>
+        </section>
+
+        <section class="section" id="sec-anomalies">
+            <h2 class="section-title" id="title-anomalies"></h2>
+            <div class="grid-2" id="content-anomalies"></div>
+        </section>
+
+        <section class="section" id="sec-comparison">
+            <h2 class="section-title" id="title-comparison"></h2>
+            <p id="subtitle-comparison" style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;"></p>
+            <div id="content-comparison-items"></div>
+            <div class="card" style="margin-top: 25px; border-left: 4px solid var(--main-color);">
+                <p id="summary-comparison" style="margin: 0; line-height: 1.5; font-size: 0.9rem;"></p>
+            </div>
+        </section>
+
+        <section class="section" id="sec-missions">
+            <h2 class="section-title">Misje Kosmiczne</h2>
+            <div class="grid-2" id="content-missions"></div>
+        </section>
+
+        <section class="section" id="sec-gallery">
+            <h2 class="section-title" id="title-gallery"></h2>
+            <div class="gallery" id="content-gallery"></div>
+        </section>
     </div>
-</div>
-
-        <div class="section">
-            <h3>Możliwość istnienia życia</h3>
-            <div class="astro-rating">Potencjał astrobiologiczny: <span class="stars">★★★★★</span></div>
-            <p style="color: #cbd5e1;">Europa ma trzy kluczowe składniki niezbędne do życia, jakie znamy: wodę w stanie ciekłym, odpowiednie pierwiastki chemiczne z dna morskiego oraz źródło energii (ciepło pływowe generowane przez grawitację Jowisza).</p>
-        </div>
-
-        <div class="section">
-            <h3>Parametry fizyczne</h3>
-            <table class="extended-table">
-                <tr><td>Masa całkowita</td><td>~4,80 × 10<sup>19</sup> ton (48 trylionów ton)</td></tr>
-                <tr><td>Promień równikowy</td><td>1560,8 km</td></tr>
-                <tr><td>Gęstość</td><td>3,013 g/cm³</td></tr>
-                <tr><td>Atmosfera</td><td>Niezwykle cienka</td></tr>
-                <tr><td>Skład atmosfery</td><td>Głównie tlen (O2)</td></tr>
-                <tr><td>Prędkość ucieczki</td><td>2,025 km/s</td></tr>
-                <tr><td>Albedo</td><td>0,64 (wysokie)</td></tr>
-                <tr><td>Nachylenie orbity</td><td>0,47° do równika Jowisza</td></tr>
-            </table>
-        </div>
-
-        <div class="section">
-            <h3>Geologia i Skład Chemiczny</h3>
-            <div class="text-grid">
-                <div class="text-box">
-                    <h4>Młoda, lodowa skorupa</h4>
-                    <p>Powierzchnia Europy należy do najmłodszych w Układzie Słonecznym (szacuje się ją na zaledwie 20 do 180 milionów lat). Brak licznych kraterów uderzeniowych dowodzi, że pokrywa lodowa jest nieustannie odnawiana – prawdopodobnie przez procesy kriowulkanizmu i przesuwanie się lodowych płyt tektonicznych.</p>
-                </div>
-                <div class="text-box">
-                    <h4>Tereny chaotyczne i Lineae</h4>
-                    <p>Powierzchnię przecina gęsta sieć ciemnych pasm, zwanych <i>lineae</i>, które są gigantycznymi pęknięciami wywołanymi przez siły pływowe Jowisza. Występują tu także tzw. tereny chaotyczne (np. <i>Conamara Chaos</i>), gdzie wielkie bloki lodu zostały oderwane, przesunięte i ponownie wmarznięte, przypominając ziemską krę.</p>
-                </div>
-                <div class="text-box">
-                    <h4>Związki chemiczne i sole</h4>
-                    <p>Chociaż powierzchnia to głównie lód wodny, ciemne pęknięcia są niezwykle bogate w sole mineralne. Pomiary spektroskopowe wskazują na obecność siarczanu magnezu oraz chlorku sodu. To właśnie te związki, wystawione na silne promieniowanie ze strony Jowisza, nadają pasmom na Europie charakterystyczny, rdzawo-brązowy kolor.</p>
-                </div>
-                <div class="text-box">
-                    <h4>Interakcje z promieniowaniem</h4>
-                    <p>Silne pole magnetyczne Jowisza przyspiesza cząsteczki, które nieustannie bombardują powierzchnię Europy. Promieniowanie to rozbija cząsteczki wody, tworząc m.in. nadtlenek wodoru i uwalniając tlen. Istnieją przypuszczenia, że natleniona woda z powierzchni może z czasem przenikać do głębokiego oceanu, zasilając potencjalne ekosystemy.</p>
-                </div>
-                <div class="text-box">
-                    <h4>Pióropusze pary wodnej</h4>
-                    <p>Obserwacje prowadzone m.in. przez Kosmiczny Teleskop Hubble'a sugerują istnienie potężnych gejzerów wyrzucających parę wodną na wysokość nawet 200 km. Jeśli ich istnienie i stała aktywność zostaną w pełni potwierdzone, umożliwi to przyszłym sondom zbadanie składu podziemnego oceanu z orbity, bez konieczności wiercenia w grubej warstwie lodu.</p>
-                </div>
-
-               <div class="text-box">
-                    <h4>Lodowa tektonika płyt</h4>
-                    <p>Europa to jedno z niewielu znanych ciał w Układzie Słonecznym, gdzie występują procesy przypominające ziemską tektonikę płyt. Z tą różnicą, że zamiast skał, przemieszczają się tu ogromne kry lodu. Pękają, rozsuwają się i wsuwają jedna pod drugą, co jest głównym mechanizmem "odmładzania" i wygładzania powierzchni księżyca.</p>
-               </div>
-            </div>
-
-            <div class="chart-container">
-                <div class="chart-info">
-                    <h4>Szacunkowy skład masowy Europy</h4>
-                </div>
-                
-                <div class="donut-wrapper">
-                    <div class="donut-chart">
-                        <div class="donut-hole"></div> 
-                    </div>
-                </div>
-
-                <div class="chart-legend">
-                    <div class="legend-item">
-                        <div class="legend-color color-rock"></div>
-                        <span><strong>70-85%</strong> płaszcz skalny (krzemiany)</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color color-core"></div>
-                        <span><strong>10-15%</strong> jądro metaliczne (głównie żelazo i nikiel)</span>
-                    </div>
-                    <div class="legend-item">
-                        <div class="legend-color color-water"></div>
-                        <span><strong>5-10%</strong> warstwa wodna (lód i ocean podpowierzchniowy)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>Anomalie geologiczne</h3>
-            <div class="text-grid">
-                
-                <div class="text-box">
-                    <h4>Chaos Terrain (Tereny chaotyczne)</h4>
-                    <p>Tereny chaotyczne (np. słynny <i>Conamara Chaos</i>) to obszary, na których gładka powierzchnia Europy uległa drastycznemu spękaniu i przemieszaniu. Fragmenty lodowej skorupy przypominają tu gigantyczne kry na ziemskich oceanach, które zostały rozbite, obrócone, a następnie ponownie zamarzły. Naukowcy przypuszczają, że struktury te powstają w miejscach, gdzie podpowierzchniowe jeziora lub kominy termalne topią lód od spodu, co prowadzi do zapadania się i chaosu na powierzchni.</p>
-                    
-                    <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 15px;">
-                        <img src="Europa6.jpeg" alt="Chaos Terrain fot. 1" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="Image3_1024x576.jpg" alt="Chaos Terrain fot. 2" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="chaos-1920.jpg" alt="Chaos Terrain fot. 3" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                    </div>
-                </div>
-
-                <div class="text-box">
-                    <h4>Rdzawe linie (Lineae)</h4>
-                    <p>Rudawo-brązowe pasma przecinające całą powierzchnię księżyca to tzw. <i>lineae</i> (linie). Są to gigantyczne pęknięcia tektoniczne wywołane naprężeniami od sił pływowych Jowisza. Gdy lód pęka, woda z domieszką soli (takich jak siarczan magnezu) wydostaje się z głębin i zamarza. Swój charakterystyczny, "rdzawy" kolor pasma te zawdzięczają bezpośredniemu, długotrwałemu działaniu silnego promieniowania kosmicznego na uwięzione w lodzie minerały.</p>
-                    
-                    <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 15px;">
-                        <img src="EuropaLineae/EuropaLineae1.webp" alt="Rdzawe linie fot. 1" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="EuropaLineae/EuropaLineae2.png" alt="Rdzawe linie fot. 2" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="EuropaLineae/EuropaLineae3.jpg" alt="Rdzawe linie fot. 3" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="EuropaLineae/EuropaLineae4.webp" alt="Rdzawe linie fot. 4" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                    </div>
-                </div>
-                
-                <div class="text-box">
-                    <h4>Double Ridges (Podwójne grzbiety)</h4>
-                    <p>Podwójne grzbiety to jedna z najbardziej powszechnych, a zarazem zagadkowych formacji na Europie. Składają się z dwóch niemal równoległych wzniesień przedzielonych wąską doliną i potrafią ciągnąć się przez tysiące kilometrów. Powstają najprawdopodobniej na skutek naprężeń pływowych Jowisza. Gdy skorupa pęka, woda lub lodowa „papka” (ang. <i>slush</i>) z wnętrza jest wyciskana na powierzchnię, gdzie natychmiast zamarza, budując symetryczne wały wzdłuż szczeliny.</p>
-                    
-                    <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 15px;">
-                        <img src="graphs/DReuropa1.jpg" alt="Double Ridges fot. 1" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="graphs/DReuropa2.webp" alt="Double Ridges fot. 2" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="graphs/DReuropa3.webp" alt="Double Ridges fot. 3" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                    </div>
-                </div>
-
-                <div class="text-box">
-                    <h4>Krater Pwyll</h4>
-                    <p>Ponieważ lodowa powierzchnia Europy jest stale odnawiana, kratery uderzeniowe są tu rzadkością. Krater Pwyll to jeden z najmłodszych i najbardziej wyrazistych tego typu obiektów. Ma zaledwie kilkadziesiąt kilometrów średnicy, ale wyróżnia się ciemnym centrum oraz jasnymi, spektakularnymi promieniami wyrzuconej materii (tzw. ejekty), które rozciągają się na odległość ponad tysiąca kilometrów. Jego układ i ukształtowanie pomagają naukowcom szacować grubość lodowej skorupy księżyca.</p>
-                    
-                    <div class="gallery" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 15px;">
-                        <img src="graphs/pwyll1.jpg" alt="Krater Pwyll fot. 1" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="graphs/pwyll2.webp" alt="Krater Pwyll fot. 2" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="graphs/pwyll3.webp" alt="Krater Pwyll fot. 3" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="graphs/pwyll4.jpg" alt="Krater Pwyll fot. 4" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                        <img src="graphs/pwyll5.jpg" alt="Krater Pwyll fot. 5" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 6px; border: 1px solid #1e293b; cursor: pointer;">
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-
-
-
-        <div class="section">
-            <h3>Analiza Porównawcza</h3>
-            <p style="color: #94a3b8; margin-bottom: 25px; font-size: 0.95rem;">Zestawienie kluczowych wskaźników fizycznych Europy w relacji do obiektów referencyjnych (Ziemi oraz Księżyca):</p>
-            
-            <div class="comparison-item">
-                <div class="comparison-label"><span>Średnica równikowa (w odniesieniu do Księżyca Ziemi)</span><span>90%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 90%;"></div></div>
-            </div>
-            <div class="comparison-item">
-                <div class="comparison-label"><span>Stosunek grawitacji powierzchniowej (względem Ziemi)</span><span>13.4%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 13.4%;"></div></div>
-            </div>
-            <div class="comparison-item">
-                <div class="comparison-label"><span>Szacowana objętość wody ciekłej (w stosunku do hydrosfery Ziemi)</span><span>~200%</span></div>
-                <div class="progress-bg"><div class="progress-fill" style="width: 100%; background: #2dd4bf;"></div></div>
-            </div>
-            
-            <div style="margin-top: 25px; padding: 15px; background-color: #0b0f19; border-left: 4px solid #2dd4bf; border-radius: 6px;">
-                <p style="color: #cbd5e1; font-size: 0.9rem; margin: 0; line-height: 1.5;">
-                    <strong>Bilans zasobów wodnych:</strong> Pomimo znacznie mniejszej kubatury całkowitej, podpowierzchniowy ocean Europy mieści w sobie szacunkowo dwukrotnie więcej wody w stanie ciekłym niż wszystkie połączone baseny oceaniczne na Ziemi.
-                </p>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>Misje Kosmiczne</h3>
-            <div class="grid-cards">
-                <div class="card">
-                    <h4>Sonda Galileo</h4>
-                    <span class="agency">NASA | 1995–2003</span>
-                    <p style="color:#cbd5e1; font-size: 0.9rem; margin-top: 5px;">Sonda zrewolucjonizowała naszą wiedzę o układzie Jowisza. Wykonała szczegółowe zdjęcia spękanej powierzchni Europy, a precyzyjne pomiary jej pola magnetycznego dostarczyły pierwszych, niezwykle silnych dowodów na istnienie globalnego, słonego oceanu pod lodową skorupą.</p>
-                </div>
-                <div class="card">
-                    <h4>Europa Clipper</h4>
-                    <span class="agency">NASA | Wystrzelona: 2024</span>
-                    <p style="color:#cbd5e1; font-size: 0.9rem; margin-top: 5px;">Największa w historii sonda zbudowana do badań planetarnych. Będąc na orbicie Jowisza, wykona blisko 50 bliskich przelotów nad Europą. Wykorzysta m.in. radary przenikające lód, aby zmapować ukryty ocean i ocenić, czy panują tam warunki odpowiednie do podtrzymania życia.</p>
-                </div>
-                <div class="card">
-                    <h4>JUICE</h4>
-                    <span class="agency">ESA | Wystrzelona: 2023</span>
-                    <p style="color:#cbd5e1; font-size: 0.9rem; margin-top: 5px;">Sonda <i>JUpiter ICy moons Explorer</i> dotrze do układu w 2031 roku. Choć jej głównym celem jest Ganimedes, wykona również niezwykle ważne przeloty nad Europą, badając skład chemiczny jej powierzchni oraz poszukując aktywnych pióropuszy materii wyrzucanych w przestrzeń kosmiczną.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h3>Galeria zdjęć i grafik</h3>
-            <div class="gallery-wrapper">
-                <div class="slide-container active"><img src="europa-full.en.jpg" alt="Europa - Zdjęcie 1"></div>
-                <div class="slide-container"><img src="4965690752_066be059b7_h.jpg" alt="Europa - Zdjęcie 2"></div>
-                <div class="slide-container"><img src="Close-up Images of Jupiter's Frozen Ocean Moon_.jpeg" alt="Europa - Zdjęcie 3"></div>
-                <div class="slide-container"><img src="Europa (2).jpeg" alt="Europa - Zdjęcie 4"></div>
-                <div class="slide-container"><img src="Europa (1).jpeg" alt="Europa - Zdjęcie 5"></div>
-                <div class="slide-container"><img src="Europa.jpeg" alt="Europa - Zdjęcie 6"></div>
-                <div class="slide-container"><img src="Jupiter and its moon Europe.jpeg" alt="Europa - Zdjęcie 7"></div>
-                <div class="slide-container"><img src="pia25695-nasas-juno-mission-captures-images-of-europa.jpg" alt="Europa - Zdjęcie 8"></div>
-                <div class="slide-container"><img src="Europa1.png" alt="Europa - Zdjęcie 9"></div>
-                <div class="slide-container"><img src="Europa2.jpg" alt="Europa - Zdjęcie 10"></div>
-                <div class="slide-container"><img src="Europa3.webp" alt="Europa - Zdjęcie 11"></div>
-                <div class="slide-container"><img src="Europa4.jpg" alt="Europa - Zdjęcie 12"></div>
-                <div class="slide-container"><img src="Europa5.webp" alt="Europa - Zdjęcie 13"></div>
-                <div class="slide-container"><img src="Europa6.jpeg" alt="Europa - Zdjęcie 14"></div>
-                <div class="slide-container"><img src="Europa7.webp" alt="Europa - Zdjęcie 15"></div>
-                <div class="slide-container"><img src="Europa8.webp" alt="Europa - Zdjęcie 16"></div>
-                <div class="slide-container"><img src="chaos-1920.jpg" alt="Europa - Zdjęcie 17"></div>
-                <div class="slide-container"><img src="Image3_1024x576.jpg" alt="Europa - Zdjęcie 18"></div>
-                <div class="slide-container"><img src="europa-1920.jpg" alt="Europa - Zdjęcie 19"></div>
-                <div class="slide-container"><img src="graphs/Europa0.webp" alt="Europa - Zdjęcie 20"></div>
-                <div class="slide-container"><img src="EuropaLineae/EuropaLineae1.webp" alt="Europa - Zdjęcie 21"></div>
-                <div class="slide-container"><img src="EuropaLineae/EuropaLineae2.png" alt="Europa - Zdjęcie 22"></div>
-                <div class="slide-container"><img src="EuropaLineae/EuropaLineae3.jpg" alt="Europa - Zdjęcie 23"></div>
-                <div class="slide-container"><img src="EuropaLineae/EuropaLineae4.webp" alt="Europa - Zdjęcie 24"></div>
-                <div class="slide-container"><img src="graphs/DReuropa1.jpg" alt="Europa - Zdjęcie 25"></div>
-                <div class="slide-container"><img src="graphs/DReuropa2.webp" alt="Europa - Zdjęcie 26"></div>
-                <div class="slide-container"><img src="graphs/DReuropa3.webp" alt="Europa - Zdjęcie 27"></div>
-                <div class="slide-container"><img src="graphs/pwyll1.jpg" alt="Europa - Zdjęcie 28"></div>
-                <div class="slide-container"><img src="graphs/pwyll2.webp" alt="Europa - Zdjęcie 29"></div>
-                <div class="slide-container"><img src="graphs/pwyll3.webp" alt="Europa - Zdjęcie 30"></div>
-                <div class="slide-container"><img src="graphs/pwyll4.jpg" alt="Europa - Zdjęcie 31"></div>
-                <div class="slide-container"><img src="graphs/pwyll5.jpg" alt="Europa - Zdjęcie 32"></div>
-            </div>
-        </div>
-
-        <div id="gallery-modal" class="modal">
-            <span class="close-modal">&times;</span>
-            <a class="prev-slide">&#10094;</a>
-            <img class="modal-content" id="modal-img" alt="Powiększone zdjęcie">
-            <a class="next-slide">&#10095;</a>
-        </div>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Księżyce Układu Słonecznego</p>
-    </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // --- LOGIKA ORBITY (pozostaje bez zmian) ---
-            const timerElement = document.getElementById("live-orbit-timer");
-            const animatorElement = document.getElementById("orbit-animator");
+        const urlParams = new URLSearchParams(window.location.search);
+        const moonId = urlParams.get('id');
+
+        if (!moonId) {
+            document.body.innerHTML = "<h1 style='text-align:center; padding: 50px;'>Błąd: Nie wybrano żadnego obiektu.</h1>";
+        } else {
+            fetch('moon.json')
+                .then(res => res.json())
+                .then(data => {
+                    const moon = data[moonId];
+                    if (!moon) {
+                        document.body.innerHTML = "<h1 style='text-align:center; padding: 50px;'>Obiekt nie istnieje w bazie danych.</h1>";
+                        return;
+                    }
+                    renderPage(moon);
+                })
+                .catch(err => console.error("Błąd pobierania bazy JSON:", err));
+        }
+
+        function renderPage(data) {
+            // 1. Główne dane i Hero
+            if (data.themeColor) document.documentElement.style.setProperty('--main-color', data.themeColor);
+            document.title = data.name;
+            document.getElementById('moon-name').innerText = data.name;
+            document.getElementById('moon-tag').innerText = data.planetTag;
+            document.getElementById('moon-desc').innerText = data.description;
             
-            if (timerElement && animatorElement) {
-                const targetDays = 3.551;
-                const animationDurationMs = 12000;
-                const startTime = Date.now();
+            // Poprawka kadrowania zdjęcia hero
+            const heroImg = document.getElementById('moon-hero-img');
+            heroImg.style.backgroundImage = `url('${data.heroImage}')`;
+            heroImg.style.backgroundSize = 'contain';
+            heroImg.style.backgroundRepeat = 'no-repeat';
+            heroImg.style.backgroundPosition = 'center';
 
-                function updateOrbitTimer() {
-                    const elapsedMs = (Date.now() - startTime) % animationDurationMs;
-                    const progressRatio = elapsedMs / animationDurationMs;
-                    
-                    const currentTotalDays = progressRatio * targetDays;
-                    const days = Math.floor(currentTotalDays);
-                    const remainingHoursTotal = (currentTotalDays - days) * 24;
-                    const hours = Math.floor(remainingHoursTotal);
-
-                    timerElement.innerText = `${days}d ${hours}h`;
-
-                    const degrees = progressRatio * 360;
-                    animatorElement.style.transform = `rotate(${degrees}deg)`;
-
-                    requestAnimationFrame(updateOrbitTimer);
-                }
-                requestAnimationFrame(updateOrbitTimer);
-            }
-
-// --- LOGIKA GALERII (ZAKTUALIZOWANA - ZAPĘTLENIE W GRUPACH) ---
-            const modal = document.getElementById("gallery-modal");
-            const modalImg = document.getElementById("modal-img");
-            const closeBtn = document.querySelector(".close-modal");
-            const prevBtn = document.querySelector(".prev-slide");
-            const nextBtn = document.querySelector(".next-slide");
-            
-            // Łapiemy wszystkie zdjęcia z obu typów galerii, by dodać nasłuchiwanie kliknięć
-            const allImages = document.querySelectorAll(".gallery-wrapper img, .gallery img");
-            
-            // Te zmienne będą trzymać tylko zdjęcia z aktualnie otwartej podsekcji
-            let currentGalleryGroup = [];
-            let currentIndex = 0;
-
-            // 1. Otwieranie modala
-            allImages.forEach((img) => {
-                img.addEventListener("click", function() {
-                    // Znajdujemy kontener, w którym znajduje się kliknięte zdjęcie
-                    const parentContainer = this.closest('.gallery, .gallery-wrapper');
-                    
-                    // Pobieramy TYLKO obrazki z tego konkretnego kontenera
-                    currentGalleryGroup = Array.from(parentContainer.querySelectorAll('img'));
-                    
-                    // Ustalamy indeks klikniętego zdjęcia w jego własnej grupie
-                    currentIndex = currentGalleryGroup.indexOf(this);
-                    
-                    modal.style.display = "flex";
-                    modalImg.src = this.src;
+            // 2. Szybkie Statystyki
+            const statsContainer = document.getElementById('moon-stats');
+            statsContainer.innerHTML = ''; 
+            if(data.quickStats) {
+                data.quickStats.forEach(stat => {
+                    statsContainer.innerHTML += `
+                        <div class="stat-box">
+                            <span class="stat-val">${stat.value}</span>
+                            <span class="stat-lbl">${stat.label}</span>
+                        </div>`;
                 });
-            });
-
-            // 2. Zamykanie modala
-            closeBtn.onclick = () => modal.style.display = "none";
-            window.onclick = (event) => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            };
-
-            // 3. Przełączanie zdjęć strzałkami w obrębie wyizolowanej grupy
-            function changeSlide(step) {
-                if (currentGalleryGroup.length === 0) return;
-
-                currentIndex += step;
-                
-                // Zapętlanie we własnej sekcji
-                if (currentIndex >= currentGalleryGroup.length) {
-                    currentIndex = 0;
-                } else if (currentIndex < 0) {
-                    currentIndex = currentGalleryGroup.length - 1;
-                }
-                
-                modalImg.src = currentGalleryGroup[currentIndex].src;
             }
 
-            prevBtn.onclick = () => changeSlide(-1);
-            nextBtn.onclick = () => changeSlide(1);
+            // 3. Orbita (Wizualizacja Graficzna + Dane liczbowkie)
+            if(data.orbit) {
+                document.getElementById('sec-orbit').style.display = 'block';
+                
+                // Generowanie animowanego modelu graficznego SVG w locie
+                const visualContainer = document.getElementById('orbit-visual-container');
+                if (visualContainer) {
+                    let planetColor = '#e2e8f0'; 
+                    let planetName = 'Planeta';
+                    const tagLower = data.planetTag.toLowerCase();
+                    
+                    if (tagLower.includes('saturn')) {
+                        planetColor = '#fde047';
+                        planetName = 'Saturn';
+                    } else if (tagLower.includes('jowisz')) {
+                        planetColor = '#fb923c';
+                        planetName = 'Jowisz';
+                    } else if (tagLower.includes('ziemi')) {
+                        planetColor = '#60a5fa';
+                        planetName = 'Ziemia';
+                    } else if (tagLower.includes('mars')) {
+                        planetColor = '#f87171';
+                        planetName = 'Mars';
+                    } else if (tagLower.includes('neptun')) {
+                        planetColor = '#3b82f6';
+                        planetName = 'Neptun';
+                    } else if (tagLower.includes('uran')) {
+                        planetColor = '#2dd4bf';
+                        planetName = 'Uran';
+                    }
 
-            // 4. Obsługa klawiatury
-            document.addEventListener('keydown', function(e) {
-                if (modal.style.display === "flex") { 
-                    if (e.key === "ArrowLeft") changeSlide(-1);
-                    if (e.key === "ArrowRight") changeSlide(1);
-                    if (e.key === "Escape") modal.style.display = "none";
+                    // Skalowanie prędkości animacji bazując na dniach orbitalnych
+                    const duration = data.orbit.targetDays ? Math.max(4, Math.min(data.orbit.targetDays * 1.5, 25)) : 12;
+                    const moonColor = data.themeColor || '#38bdf8';
+
+                    visualContainer.innerHTML = `
+                        <svg width="240" height="240" viewBox="0 0 240 240" style="overflow: visible;">
+                            <defs>
+                                <linearGradient id="planetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="${planetColor}" />
+                                    <stop offset="100%" stop-color="#451a03" stop-opacity="0.7" />
+                                </linearGradient>
+                                <filter id="moonGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+                            
+                            <circle cx="120" cy="120" r="80" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" stroke-dasharray="4 4" />
+                            
+                            <circle cx="120" cy="120" r="28" fill="url(#planetGrad)" style="box-shadow: 0 0 15px ${planetColor}40;" />
+                            <text x="120" y="123" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle" style="font-family: system-ui, sans-serif; pointer-events: none; letter-spacing: 0.5px;">${planetName}</text>
+                            
+                            <g style="transform-origin: 120px 120px; animation: orbit-spin-anim ${duration}s linear infinite;">
+                                <circle cx="120" cy="40" r="7" fill="${moonColor}" filter="url(#moonGlow)" />
+                                <text x="120" y="26" font-size="10" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family: system-ui, sans-serif;">${data.name}</text>
+                            </g>
+                            
+                            <style>
+                                @keyframes orbit-spin-anim {
+                                    from { transform: rotate(0deg); }
+                                    to { transform: rotate(360deg); }
+                                }
+                            </style>
+                        </svg>
+                    `;
                 }
-            });
 
-        });
+                const metricsContainer = document.getElementById('content-orbit-metrics');
+                metricsContainer.innerHTML = data.orbit.metrics.map(m => `
+                    <div class="card" style="text-align: center;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: bold; color: var(--main-color);">${m.value}</span>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">${m.label}</span>
+                    </div>
+                `).join('');
+                document.getElementById('content-orbit-summary').innerHTML = data.orbit.summaryText;
+            }
+
+            // 4. Profil szczegółowy
+            renderFlexSection('sec-profile', 'title-profile', 'content-profile', 'Szczegółowy Profil', data.detailedProfile);
+
+            // 5. Astrobiologia
+            if(data.astrobiology) {
+                document.getElementById('sec-astrobiology').style.display = 'block';
+                document.getElementById('astro-stars').innerText = data.astrobiology.stars;
+                document.getElementById('astro-desc').innerText = data.astrobiology.description;
+            }
+
+            // 6. Parametry fizyczne
+            if(data.physicalParameters) {
+                document.getElementById('sec-physical').style.display = 'block';
+                const physContainer = document.getElementById('content-physical');
+                physContainer.innerHTML = data.physicalParameters.map(p => `
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                        <td style="padding: 12px 0; color: var(--text-muted);">${p.label}</td>
+                        <td style="padding: 12px 0; font-weight: bold; text-align: right;">${p.value}</td>
+                    </tr>
+                `).join('');
+            }
+
+            // 7. Geologia i Chemia
+            if(data.geologyChemistry) {
+                document.getElementById('sec-geology').style.display = 'block';
+                const textContainer = document.getElementById('content-geology-text');
+                textContainer.innerHTML = data.geologyChemistry.textBlocks.map(block => `
+                    <div class="card">
+                        <h3>${block.title}</h3>
+                        <p style="color: var(--text-muted); line-height: 1.5; margin-bottom: 0;">${block.content}</p>
+                    </div>
+                `).join('');
+
+                if(data.geologyChemistry.compositionChart) {
+                    document.getElementById('geology-chart-title').innerText = data.geologyChemistry.compositionChart.title;
+                    const legend = document.getElementById('geology-chart-legend');
+                    legend.innerHTML = data.geologyChemistry.compositionChart.segments.map(seg => `
+                        <li><strong style="color: var(--main-color);">${seg.percentage}</strong> - ${seg.text}</li>
+                    `).join('');
+                } else {
+                    document.getElementById('content-geology-chart-container').style.display = 'none';
+                }
+            }
+
+            // 8. Anomalie
+            renderFlexSection('sec-anomalies', 'title-anomalies', 'content-anomalies', 'Anomalie Geologiczne', data.anomalies);
+
+            // 9. Analiza porównawcza (Poprawka paska, by nie wychodził ponad 100%)
+            if(data.comparison) {
+                document.getElementById('sec-comparison').style.display = 'block';
+                document.getElementById('title-comparison').innerText = data.comparison.title;
+                document.getElementById('subtitle-comparison').innerText = data.comparison.subtitle;
+                document.getElementById('summary-comparison').innerHTML = `<strong>Podsumowanie:</strong> ${data.comparison.summaryBox}`;
+                
+                const compItems = document.getElementById('content-comparison-items');
+                compItems.innerHTML = data.comparison.items.map(item => {
+                    const numericVal = parseFloat(item.percentage);
+                    const visualWidth = numericVal > 100 ? 100 : numericVal;
+
+                    return `
+                    <div style="margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 5px;">
+                            <span>${item.label}</span>
+                            <span style="font-weight: bold; color: var(--main-color);">${item.percentage}</span>
+                        </div>
+                        <div style="width: 100%; background: rgba(255,255,255,0.05); height: 8px; border-radius: 4px; overflow: hidden;">
+                            <div style="width: ${visualWidth}%; height: 100%; background: var(--main-color); border-radius: 4px;"></div>
+                        </div>
+                    </div>
+                `}).join('');
+            }
+
+            // 10. Misje Kosmiczne
+            if(data.missions) {
+                document.getElementById('sec-missions').style.display = 'block';
+                const missionsContainer = document.getElementById('content-missions');
+                missionsContainer.innerHTML = data.missions.map(mission => `
+                    <div class="card">
+                        <h4 style="margin: 0 0 5px 0;">${mission.name}</h4>
+                        <span style="font-size: 0.8rem; font-weight: bold; color: var(--main-color); text-transform: uppercase;">${mission.agency}</span>
+                        <p style="color: var(--text-muted); line-height: 1.5; font-size: 0.9rem; margin-top: 10px;">${mission.description}</p>
+                    </div>
+                `).join('');
+            }
+
+            // 11. Główna Galeria
+            const secGallery = document.getElementById('sec-gallery');
+            if (data.gallery && data.gallery.length > 0) {
+                secGallery.style.display = 'block';
+                document.getElementById('title-gallery').innerText = data.galleryTitle || "Galeria zdjęć";
+                const galContainer = document.getElementById('content-gallery');
+                galContainer.innerHTML = '';
+                data.gallery.forEach(imgUrl => {
+                    galContainer.innerHTML += `<img src="${imgUrl}" alt="Zdjęcie obiektu">`;
+                });
+            }
+
+            // Pokazanie załadowanego kontenera
+            document.getElementById('main-container').style.opacity = '1';
+        }
+
+        function renderFlexSection(sectionId, titleId, contentId, titleText, itemsArray) {
+            const section = document.getElementById(sectionId);
+            if (itemsArray && itemsArray.length > 0) {
+                section.style.display = 'block';
+                document.getElementById(titleId).innerText = titleText;
+                const container = document.getElementById(contentId);
+                container.innerHTML = '';
+                
+                itemsArray.forEach(item => {
+                    let subImagesHtml = '';
+                    if (item.images && item.images.length > 0) {
+                        subImagesHtml = `<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); gap: 8px; margin-top: 15px;">`;
+                        item.images.forEach(img => {
+                            subImagesHtml += `<img src="${img}" style="width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 4px; cursor: pointer; border: 1px solid rgba(255,255,255,0.1);">`;
+                        });
+                        subImagesHtml += `</div>`;
+                    }
+
+                    container.innerHTML += `
+                        <div class="card">
+                            <h3 style="margin-top:0;">${item.title}</h3>
+                            <p style="color: var(--text-muted); line-height: 1.5; margin-bottom: 0; font-size: 0.95rem;">${item.content}</p>
+                            ${subImagesHtml}
+                        </div>`;
+                });
+            }
+        }
     </script>
-
 </body>
+
 </html>
