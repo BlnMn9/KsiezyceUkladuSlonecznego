@@ -2,6 +2,7 @@
   "tytan": {
     "name": "Tytan",
     "planetTag": "Księżyc Saturna",
+    "themeColor": "#fb923c",
     "heroImage": "Saturns-moon-Titan-14.jpg",
     "description": "Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest jedynym znanym satelitą posiadającym gęstą atmosferę oraz jedynym ciałem niebieskim poza Ziemią, na powierzchni którego odkryto stałe zbiorniki cieczy.",
     
@@ -21,7 +22,7 @@
         { "value": "1.22 mln km", "label": "Dystans" },
         { "value": "5.57 km/s", "label": "Prędkość" }
       ],
-      "summaryText": "Jedno okrążenie wokół Saturna trwa 15,95 dnia. Średni dystans to 1 221 870 km przy prędkości orbitalnej wynoszącej 5,57 km/s."
+      "summaryText": "Jedno okrążenie wokół Saturna trwa <b>15,95 dnia</b>. Średni dystans to <b>1 221 870 km</b> przy prędkości orbitalnej wynoszącej <b>5,57 km/s</b>."
     },
 
     "detailedProfile": [
