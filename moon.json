@@ -7,7 +7,7 @@
     "description": "Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest jedynym znanym satelitą posiadającym gęstą atmosferę oraz jedynym ciałem niebieskim poza Ziemią, na powierzchni którego odkryto stałe zbiorniki cieczy.",
     
     "quickStats": [
-      { "value": "5150 km", "label": "Średnica" },
+      { "value": "5151 km", "label": "Średnica" },
       { "value": "0,0225 M⊕", "label": "Masa" },
       { "value": "-179°C", "label": "Temperatura" },
       { "value": "1,35 m/s²", "label": "Grawitacja" },
@@ -18,7 +18,7 @@
     "orbit": {
       "targetDays": 15.945,
       "metrics": [
-        { "value": "15.95 d", "label": "Okres całkowity" },
+        { "value": "15.945 d", "label": "Okres całkowity" },
         { "value": "1.22 mln km", "label": "Dystans" },
         { "value": "5.57 km/s", "label": "Prędkość" }
       ],
