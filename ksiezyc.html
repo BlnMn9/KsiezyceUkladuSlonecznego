@@ -296,77 +296,95 @@ function renderPage(data) {
                 });
             }
 
-            // 3. Orbita (Wizualizacja oparta na Twoim CSS i HTML z europa.html)
+            // 3. Orbita (Wizualizacja Graficzna + Dane liczbowe)
             if(data.orbit) {
                 const secOrbit = document.getElementById('sec-orbit');
                 secOrbit.style.display = 'block';
                 
-                // Budujemy strukturę HTML opartą na Twoich klasach CSS
-                secOrbit.innerHTML = `
-                    <h2 class="section-title">Wizualizacja Orbity</h2>
-                    <div class="orbit-canvas-wrapper">
-                        <div id="live-orbit-timer" class="orbit-timer-top-right">0d 0h</div>
-                        
-                        <div class="orbit-system">
-                            <div class="orbit-planet-core" id="dynamic-planet-core"></div>
-                            <div class="orbit-path-animator" id="orbit-animator">
-                                <div class="orbit-moon-point" id="dynamic-moon-point"></div>
-                            </div>
-                        </div>
+                // Tworzenie brakującego kontenera wizualnego w locie
+                let visualContainer = document.getElementById('orbit-visual-container');
+                if (!visualContainer) {
+                    visualContainer = document.createElement('div');
+                    visualContainer.id = 'orbit-visual-container';
+                    visualContainer.style.cssText = 'display: flex; justify-content: center; align-items: center; padding: 30px 20px; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 25px;';
+                    // Wstawienie przed statystykami
+                    secOrbit.insertBefore(visualContainer, document.getElementById('content-orbit-metrics'));
+                }
+                
+                // Generowanie animowanego modelu graficznego SVG
+                let planetColor = '#e2e8f0'; 
+                let planetName = 'Planeta';
+                const tagLower = data.planetTag.toLowerCase();
+                
+                // Wykrywanie planety, by nadać odpowiedni kolor i nazwę
+                if (tagLower.includes('saturn')) {
+                    planetColor = '#fde047';
+                    planetName = 'Saturn';
+                } else if (tagLower.includes('jowisz')) {
+                    planetColor = '#fb923c';
+                    planetName = 'Jowisz';
+                } else if (tagLower.includes('ziemi')) {
+                    planetColor = '#60a5fa';
+                    planetName = 'Ziemia';
+                } else if (tagLower.includes('mars')) {
+                    planetColor = '#f87171';
+                    planetName = 'Mars';
+                } else if (tagLower.includes('neptun')) {
+                    planetColor = '#3b82f6';
+                    planetName = 'Neptun';
+                } else if (tagLower.includes('uran')) {
+                    planetColor = '#2dd4bf';
+                    planetName = 'Uran';
+                }
 
-                        <div class="orbit-data-panel">
-                            ${data.orbit.metrics.map(m => `
-                                <div class="data-metric">
-                                    <span class="data-value" style="color: var(--main-color);">${m.value}</span>
-                                    <span class="data-label">${m.label}</span>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                    <p style="text-align: center; color: var(--text-muted); margin-top: 15px; font-size: 0.95rem;">
-                        ${data.orbit.summaryText}
-                    </p>
+                // Skalowanie prędkości animacji bazując na dniach orbitalnych
+                const duration = data.orbit.targetDays ? Math.max(4, Math.min(data.orbit.targetDays * 1.5, 25)) : 12;
+                const moonColor = data.themeColor || '#38bdf8';
+
+                visualContainer.innerHTML = `
+                    <svg width="240" height="240" viewBox="0 0 240 240" style="overflow: visible;">
+                        <defs>
+                            <linearGradient id="planetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="${planetColor}" />
+                                <stop offset="100%" stop-color="#451a03" stop-opacity="0.7" />
+                            </linearGradient>
+                            <filter id="moonGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        
+                        <!-- Orbita księżyca -->
+                        <circle cx="120" cy="120" r="80" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" stroke-dasharray="4 4" />
+                        
+                        <!-- Planeta w centrum -->
+                        <circle cx="120" cy="120" r="28" fill="url(#planetGrad)" style="box-shadow: 0 0 15px ${planetColor}40;" />
+                        <text x="120" y="123" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle" style="font-family: system-ui, sans-serif; pointer-events: none; letter-spacing: 0.5px;">${planetName}</text>
+                        
+                        <!-- Animowany księżyc -->
+                        <g style="transform-origin: 120px 120px; animation: orbit-spin-anim ${duration}s linear infinite;">
+                            <circle cx="120" cy="40" r="7" fill="${moonColor}" filter="url(#moonGlow)" />
+                            <text x="120" y="26" font-size="10" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family: system-ui, sans-serif;">${data.name}</text>
+                        </g>
+                        
+                        <style>
+                            @keyframes orbit-spin-anim {
+                                from { transform: rotate(0deg); }
+                                to { transform: rotate(360deg); }
+                            }
+                        </style>
+                    </svg>
                 `;
 
-                // Opcjonalne dopasowanie koloru planety (Tytan krąży wokół Saturna, nie Jowisza)
-                const core = document.getElementById('dynamic-planet-core');
-                if (data.planetTag.toLowerCase().includes('saturn')) {
-                    // Żółto-pomarańczowe pasy Saturna zamiast domyślnych jowiszowych z CSS
-                    core.style.background = 'repeating-linear-gradient(0deg, #d97706 0%, #fcd34d 15%, #b45309 30%, #fef3c7 50%, #d97706 65%, #f59e0b 80%, #b45309 100%)';
-                }
-                
-                // Kolor księżyca krążącego na orbicie zgodny z themeColor z JSON
-                if (data.themeColor) {
-                    document.getElementById('dynamic-moon-point').style.background = `radial-gradient(circle at 30% 30%, #ffffff 0%, ${data.themeColor} 100%)`;
-                }
-
-                // -- LOGIKA ANIMACJI I LICZNIKA (Przeniesiona z europa.html) --
-                const timerElement = document.getElementById("live-orbit-timer");
-                const animatorElement = document.getElementById("orbit-animator");
-                
-                if (timerElement && animatorElement) {
-                    const targetDays = data.orbit.targetDays;
-                    const animationDurationMs = 12000; // 12 sekund na pełen obrót
-                    const startTime = Date.now();
-
-                    function updateOrbitTimer() {
-                        const elapsedMs = (Date.now() - startTime) % animationDurationMs;
-                        const progressRatio = elapsedMs / animationDurationMs;
-                        
-                        const currentTotalDays = progressRatio * targetDays;
-                        const days = Math.floor(currentTotalDays);
-                        const remainingHoursTotal = (currentTotalDays - days) * 24;
-                        const hours = Math.floor(remainingHoursTotal);
-
-                        timerElement.innerText = `${days}d ${hours}h`;
-
-                        const degrees = progressRatio * 360;
-                        animatorElement.style.transform = `rotate(${degrees}deg)`;
-
-                        requestAnimationFrame(updateOrbitTimer);
-                    }
-                    requestAnimationFrame(updateOrbitTimer);
-                }
+                // Renderowanie kart ze statystykami liczbowymi
+                const metricsContainer = document.getElementById('content-orbit-metrics');
+                metricsContainer.innerHTML = data.orbit.metrics.map(m => `
+                    <div class="card" style="text-align: center;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: bold; color: var(--main-color);">${m.value}</span>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">${m.label}</span>
+                    </div>
+                `).join('');
+                document.getElementById('content-orbit-summary').innerHTML = data.orbit.summaryText;
             }
 
             // 4. Profil szczegółowy
