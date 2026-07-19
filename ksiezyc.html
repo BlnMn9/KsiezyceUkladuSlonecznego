@@ -449,11 +449,15 @@ function renderPage(data) {
                     chartContainer.style.cssText = 'display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px; padding: 25px; margin-top: 25px; background: var(--bg-card); border-radius: 8px; width: 100%; box-sizing: border-box;';
                     
                     // Słownik mapujący nazwy klas na konkretne kolory HEX z europa.css
+                                        // Zaktualizowany słownik mapujący kolory pod Tytana
                     const colorMap = {
-                        'color-rock': '#94a3b8', // szary
-                        'color-water': '#38bdf8', // niebieski
-                        'color-core': '#fbbf24'  // żółty/złoty
+                        'color-rock': '#94a3b8', // szary (płaszcz skalny - wraca do normy)
+                        
+                        // Zależnie od tego, jak masz to wpisane w moon.json, zamieniamy te dwie wartości:
+                        'color-water': '#eab308', // żółty/złoty (zewnętrzna skorupa Tytana)
+                        'color-core': '#38bdf8'   // niebieski (podpowierzchniowy ocean)
                     };
+                    
                     
                     let conicStops = [];
                     let currentPercentage = 0;
