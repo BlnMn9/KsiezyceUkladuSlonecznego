@@ -441,16 +441,62 @@ function renderPage(data) {
                     </div>
                 `).join('');
 
+                // Renderowanie wykresu kołowego (Donut Chart) na wzór Europy
                 if(data.geologyChemistry.compositionChart) {
-                    document.getElementById('geology-chart-title').innerText = data.geologyChemistry.compositionChart.title;
-                    const legend = document.getElementById('geology-chart-legend');
-                    legend.innerHTML = data.geologyChemistry.compositionChart.segments.map(seg => `
-                        <li><strong style="color: var(--main-color);">${seg.percentage}</strong> - ${seg.text}</li>
-                    `).join('');
+                    const chartContainer = document.getElementById('content-geology-chart-container');
+                    
+                    // Przebudowa kontenera, by używał układu flex, podobnie jak w europa.css
+                    chartContainer.style.cssText = 'display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 30px; padding: 25px; margin-top: 25px; background: var(--bg-card); border-radius: 8px; width: 100%; box-sizing: border-box;';
+                    
+                    // Słownik mapujący nazwy klas na konkretne kolory HEX z europa.css
+                    const colorMap = {
+                        'color-rock': '#94a3b8', // szary
+                        'color-water': '#38bdf8', // niebieski
+                        'color-core': '#fbbf24'  // żółty/złoty
+                    };
+                    
+                    let conicStops = [];
+                    let currentPercentage = 0;
+                    
+                    // Generowanie legendy i obliczanie granic kolorów w gradiencie
+                    const legendHtml = data.geologyChemistry.compositionChart.segments.map(seg => {
+                        const numVal = parseFloat(seg.percentage);
+                        const hexColor = colorMap[seg.color] || 'var(--main-color)';
+                        
+                        const start = currentPercentage;
+                        const end = currentPercentage + numVal;
+                        conicStops.push(`${hexColor} ${start}% ${end}%`);
+                        currentPercentage = end;
+                        
+                        return `
+                            <div style="display: flex; align-items: center; margin-bottom: 12px; font-size: 0.95rem; color: var(--text-muted); line-height: 1.4;">
+                                <div style="width: 16px; height: 16px; border-radius: 4px; margin-right: 12px; flex-shrink: 0; background-color: ${hexColor};"></div>
+                                <div><strong style="color: ${hexColor};">${seg.percentage}</strong> - ${seg.text}</div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    // Sklejamy granice w jedną regułę CSS conic-gradient
+                    const gradientStr = conicStops.join(', ');
+
+                    // Nadpisanie struktury HTML kontenera elementami wykresu
+                    chartContainer.innerHTML = `
+                        <div style="flex: 1 1 100%; text-align: center; margin-bottom: 10px;">
+                            <h4 style="color: var(--main-color); margin: 0; font-size: 1.2rem;">${data.geologyChemistry.compositionChart.title}</h4>
+                        </div>
+                        <div style="flex: 0 0 auto; display: flex; justify-content: center; position: relative;">
+                            <div style="width: 180px; height: 180px; border-radius: 50%; background: conic-gradient(${gradientStr}); display: flex; justify-content: center; align-items: center; box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);">
+                                <!-- Środek tworzący 'obwarzanek' -->
+                                <div style="width: 110px; height: 110px; background-color: var(--bg-card); border-radius: 50%;"></div>
+                            </div>
+                        </div>
+                        <div style="flex: 1 1 200px; display: flex; flex-direction: column; justify-content: center;">
+                            ${legendHtml}
+                        </div>
+                    `;
                 } else {
                     document.getElementById('content-geology-chart-container').style.display = 'none';
                 }
-            }
 
             // 8. Anomalie
             renderFlexSection('sec-anomalies', 'title-anomalies', 'content-anomalies', 'Anomalie Geologiczne', data.anomalies);
