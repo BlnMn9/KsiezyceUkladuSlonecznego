@@ -2,9 +2,9 @@
   "tytan": {
     "name": "Tytan",
     "planetTag": "Księżyc Saturna",
-    "themeColor": "#eab308", 
+    "themeColor": "#eab308",
     "heroImage": "Saturns-moon-Titan-14.jpg",
-    "description": "Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest jedynym znanym satelitą posiadającym gęstą atmosferę oraz jedynym ciałem niebieskim poza Ziemią, na powierzchni którego odkryto stałe zbiorniki cieczy.",
+    "description": "Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest jedynym znanym satelitą posiadającym gęstą atmosferę oraz jeziora metanowe.",
     "quickStats": [
       { "value": "5151 km", "label": "Średnica" },
       { "value": "0,0225 M⊕", "label": "Masa" },
@@ -13,7 +13,6 @@
       { "value": "1 221 870 km", "label": "Odległość" },
       { "value": "1655 r.", "label": "Odkrycie" }
     ],
-
     "orbit": {
       "targetDays": 15.945,
       "metrics": [
@@ -23,234 +22,278 @@
       ],
       "summaryText": "Jedno okrążenie wokół Saturna trwa <b>15,95 dnia</b>. Średni dystans to <b>1 221 870 km</b> przy prędkości orbitalnej wynoszącej <b>5,57 km/s</b>."
     },
-
     "detailedProfile": [
       {
         "title": "Historia odkrycia",
-        "content": "Tytana odkrył holenderski astronom Christiaan Huygens w marcu 1655 roku. Zainspirowany odkryciem księżyców Jowisza przez Galileusza, Huygens skierował własnoręcznie zbudowany, potężny teleskop w stronę Saturna. Był to szósty zaobserwowany przez ludzkość naturalny satelita, a jego odkrycie zapoczątkowało erę intensywnych badań nad układem pierścieni i księżyców gazowego olbrzyma."
+        "content": "Tytana odkrył holenderski astronom Christiaan Huygens w marcu 1655 roku. Był to pierwszy znany księżyc Saturna."
       },
       {
         "title": "Charakterystyka",
-        "content": "Tytan to gigantyczny glob – rozmiarem przewyższa planetę Merkury, a ustępuje jedynie jowiszowemu Ganimedesowi. Jego najbardziej uderzającą cechą jest nieprzezroczysta, gruba powłoka atmosferyczna o charakterystycznym pomarańczowym zabarwieniu. Ta smogowa zasłona przez ponad trzysta lat skutecznie uniemożliwiała ziemskim astronomom podejrzenie, jak wygląda rzeźba terenu tego fascynującego świata."
+        "content": "Tytan to gigantyczny glob – rozmiarem przewyższa planetę Merkury. Jego najbardziej uderzającą cechą jest nieprzezroczysta, pomarańczowa atmosfera bogata w azot i metan."
       },
       {
         "title": "Powierzchnia",
-        "content": "Krajobraz Tytana jest zaskakująco podobny do ziemskiego, choć ukształtowany przez zupełnie inne związki chemiczne. Zamiast krzemianowego piasku występują tu ciemne wydmy z organicznego pyłu, a rolę skał pełni lód wodny zamarznięty do twardości granitu. Powierzchnia jest geologicznie młoda i stale rzeźbiona przez wiatry oraz opady płynnych węglowodorów, które tworzą unikalne systemy rzeczne."
+        "content": "Krajobraz Tytana jest zaskakująco podobny do ziemskiego, choć ukształtowany przez zupełnie inne związki chemiczne. Zamiast krzemianowego piasku występują tu ciemne wydmy organiczne."
       },
       {
         "title": "Wnętrze",
-        "content": "Pod względem budowy wewnętrznej Tytan składa się w około połowie z lodu wodnego i w połowie z materiałów skalnych. Pod twardą jak skała lodową skorupą zewnętrzną, na głębokości kilkudziesięciu kilometrów, znajduje się globalny ocean płynnej wody z dużą domieszką amoniaku. Głęboko w sercu księżyca mieści się natomiast gęste jądro złożone z krzemianów i odwodnionych skał."
+        "content": "Pod względem budowy wewnętrznej Tytan składa się w około połowie z lodu wodnego i w połowie z materiałów skalnych. Pod twardą jak skała lodową skorupą zewnętrzną znajduje się możliwy ocean wody i amoniaku."
       },
       {
         "title": "Obrót synchroniczny",
-        "content": "Tytan jest grawitacyjnie zablokowany przez potężne pole Saturna, co oznacza, że znajduje się w rotacji synchronicznej. Czas jego obrotu wokół własnej osi wynosi dokładnie tyle samo, ile pełne okrążenie planety – niemal 16 ziemskich dni. W rezultacie satelita jest stale zwrócony ku Saturnowi tą samą półkulą, podczas gdy druga strona bez przerwy spogląda w głęboką przestrzeń kosmiczną."
+        "content": "Tytan jest grawitacyjnie zablokowany przez potężne pole Saturna. Czas jego obrotu wokół własnej osi wynosi dokładnie 15,95 dnia – tyle samo co okres obiegu."
       },
       {
         "title": "Widoczność z Ziemi",
-        "content": "Dzięki swoim potężnym rozmiarom, Tytan jest najjaśniejszym księżycem Saturna i bez trudu można go dostrzec z Ziemi. Przy jasności obserwowanej oscylującej wokół 8 magnitudo, jest widoczny jako wyraźny punkt już przez niewielkie teleskopy amatorskie, a nawet za pomocą dobrej jakości lornetki. Na nocnym niebie jawi się jako mała, żółtawa gwiazdka wiernie towarzysząca tarczy Saturna."
+        "content": "Dzięki swoim potężnym rozmiarom, Tytan jest najjaśniejszym księżycem Saturna i bez trudu można go dostrzec z Ziemi."
       }
     ],
-
     "astrobiology": {
       "stars": "★★★★☆",
-      "description": "Tytan to gigantyczne laboratorium chemii prebiotycznej. Choć ekstremalne zimno (-179°C) spowalnia reakcje metaboliczne, obecność gęstego smogu organicznego, powierzchniowych jezior metanowych oraz ukrytego pod lodem oceanu wodno-amoniakowego czyni go jednym z najbardziej fascynujących i priorytetowych miejsc w poszukiwaniu alternatywnych form życia."
+      "description": "Tytan to gigantyczne laboratorium chemii prebiotycznej. Choć ekstremalne zimno spowalnia reakcje metaboliczne, obecność gęstego smogu organicznego, powierzchniowych jezior metanu i głębokich oceanów wodnych czyni go jednym z najbardziej obiecujących kandydatów do poszukiwań pozaziemskiego życia."
     },
-
     "physicalParameters": [
-      { "label": "Masa całkowita", "value": "~1,345 × 10²³ kg (ok. 134 tryliony ton)" },
+      { "label": "Masa całkowita", "value": "~1,345 × 10²³ kg" },
       { "label": "Promień równikowy", "value": "2574,7 km" },
       { "label": "Gęstość", "value": "1,88 g/cm³" },
       { "label": "Atmosfera", "value": "Bardzo gęsta (ciśnienie 1,45 atm)" },
       { "label": "Skład atmosfery", "value": "98,4% Azot (N2), 1,4% Metan (CH4)" },
       { "label": "Prędkość ucieczki", "value": "2,639 km/s" },
-      { "label": "Albedo", "value": "0,22 (umiarkowane pochłanianie)" },
+      { "label": "Albedo", "value": "0,22" },
       { "label": "Nachylenie orbity", "value": "0,348° do równika Saturna" }
     ],
-
     "geologyChemistry": {
       "textBlocks": [
         {
           "title": "Potężna, azotowa atmosfera",
-          "content": "Tytan jest jedynym księżycem w Układzie Słonecznym posiadającym rozwiniętą atmosferę, która na dodatek jest gęstsza od ziemskiej. Słup powietrza wywiera przy powierzchni ciśnienie o 45% wyższe niż na Ziemi. Składa się ona głównie z azotu cząsteczkowego, co upodabnia ją do pierwotnego składu chemicznego wczesnej Ziemi przed pojawieniem się życia."
+          "content": "Tytan jest jedynym księżycem w Układzie Słonecznym posiadającym rozwiniętą atmosferę, która jest gęstsza od ziemskiej. To unikatowe środowisko pozwala na istnienie procesów pogodowych."
         },
         {
           "title": "Cykl hydrologiczny metanu",
-          "content": "Na tym mroźnym globie metan i etan zachowują się dokładnie tak, jak woda na Ziemi. Istnieje tu kompletny cykl klimatyczny: gazowy metan skrapla się w chmurach, generuje gwałtowne burze, a spadający deszcz żłobi koryta rzeczne i zasila rozległe, polarne zbiorniki ciekłych węglowodorów, po czym ponownie paruje do atmosfery."
+          "content": "Na tym mroźnym globie metan i etan zachowują się dokładnie tak, jak woda na Ziemi. Istnieje tu kompletny cykl klimatyczny: gazowy metan skrapla się w chmurach, generuje opady."
         },
         {
           "title": "Tholiny i organiczny opad",
-          "content": "Górne warstwy atmosfery Tytana są nieustannie bombardowane światłem ultrafioletowym. Promieniowanie to rozbija cząsteczki metanu i azotu, które następnie łączą się w złożone związki organiczne zwane tholinami. Tworzą one gęstą, pomarańczową mgłę, a po skondensowaniu powoli opadają na powierzchnię w postaci lepkiego, organicznego pyłu."
+          "content": "Górne warstwy atmosfery Tytana są bombardowane światłem ultrafioletowym. Promieniowanie rozbija cząsteczki metanu i azotu, tworząc złożone związki organiczne."
         },
         {
           "title": "Pola wydm organicznych",
-          "content": "W strefach równikowych Tytana dominują gigantyczne, ciemne pustynie usiane polami wydmowymi, które ciągną się przez setki kilometrów. Co fascynujące, ziarna tworzące te wydmy nie powstały z erozji skał krzemianowych, lecz są drobnym, zamarzniętym plastikiem organicznym (tholinami), uformowanym przez wiejące wiatry pasatowe."
+          "content": "W strefach równikowych Tytana dominują gigantyczne pustynie usiane polami wydmowymi. Ziarna tworzące te wydmy to organiczny materiał zwany thiolinami."
         },
         {
           "title": "Kriowulkanizm metanowy",
-          "content": "Zamiast gorącej, płynnej magmy skalnej znanej z Ziemi, wulkany na Tytanie (tzw. kriowulkany) wyrzucają lodowatą mieszaninę wody, amoniaku i metanu. Struktury takie jak Sotra Patera są namacalnym dowodem na to, że wnętrze księżyca wciąż jest aktywne termicznie, a procesy te stale uzupełniają zapasy metanu w atmosferze."
+          "content": "Zamiast gorącej magmy, wulkany na Tytanie wyrzucają lodowatą mieszaninę wody, amoniaku i metanu. Struktury takie jak Sotra Patera to przykłady kriowulkanów."
         },
         {
           "title": "Erozja węglowodorowa",
-          "content": "Ukształtowanie terenu Tytana wykazuje zadziwiająco małą liczbę kraterów meteorytowych. Wynika to z niezwykle intensywnych procesów erozyjnych. Rzeki płynnego metanu oraz wiatry eoliczne w relatywnie krótkim czasie geologicznym niszczą ślady uderzeń, bezustannie wygładzając i modelując krajobraz lodowego księżyca."
+          "content": "Ukształtowanie terenu Tytana wykazuje zaskakująco małą liczbę kraterów. Wynika to z intensywnych procesów erozyjnych. Rzeki płynnego metanu powoli kształtują powierzchnię."
         }
       ],
       "compositionChart": {
         "title": "Szacunkowy skład masowy Tytana",
         "segments": [
-          { "percentage": "55%", "color": "color-rock", "text": "płaszcz skalny i jądro (krzemiany i żelazo)" },
-          { "percentage": "40%", "color": "color-water", "text": "gruba, zewnętrzna skorupa z lodu wodnego" },
-          { "percentage": "5%", "color": "color-core", "text": "głęboki, podpowierzchniowy ocean (woda i amoniak)" }
+          { "percentage": "55%", "color": "color-rock", "text": "Płaszcz skalny i jądro" },
+          { "percentage": "40%", "color": "color-water", "text": "Skorupa z lodu wodnego" },
+          { "percentage": "5%", "color": "color-core", "text": "Ocean wody i amoniaku" }
         ]
       }
     },
-
     "anomalies": [
       {
         "title": "Morza i jeziora metanowe (Kraken Mare)",
-        "content": "Bieguny Tytana skrywają gigantyczne, stałe zbiorniki płynnych węglowodorów. Największe z nich, Kraken Mare, rozciąga się na przestrzeni ponad 400 tysięcy kilometrów kwadratowych, co czyni je większym od ziemskiego Morza Kaspijskiego. Ciecz ta składa się z ultraczystej mieszaniny metanu i etanu. Radar sondy Cassini wykazał, że w centralnych częściach głębokość tego morza przekracza 150 metrów, a jego powierzchnia jest idealnie gładka, niemal pozbawiona fal.",
-        "images": ["KrakenMare1.jpeg", "KrakenRadar.jpg", "titan-seas.jpg"]
+        "content": "Bieguny Tytana skrywają gigantyczne, stałe zbiorniki płynnych węglowodorów. Największe z nich, Kraken Mare, to pierwszy znany ocean na innym ciele niż Ziemia."
       },
       {
         "title": "Ciemne pustynie eoliczne (Wydmy Belet)",
-        "content": "Wzdłuż równika Tytana rozciąga się gigantyczny, ciemny obszar zwany Belet. Jest to bezkresna pustynia pokryta pasmami liniowych wydm węglowodorowych o wysokości dochodzącej do 100 metrów. Struktury te powstają w wyniku skomplikowanych cykli wiatrów monsunowych. Są one idealnym, ciemnym rezerwuarem dla opadających z atmosfery cząstek organicznych, upodabniając krajobraz Tytana do afrykańskiej pustyni Namib.",
-        "images": ["BeletDunes1.webp", "TitanDunesRadar.png", "belet-organic.jpg", "dunes-cassini.webp"]
+        "content": "Wzdłuż równika Tytana rozciąga się gigantyczny, ciemny obszar zwany Belet. Jest to bezkresna pustynia pokryta pasmami liniowych wydm węglowodorowych."
       },
       {
-        "title": "Kaniony i Labirynty Sikun (Sikun Labyrinths)",
-        "content": "Sikun Labyrinths to spektakularny region wyżynny, który został doszczętnie pocięty przez procesy erozji kwasowej i deszczowej. Ciecze węglowodorowe przez miliony lat wyżłobiły w twardym lodzie wodnym niezwykle gęstą i głęboką sieć splątanych dolin, ślepych kanionów oraz krasowych korytarzy. Z lotu ptaka formacje te przypominają unikalne struktury wapienne niszczone przez wodę w południowych Chinach.",
-        "images": ["SikunLab1.jpg", "SikunErosion.webp", "titan-canyons.webp"]
+        "title": "Kaniony i Labirynty Sikun",
+        "content": "Sikun Labyrinths to spektakularny region wyżynny, który został pocięty przez procesy erozji. Ciecze węglowodorowe przez miliony lat wyrzeźbiały krajobraze."
       },
       {
         "title": "Struktura uderzeniowa Menrva",
-        "content": "Z racji gęstej atmosfery, która spala mniejsze meteoryty, oraz silnej erozji, kratery na Tytanie są anomalną rzadkością. Menrva to największa, potężna struktura uderzeniowa o średnicy aż 392 kilometrów. Jest to krater wielopierścieniowy, którego dno zostało zalane przez późniejsze osady organiczne, a jego krawędzie są poprzecinane wyschniętymi dziś korytami dawnych rzek metanowych, co dowodzi bogatej historii klimatycznej.",
-        "images": ["Menrva1.jpg", "MenrvaRadar.webp", "menrva-crater.webp", "titan-impact.jpg", "menrva-topography.jpg"]
+        "content": "Z racji gęstej atmosfery, która spala mniejsze meteoryty, kratery na Tytanie są anomalną rzadkością. Menrva to największa znana struktura uderzeniowa."
       }
     ],
-
     "comparison": {
       "title": "Analiza Porównawcza",
-      "subtitle": "Zestawienie kluczowych wskaźników fizycznych Tytana w relacji do obiektów referencyjnych (Ziemi oraz Księżyca):",
+      "subtitle": "Zestawienie kluczowych wskaźników fizycznych Tytana:",
       "items": [
         { "label": "Średnica równikowa (w odniesieniu do Księżyca Ziemi)", "percentage": "148%" },
         { "label": "Stosunek grawitacji powierzchniowej (względem Ziemi)", "percentage": "13.8%" },
-        { "label": "Szacowana objętość płynnych węglowodorów na powierzchni (w stosunku do rezerw ropy na Ziemi)", "percentage": "100%" }
+        { "label": "Szacowana ilość węglowodorów (porównanie do Ziemi)", "percentage": "100%" }
       ],
-      "summaryBox": "Bilans zasobów węglowodorowych i wodnych: Choć Tytan jest znacznie mniejszy od Ziemi, panujące na nim niskie temperatury pozwoliły na zgromadzenie setek razy więcej płynnych paliw organicznych w postaci jezior niż wynoszą wszystkie udokumentowane rezerwy ropy i gazu na naszej planecie. Dodatkowo jego ukryty ocean wodny drastycznie przewyższa objętość ziemskiej hydrosfery."
+      "summaryBox": "Tytan zawiera znacznie więcej płynnych węglowodorów niż Ziemia ropy naftowej. To miejsce fascynujące dla przyszłych badań astrobiologicznych."
     },
-
     "missions": [
       {
         "name": "Sonda Cassini-Huygens",
         "agency": "NASA / ESA | 1997–2017",
-        "description": "Najbardziej udana misja w historii eksploracji zewnętrznego Układu Słonecznego. Sonda Cassini przez 13 lat krążyła wokół Saturna, wykonując ponad 120 bliskich przelotów nad Tytanem i mapując jego powierzchnię za pomocą radaru. W styczniu 2005 roku odłączył się od niej europejski lądownik Huygens, który pomyślnie osiadł na pomarańczowej powierzchni księżyca, przesyłając pierwsze w historii, legendarne zdjęcia otoczaków z lodu wodnego."
+        "description": "Najbardziej udana misja w historii eksploracji zewnętrznego Układu Słonecznego. Sonda przez 13 lat krążyła wokół Saturna, wykonując ponad 120 bliskich przelotów nad Titanem."
       },
       {
         "name": "Dragonfly",
-        "agency": "NASA | Planowane wystrzelenie: 2027/2028 r.",
-        "description": "Przełomowa, nadchodząca misja wirnikowca (quadcoptera) wielkości łazika marsjańskiego. Z uwagi na gęstą atmosferę i niską grawitację Tytana, Dragonfly będzie w stanie przemieszczać się drogą powietrzną, wykonując kilkukilometrowe skoki nad powierzchnią księżyca. Sonda wyląduje w rejonie wydm Belet oraz krateru Menrva, bezpośrednio badając skład chemiczny organicznego gruntu w poszukiwaniu śladów biologii."
+        "agency": "NASA | Planowane wystrzelenie: 2027-2028",
+        "description": "Przełomowa, nadchodząca misja wirnikowca wielkości łazika marsjańskiego. Dragonfly będzie w stanie wylatywać z jednego miejsca na powierzchni Tytana do innego, badając szerokie obszary."
       },
       {
         "name": "Sonda Voyager 1",
         "agency": "NASA | Przelot: 1980 r.",
-        "description": "Pierwszy ziemski aparat, który z bliska zbadał Tytana. Choć kamery optyczne Voyagera nie zdołały spenetrować nieprzeniknionego, pomarańczowego smogu atmosferycznego, to precyzyjne pomiary radiowe i podczerwone po raz pierwszy w historii ujawniły dokładną masę, temperaturę oraz ogromną gęstość azotowej atmosfery, dając naukowcom podwaliny pod hipotezy o istnieniu metanowych mórz."
+        "description": "Pierwszy ziemski aparat, który z bliska zbadał Tytana. Choć kamery optyczne nie zdołały spenetrować atmosfery, radiowe obserwacje były invaluable."
       }
     ],
-
     "gallery": [
-      "titan-full.en.jpg",
-      "titan-atmosphere-layers.jpg",
-      "huygens-surface-raw.jpeg",
-      "titan-methane-clouds.jpg",
-      "titan-sunglint-seas.jpg",
-      "cassini-titan-infrared.jpg",
-      "titan-saturn-background.jpeg",
-      "dragonfly-concept.jpg",
-      "huygens-descent.png",
-      "titan-polar-vortex.jpg",
-      "titan-global-radar.webp",
-      "titan-shorelines.jpg",
-      "sotra-patera-cryovolcano.webp",
-      "titan-belet-dunes.jpeg",
-      "kraken-mare-depth.webp",
-      "titan-organic-dust.webp",
-      "titan-canyons-grid.jpg",
-      "huygens-landing-site.jpg",
-      "titan-clouds-vims.jpg",
-      "titan-atmosphere-blue.webp",
-      "KrakenMare1.jpeg",
-      "KrakenRadar.jpg",
-      "BeletDunes1.webp",
-      "TitanDunesRadar.png",
-      "SikunLab1.jpg",
-      "SikunErosion.webp",
-      "Menrva1.jpg",
-      "MenrvaRadar.webp",
-      "menrva-crater.webp",
-      "titan-impact.jpg",
-      "menrva-topography.jpg",
-      "titan-historical-huygens.jpg"
+      "Saturns-moon-Titan-14.jpg",
+      "PIA02145-1200w.jpg",
+      "PIA07232.jpg",
+      "PIA08119.jpg",
+      "PIA21923_CassiniVIMSTitan_MAIN-1200w.jpg"
     ]
-  }
-}
-
-{
+  },
   "europa": {
     "name": "Europa",
     "planetTag": "Księżyc Jowisza",
     "themeColor": "#22d3ee",
     "heroImage": "europa-full.en.jpg",
-    "description": "Europa to najmniejszy z czterech księżyców galileuszowych Jowisza i jedno z najbardziej obiecujących miejsc w Układzie Słonecznym w poszukiwaniu życia pozaziemskiego. Jej lodowa powierzchnia jest niezwykle gładka, poprzecinana siecią ciemnych linii i pęknięć. Pod grubą warstwą lodu skrywa się globalny ocean płynnej wody o głębokości mogącej sięgać nawet 100 kilometrów, który pozostaje w stanie ciekłym dzięki ciepłu generowanemu przez siły przypływowe Jowisza.",
+    "description": "Europa to najmniejszy z czterech księżyców galileuszowych Jowisza i jedno z najbardziej obiecujących miejsc w Układzie Słonecznym w poszukiwaniu życia. Pod jej lodową powierzchnią kryje się globalny ocean wody.",
     "quickStats": [
       { "value": "3122 km", "label": "Średnica" },
+      { "value": "0,0080 M⊕", "label": "Masa" },
       { "value": "-160°C", "label": "Temp. powierzchni" },
-      { "value": "3,55 dnia", "label": "Okres obiegu" },
-      { "value": "1,31 m/s²", "label": "Grawitacja" }
+      { "value": "1,31 m/s²", "label": "Grawitacja" },
+      { "value": "670 900 km", "label": "Odległość" },
+      { "value": "1610 r.", "label": "Odkrycie" }
     ],
     "orbit": {
       "targetDays": 3.55,
       "metrics": [
+        { "value": "3,55 d", "label": "Okres obiegu" },
         { "value": "670 900 km", "label": "Odległość od Jowisza" },
-        { "value": "0,009", "label": "Mimośród orbity" },
         { "value": "Synchroniczna", "label": "Rotacja" }
       ],
-      "summaryText": "Europa obiega Jowisza, doświadczając silnych sił pływowych, które stale rozgrzewają jej wnętrze i zapobiegają całkowitemu zamarznięciu oceanu."
+      "summaryText": "Europa obiega Jowisza co 3,55 dnia, doświadczając silnych sił pływowych, które stale rozgrzewają jej wnętrze i zapobiegają całkowitemu zamarznięciu oceanu."
     },
+    "detailedProfile": [
+      {
+        "title": "Historia odkrycia",
+        "content": "Europa została odkryta przez Galileusza w 1610 roku wraz z trzema innymi dużymi księżycami Jowisza. Jest to jeden z czterech księżyców galileuszowych."
+      },
+      {
+        "title": "Charakterystyka",
+        "content": "Europa to gładka kula pokryta lodem, z minimalnym reliefem topograficznym. Jej powierzchnia jest pełna charakterystycznych crack'ów – szczelin w lodzie, które świadczą o dynamicznym wnętrzu."
+      },
+      {
+        "title": "Lodowa skorupa",
+        "content": "Powierzchnia Europy ma grubość zaledwie kilka do kilkunastu kilometrów. Pod tym cienkimi lodem wody znajduje się globalny ocean, którego głębokość szacuje się na 100-200 km."
+      },
+      {
+        "title": "Proces pływowy",
+        "content": "Siły pływowe z Jowisza ciągle rozciągają i ściskają Europę, generując ogromną ilość ciepła. To ciepło utrzymuje ocean w stanie płynnym pomimo ogromnej odległości od Słońca."
+      },
+      {
+        "title": "Hydrotermalne źródła",
+        "content": "Na dnie oceanu Europy znajduje się skaliste dno, gdzie prawdopodobnie działają hydrotermalne otwory. Takie struktury na Ziemi otaczają bogatą ekosystemów chemolitotroficznych."
+      },
+      {
+        "title": "Szansa na życie",
+        "content": "Połączenie płynnej wody, źródła energii (ciepło pływowe) i potencjalnych reaktantów chemicznych czyni Europę najlepszym kandydatem do poszukiwań pozaziemskiego życia w Układzie Słonecznym."
+      }
+    ],
     "astrobiology": {
       "stars": "★★★★★",
-      "description": "Dzięki obecności płynnego oceanu, źródła ciepła z sił pływowych oraz prawdopodobnego kontaktu wody ze skalistym dnem (co umożliwia reakcje chemiczne), Europa jest obecnie jednym z głównych celów w poszukiwaniu życia pozaziemskiego."
+      "description": "Europa jest uważana za najlepszy kandydat do poszukiwania mikrobialnego życia pozaziemskiego. Posiada wszystkie elementy potrzebne do życia: płynną wodę, źródło energii (siły pływowe) i potencjalne źródła chemiczne na kontakcie wody z dnem oceanicznym."
     },
     "physicalParameters": [
       { "label": "Masa (względem Ziemi)", "value": "0,0080 M⊕" },
-      { "label": "Grawitacja", "value": "1,31 m/s²" },
+      { "label": "Promień równikowy", "value": "1560,8 km" },
+      { "label": "Gęstość", "value": "3,01 g/cm³" },
       { "label": "Temperatura powierzchni", "value": "-160°C" },
+      { "label": "Albedo", "value": "0,67 (wysoka odbojność)" },
+      { "label": "Grubość lodu", "value": "10-25 km" },
+      { "label": "Głębokość oceanu", "value": "100-200 km" },
       { "label": "Odkrywca", "value": "G. Galileusz (1610)" }
     ],
     "geologyChemistry": {
       "textBlocks": [
-        { "title": "Lodowa skorupa", "content": "Powierzchnia jest zbudowana głównie z lodu wodnego. Brak licznych kraterów świadczy o tym, że jest to jedna z najmłodszych geologicznie powierzchni w Układzie Słonecznym." },
-        { "title": "Skład wewnętrzny", "content": "Wnętrze Europy prawdopodobnie składa się z żelaznego jądra i płaszcza krzemianowego, które otacza warstwa ciekłej wody i lodowa skorupa." }
+        {
+          "title": "Lodowa skorupa",
+          "content": "Powierzchnia jest zbudowana głównie z czystego lodu wodnego. Brak licznych kraterów świadczy o tym, że jest to jedna z najmłodszych geologicznie powierzchni w Układzie Słonecznym."
+        },
+        {
+          "title": "Crack'i i liniacje",
+          "content": "Charakterystyczne pęknięcia na powierzchni Europy to śwadectwo dynamicznego oceanu pod lodem. Siły pływowe powodują cykliczne rozciąganie i ściskanie skorupy."
+        },
+        {
+          "title": "Skład wewnętrzny",
+          "content": "Wnętrze Europy prawdopodobnie składa się z żelaznego jądra i płaszcza krzemianowego, które otacza warstwa ciekłej wody i lodowa skorupa."
+        },
+        {
+          "title": "Szacunkowe składniki",
+          "content": "Poszczególne warstwy: jądro (żelazo), płaszcz (silikatowe minerały), ocean (woda słodka lub słonawka), skorupa (lód) - tworza idealną konfigurację dla procesów biologicznych."
+        },
+        {
+          "title": "Izotopy radioaktywne",
+          "content": "Rozpad izotopów radioaktywnych w jądrze i płaszczu dostarcza dodatkowego źródła ciepła, które jest również ważnym czynnikiem utrzymującym ocean w stanie płynnym."
+        },
+        {
+          "title": "Hydrotermalne systemyoceanu",
+          "content": "Jeśli rzeczywiście istnieją hydrotermalne otwory na dnie oceanu Europy, mogą one dostarczać energię chemiczną dla mikrobiów, podobnie jak na Ziemi."
+        }
       ],
       "compositionChart": {
-        "title": "Prawdopodobny skład",
+        "title": "Szacunkowy skład Europy",
         "segments": [
-          { "percentage": "10%", "text": "Lód wodny (powierzchnia)" },
-          { "percentage": "20%", "text": "Płynna woda (ocean podziemny)" },
-          { "percentage": "70%", "text": "Związki skaliste i jądro" }
+          { "percentage": "10%", "color": "color-water", "text": "Lód wodny (powierzchnia)" },
+          { "percentage": "20%", "color": "color-core", "text": "Płynna woda (ocean)" },
+          { "percentage": "70%", "color": "color-rock", "text": "Jądro i płaszcz" }
         ]
       }
     },
+    "anomalies": [
+      {
+        "title": "Formacje liniowe (Lineae)",
+        "content": "Europa jest pokryta siecią linii - pęknięć w lodzie, które mogą osiągać długości setek kilometrów. Charakter tych struktur wskazuje na dynamiczne procesy w oceanie poniżej."
+      },
+      {
+        "title": "Chaos terrain",
+        "content": "Niektóre obszary powierzchni wykazują chaotyczne, nieregularne topografe, sugerując lokalny lub czasowy kontakt między oceanem a powierzchnią."
+      },
+      {
+        "title": "Plamy i regiony",
+        "content": "Ciemniejsze regiony na Europie mogą reprezentować zanieczyszczenia lub minerały z oceanu, które w pewien moment dostały się na powierzchnię."
+      },
+      {
+        "title": "Słabe pole magnetyczne",
+        "content": "Europa wykazuje słabe własne pole magnetyczne, ale znacznie silniejsze pole indukcjne generowane przez Jowisza, co świadczy o obecności przewodnika elektrycznego w wnętrzu - czyli płynnego oceanu."
+      }
+    ],
     "comparison": {
       "title": "Porównanie z Ziemią",
-      "subtitle": "Europa vs nasza planeta",
-      "summaryBox": "Choć Europa jest mniejsza od naszego Księżyca, jej podziemny ocean prawdopodobnie zawiera ponad dwa razy więcej wody niż wszystkie oceany na Ziemi razem wzięte.",
+      "subtitle": "Europa vs nasza planeta - key metrics",
       "items": [
         { "label": "Ilość wody (względem Ziemi)", "percentage": "210%" },
-        { "label": "Rozmiar (średnica względem Ziemi)", "percentage": "24%" }
-      ]
+        { "label": "Rozmiar (średnica względem Ziemi)", "percentage": "24%" },
+        { "label": "Grawitacja (względem Ziemi)", "percentage": "13%" }
+      ],
+      "summaryBox": "Choć Europa jest mniejsza od naszego Księżyca, jej podziemny ocean prawdopodobnie zawiera ponad dwa razy więcej wody niż wszystkie oceany na Ziemi razem wzięte. To czyni ją fascynującym celem eksploracji astrobiologicznej."
     },
     "missions": [
-      { "name": "Galileo", "agency": "NASA", "description": "Misja, która dostarczyła najsilniejszych dowodów na istnienie oceanu pod lodem Europy w latach 90." },
-      { "name": "Europa Clipper", "agency": "NASA", "description": "Nadchodząca misja, która wykona serię bliskich przelotów, aby zbadać zdatność księżyca do zamieszkania." }
+      {
+        "name": "Sonda Galileo",
+        "agency": "NASA | 1995-2003",
+        "description": "Misja, która dostarczyła najsilniejszych dowodów na istnienie oceanu pod lodem Europy. Wykonała bliskie przeloty i detektowała indukcyjne pole magnetyczne."
+      },
+      {
+        "name": "Europa Clipper",
+        "agency": "NASA | Start: 2024, Przylot: 2030",
+        "description": "Nadchodząca misja, która wykona serię bliskich przelotów, aby zbadać zdatność księżyca do zamieszkania. Będzie niezwykle ważna dla nauki o potencjalnym życiu."
+      },
+      {
+        "name": "JUICE (Jupiter Icy Moons Explorer)",
+        "agency": "ESA | Start: 2023, Przylot: 2031",
+        "description": "Europejska misja dedykowana badaniu lodowych księżyców Jowisza, w tym Europy. Będzie dostarczać nowe dane o strukturze wnętrza i oceanu."
+      }
     ],
     "galleryTitle": "Galeria zdjęć Europy",
     "gallery": [
@@ -263,42 +306,5 @@
       "Jupiter and its moon Europe.jpeg",
       "pia25695-nasas-juno-mission-captures-images-of-europa.jpg"
     ]
-  },
-  "tytan": {
-    "name": "Tytan",
-    "planetTag": "Księżyc Saturna",
-    "themeColor": "#38bdf8",
-    "heroImage": "Saturns-moon-Titan-14.jpg",
-    "description": "Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest to niezwykle fascynujący świat – jako jedyny satelita posiada gęstą atmosferę, w której dominują azot i metan. Co więcej, jest to jedyne ciało niebieskie poza Ziemią, na którego powierzchni odkryto stałe zbiorniki cieczy.",
-    "quickStats": [
-      { "value": "5150 km", "label": "Średnica" },
-      { "value": "-179°C", "label": "Temp. powierzchni" },
-      { "value": "15,9 dnia", "label": "Okres obiegu" },
-      { "value": "1,35 m/s²", "label": "Grawitacja" }
-    ],
-    "orbit": {
-      "targetDays": 15.9,
-      "metrics": [
-        { "value": "1 221 870 km", "label": "Odległość od Saturna" },
-        { "value": "0,028", "label": "Mimośród orbity" },
-        { "value": "Synchroniczna", "label": "Rotacja" }
-      ],
-      "summaryText": "Tytan obiega Saturna w tak zwanym rezonansie synchronicznym, będąc największym z jego księżyców."
-    },
-    "physicalParameters": [
-      { "label": "Masa (względem Ziemi)", "value": "0,0225 M⊕" },
-      { "label": "Grawitacja", "value": "1,35 m/s²" },
-      { "label": "Temperatura powierzchni", "value": "-179°C" },
-      { "label": "Odkrywca", "value": "C. Huygens (1655)" }
-    ],
-    "galleryTitle": "Galeria zdjęć Tytana",
-    "gallery": [
-      "Saturns-moon-Titan-14.jpg",
-      "PIA02145-1200w.jpg",
-      "PIA07232.jpg",
-      "PIA08119.jpg",
-      "PIA21923_CassiniVIMSTitan_MAIN-1200w.jpg"
-    ]
   }
 }
-
