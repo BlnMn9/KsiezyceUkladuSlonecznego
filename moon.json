@@ -192,3 +192,113 @@
     ]
   }
 }
+
+{
+  "europa": {
+    "name": "Europa",
+    "planetTag": "Księżyc Jowisza",
+    "themeColor": "#22d3ee",
+    "heroImage": "europa-full.en.jpg",
+    "description": "Europa to najmniejszy z czterech księżyców galileuszowych Jowisza i jedno z najbardziej obiecujących miejsc w Układzie Słonecznym w poszukiwaniu życia pozaziemskiego. Jej lodowa powierzchnia jest niezwykle gładka, poprzecinana siecią ciemnych linii i pęknięć. Pod grubą warstwą lodu skrywa się globalny ocean płynnej wody o głębokości mogącej sięgać nawet 100 kilometrów, który pozostaje w stanie ciekłym dzięki ciepłu generowanemu przez siły przypływowe Jowisza.",
+    "quickStats": [
+      { "value": "3122 km", "label": "Średnica" },
+      { "value": "-160°C", "label": "Temp. powierzchni" },
+      { "value": "3,55 dnia", "label": "Okres obiegu" },
+      { "value": "1,31 m/s²", "label": "Grawitacja" }
+    ],
+    "orbit": {
+      "targetDays": 3.55,
+      "metrics": [
+        { "value": "670 900 km", "label": "Odległość od Jowisza" },
+        { "value": "0,009", "label": "Mimośród orbity" },
+        { "value": "Synchroniczna", "label": "Rotacja" }
+      ],
+      "summaryText": "Europa obiega Jowisza, doświadczając silnych sił pływowych, które stale rozgrzewają jej wnętrze i zapobiegają całkowitemu zamarznięciu oceanu."
+    },
+    "astrobiology": {
+      "stars": "★★★★★",
+      "description": "Dzięki obecności płynnego oceanu, źródła ciepła z sił pływowych oraz prawdopodobnego kontaktu wody ze skalistym dnem (co umożliwia reakcje chemiczne), Europa jest obecnie jednym z głównych celów w poszukiwaniu życia pozaziemskiego."
+    },
+    "physicalParameters": [
+      { "label": "Masa (względem Ziemi)", "value": "0,0080 M⊕" },
+      { "label": "Grawitacja", "value": "1,31 m/s²" },
+      { "label": "Temperatura powierzchni", "value": "-160°C" },
+      { "label": "Odkrywca", "value": "G. Galileusz (1610)" }
+    ],
+    "geologyChemistry": {
+      "textBlocks": [
+        { "title": "Lodowa skorupa", "content": "Powierzchnia jest zbudowana głównie z lodu wodnego. Brak licznych kraterów świadczy o tym, że jest to jedna z najmłodszych geologicznie powierzchni w Układzie Słonecznym." },
+        { "title": "Skład wewnętrzny", "content": "Wnętrze Europy prawdopodobnie składa się z żelaznego jądra i płaszcza krzemianowego, które otacza warstwa ciekłej wody i lodowa skorupa." }
+      ],
+      "compositionChart": {
+        "title": "Prawdopodobny skład",
+        "segments": [
+          { "percentage": "10%", "text": "Lód wodny (powierzchnia)" },
+          { "percentage": "20%", "text": "Płynna woda (ocean podziemny)" },
+          { "percentage": "70%", "text": "Związki skaliste i jądro" }
+        ]
+      }
+    },
+    "comparison": {
+      "title": "Porównanie z Ziemią",
+      "subtitle": "Europa vs nasza planeta",
+      "summaryBox": "Choć Europa jest mniejsza od naszego Księżyca, jej podziemny ocean prawdopodobnie zawiera ponad dwa razy więcej wody niż wszystkie oceany na Ziemi razem wzięte.",
+      "items": [
+        { "label": "Ilość wody (względem Ziemi)", "percentage": "210%" },
+        { "label": "Rozmiar (średnica względem Ziemi)", "percentage": "24%" }
+      ]
+    },
+    "missions": [
+      { "name": "Galileo", "agency": "NASA", "description": "Misja, która dostarczyła najsilniejszych dowodów na istnienie oceanu pod lodem Europy w latach 90." },
+      { "name": "Europa Clipper", "agency": "NASA", "description": "Nadchodząca misja, która wykona serię bliskich przelotów, aby zbadać zdatność księżyca do zamieszkania." }
+    ],
+    "galleryTitle": "Galeria zdjęć Europy",
+    "gallery": [
+      "europa-full.en.jpg",
+      "4965690752_066be059b7_h.jpg",
+      "Close-up Images of Jupiter's Frozen Ocean Moon_.jpeg",
+      "Europa (2).jpeg",
+      "Europa (1).jpeg",
+      "Europa.jpeg",
+      "Jupiter and its moon Europe.jpeg",
+      "pia25695-nasas-juno-mission-captures-images-of-europa.jpg"
+    ]
+  },
+  "tytan": {
+    "name": "Tytan",
+    "planetTag": "Księżyc Saturna",
+    "themeColor": "#38bdf8",
+    "heroImage": "Saturns-moon-Titan-14.jpg",
+    "description": "Tytan to największy księżyc Saturna i drugi pod względem wielkości księżyc w Układzie Słonecznym. Jest to niezwykle fascynujący świat – jako jedyny satelita posiada gęstą atmosferę, w której dominują azot i metan. Co więcej, jest to jedyne ciało niebieskie poza Ziemią, na którego powierzchni odkryto stałe zbiorniki cieczy.",
+    "quickStats": [
+      { "value": "5150 km", "label": "Średnica" },
+      { "value": "-179°C", "label": "Temp. powierzchni" },
+      { "value": "15,9 dnia", "label": "Okres obiegu" },
+      { "value": "1,35 m/s²", "label": "Grawitacja" }
+    ],
+    "orbit": {
+      "targetDays": 15.9,
+      "metrics": [
+        { "value": "1 221 870 km", "label": "Odległość od Saturna" },
+        { "value": "0,028", "label": "Mimośród orbity" },
+        { "value": "Synchroniczna", "label": "Rotacja" }
+      ],
+      "summaryText": "Tytan obiega Saturna w tak zwanym rezonansie synchronicznym, będąc największym z jego księżyców."
+    },
+    "physicalParameters": [
+      { "label": "Masa (względem Ziemi)", "value": "0,0225 M⊕" },
+      { "label": "Grawitacja", "value": "1,35 m/s²" },
+      { "label": "Temperatura powierzchni", "value": "-179°C" },
+      { "label": "Odkrywca", "value": "C. Huygens (1655)" }
+    ],
+    "galleryTitle": "Galeria zdjęć Tytana",
+    "gallery": [
+      "Saturns-moon-Titan-14.jpg",
+      "PIA02145-1200w.jpg",
+      "PIA07232.jpg",
+      "PIA08119.jpg",
+      "PIA21923_CassiniVIMSTitan_MAIN-1200w.jpg"
+    ]
+  }
+}
+
