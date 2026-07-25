@@ -3,8 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tytan - Księżyce Układu Słonecznego</title>
-    <link rel="stylesheet" href="ksiezyc.css">
+    <title id="page-title">Wczytywanie...</title>
+    
+    <style>
+        header {
+    background: linear-gradient(180deg, #02050a 0%, #0b0f19 100%);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #1e293b;
+    margin-bottom: 30px;
+}
+header h1 {
+    font-size: 1.8rem;
+    color: #38bdf8;
+    letter-spacing: 2px;
+}
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #38bdf8;
+    text-decoration: none;
+    font-size: 1.1rem;
+    border: 1px solid #38bdf8;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+.back-link:hover {
+    background-color: #38bdf8;
+    color: #0b0f19;
+}
+        
+        :root {
+            --main-color: #38bdf8; /* Kolor nadpisywany przez JSON */
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        /* Sekcja Hero - Domyślny układ dla telefonów (jedno pod drugim) */
+        .hero {
+            display: flex;
+            flex-direction: column; /* Ustawia zdjęcie nad tekstem */
+            margin-bottom: 40px;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        /* Zdjęcie na telefonie - pełna szerokość i idealny kwadrat */
+        .hero-img {
+            width: 100%;
+            aspect-ratio: 1 / 1; /* Wymusza proporcje kwadratu, zapobiega ucinaniu */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Układ obok siebie aktywowany dopiero na większych ekranach (komputery) */
+        @media (min-width: 992px) {
+            .hero {
+                flex-direction: row; /* Przywraca układ lewo-prawo */
+                gap: 40px;
+            }
+            .hero-img {
+                width: 45%; /* Na komputerze zdjęcie zajmuje 45% szerokości */
+                aspect-ratio: auto; /* Wyłącza wymuszony kwadrat */
+                min-height: 100%; /* Rozciąga zdjęcie w dół, by dopasować się do bloku tekstu */
+            }
+        }
+
+
+        .tag {
+            color: var(--main-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Siatka statystyk */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--main-color);
+        }
+
+        .stat-val { display: block; font-size: 1.2rem; font-weight: bold; }
+        .stat-lbl { color: var(--text-muted); font-size: 0.85rem; }
+
+        /* Dynamiczne sekcje */
+        .section {
+            margin-bottom: 40px;
+            display: none; /* Domyślnie ukryte, JS pokaże jeśli będą dane */
+            background: var(--bg-card);
+            border-radius: 8px;
+            padding: 20px;
+            border: 1px solid #1e293b;
+        }
+
+        .section h2 {
+            border-bottom: 1px solid var(--text-muted);
+            padding-bottom: 10px;
+            color: var(--main-color);
+            margin-bottom: 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--bg-dark);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #1e293b;
+        }
+
+        .card h3 { color: var(--main-color); margin-top: 0; }
+        .card h4 { color: var(--main-color); margin: 0 0 5px 0; }
+        .card p { color: var(--text-muted); }
+
+        /* Galeria */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s;
+            border: 1px solid #1e293b;
+        }
+
+        .gallery img:hover { transform: scale(1.03); }
+
+        .agency {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        .extended-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .extended-table td {
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .extended-table td:first-child {
+            color: var(--text-muted);
+            width: 40%;
+        }
+
+        .extended-table td:last-child {
+            color: #f8fafc;
+            font-weight: bold;
+            text-align: right;
+        }
+
+        .comparison-item { margin-bottom: 15px; }
+        .comparison-label { display: flex; justify-content: space-between; margin-bottom: 5px; }
+        .progress-bg { background: #0b0f19; height: 8px; border-radius: 4px; overflow: hidden; border: 1px solid #1e293b; }
+        .progress-fill { background: var(--main-color); height: 100%; border-radius: 4px; }
+
+        .stars { color: gold; letter-spacing: 2px; }
+    </style>
 </head>
 <body>
     <header>
@@ -15,41 +221,39 @@
         
         <a href="index.html" class="back-link">&#10094; Wróć do listy księżyców</a>
 
-        <section class="moon-header" id="moon-hero">
-            <div class="moon-hero-img" id="moon-hero-img"></div>
-            <div class="moon-hero-info">
-                <span class="planet-tag" id="moon-tag"></span>
-                <h2 id="moon-name" style="margin: 10px 0;"></h2>
-                <p class="moon-desc" id="moon-desc"></p>
+        <section class="hero" id="moon-hero">
+            <div class="hero-img" id="moon-hero-img"></div>
+            <div class="hero-content">
+                <span class="tag" id="moon-tag"></span>
+                <h1 id="moon-name" style="margin: 10px 0;"></h1>
+                <p id="moon-desc" style="color: var(--text-muted); line-height: 1.6;"></p>
                 
-                <div class="quick-stats" id="moon-stats"></div>
+                <div class="stats-grid" id="moon-stats"></div>
             </div>
         </section>
 
         <section class="section" id="sec-orbit">
-            <h3>Wizualizacja Orbity</h3>
-            
+            <h2>Wizualizacja Orbity</h2>
             <div id="orbit-visual-container" style="display: flex; justify-content: center; align-items: center; padding: 30px 20px; background: rgba(255,255,255,0.02); border-radius: 8px; margin-bottom: 25px;"></div>
-            
-            <div class="orbit-data-panel" id="content-orbit-metrics"></div>
-            <p id="content-orbit-summary" style="text-align: center; color: #cbd5e1; margin-top: 15px; font-size: 0.95rem;"></p>
+            <div class="grid-2" id="content-orbit-metrics"></div>
+            <p id="content-orbit-summary" style="text-align: center; color: var(--text-muted); margin-top: 15px; font-size: 0.95rem;"></p>
         </section>
 
         <section class="section" id="sec-profile">
-            <h3 id="title-profile"></h3>
-            <div class="text-grid" id="content-profile"></div>
+            <h2 id="title-profile"></h2>
+            <div class="grid-2" id="content-profile"></div>
         </section>
 
         <section class="section" id="sec-astrobiology">
-            <h3>Możliwość istnienia życia</h3>
+            <h2>Możliwość istnienia życia</h2>
             <div class="card">
                 <div style="font-weight: bold; margin-bottom: 10px;">Potencjał astrobiologiczny: <span id="astro-stars" class="stars"></span></div>
-                <p id="astro-desc" style="color: #cbd5e1; line-height: 1.5; margin: 0;"></p>
+                <p id="astro-desc" style="color: var(--text-muted); line-height: 1.5; margin: 0;"></p>
             </div>
         </section>
 
         <section class="section" id="sec-physical">
-            <h3>Parametry fizyczne</h3>
+            <h2>Parametry fizyczne</h2>
             <div class="card">
                 <table class="extended-table" style="width: 100%; border-collapse: collapse; text-align: left;">
                     <tbody id="content-physical"></tbody>
@@ -58,8 +262,8 @@
         </section>
 
         <section class="section" id="sec-geology">
-            <h3>Geologia i Skład Chemiczny</h3>
-            <div class="text-grid" id="content-geology-text"></div>
+            <h2>Geologia i Skład Chemiczny</h2>
+            <div class="grid-2" id="content-geology-text"></div>
             
             <div class="card" style="margin-top: 20px;" id="content-geology-chart-container">
                 <h4 id="geology-chart-title"></h4>
@@ -68,27 +272,27 @@
         </section>
 
         <section class="section" id="sec-anomalies">
-            <h3 id="title-anomalies"></h3>
-            <div class="text-grid" id="content-anomalies"></div>
+            <h2 id="title-anomalies"></h2>
+            <div class="grid-2" id="content-anomalies"></div>
         </section>
 
         <section class="section" id="sec-comparison">
-            <h3 id="title-comparison"></h3>
-            <p id="subtitle-comparison" style="color: #cbd5e1; margin-bottom: 25px; font-size: 0.95rem;"></p>
+            <h2 id="title-comparison"></h2>
+            <p id="subtitle-comparison" style="color: var(--text-muted); margin-bottom: 25px; font-size: 0.95rem;"></p>
             <div id="content-comparison-items"></div>
-            <div class="card" style="margin-top: 25px; border-left: 4px solid #38bdf8;">
+            <div class="card" style="margin-top: 25px; border-left: 4px solid var(--main-color);">
                 <p id="summary-comparison" style="margin: 0; line-height: 1.5; font-size: 0.9rem;"></p>
             </div>
         </section>
 
         <section class="section" id="sec-missions">
-            <h3>Misje Kosmiczne</h3>
-            <div class="grid-cards" id="content-missions"></div>
+            <h2>Misje Kosmiczne</h2>
+            <div class="grid-2" id="content-missions"></div>
         </section>
 
         <section class="section" id="sec-gallery">
-            <h3 id="title-gallery"></h3>
-            <div class="gallery-wrapper" id="content-gallery"></div>
+            <h2 id="title-gallery"></h2>
+            <div class="gallery" id="content-gallery"></div>
         </section>
     </div>
 
@@ -120,7 +324,7 @@
             document.getElementById('moon-tag').innerText = data.planetTag;
             document.getElementById('moon-desc').innerText = data.description;
             
-            // Poprawka kadrowania zdjęcia hero
+            // POPRAWKA ZDJĘCIA: Zmieniamy sposób wyświetlania tła, by nie ucinało globu
             const heroImg = document.getElementById('moon-hero-img');
             heroImg.style.backgroundImage = `url('${data.heroImage}')`;
             heroImg.style.backgroundSize = 'contain';
@@ -134,85 +338,82 @@
                 data.quickStats.forEach(stat => {
                     statsContainer.innerHTML += `
                         <div class="stat-box">
-                            <span class="stat-value">${stat.value}</span>
-                            <span class="stat-label">${stat.label}</span>
+                            <span class="stat-val">${stat.value}</span>
+                            <span class="stat-lbl">${stat.label}</span>
                         </div>`;
                 });
             }
 
-            // 3. Orbita (Wizualizacja Graficzna + Dane liczbowkie)
+            // 3. Orbita (Wizualizacja Graficzna + Dane liczbowe)
             if(data.orbit) {
-                document.getElementById('sec-orbit').style.display = 'block';
+                const secOrbit = document.getElementById('sec-orbit');
+                secOrbit.style.display = 'block';
                 
-                // Generowanie animowanego modelu graficznego SVG w locie
                 const visualContainer = document.getElementById('orbit-visual-container');
-                if (visualContainer) {
-                    let planetColor = '#e2e8f0'; 
-                    let planetName = 'Planeta';
-                    const tagLower = data.planetTag.toLowerCase();
-                    
-                    if (tagLower.includes('saturn')) {
-                        planetColor = '#fde047';
-                        planetName = 'Saturn';
-                    } else if (tagLower.includes('jowisz')) {
-                        planetColor = '#fb923c';
-                        planetName = 'Jowisz';
-                    } else if (tagLower.includes('ziemi')) {
-                        planetColor = '#60a5fa';
-                        planetName = 'Ziemia';
-                    } else if (tagLower.includes('mars')) {
-                        planetColor = '#f87171';
-                        planetName = 'Mars';
-                    } else if (tagLower.includes('neptun')) {
-                        planetColor = '#3b82f6';
-                        planetName = 'Neptun';
-                    } else if (tagLower.includes('uran')) {
-                        planetColor = '#2dd4bf';
-                        planetName = 'Uran';
-                    }
-
-                    // Skalowanie prędkości animacji bazując na dniach orbitalnych
-                    const duration = data.orbit.targetDays ? Math.max(4, Math.min(data.orbit.targetDays * 1.5, 25)) : 12;
-                    const moonColor = data.themeColor || '#38bdf8';
-
-                    visualContainer.innerHTML = `
-                        <svg width="240" height="240" viewBox="0 0 240 240" style="overflow: visible;">
-                            <defs>
-                                <linearGradient id="planetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" stop-color="${planetColor}" />
-                                    <stop offset="100%" stop-color="#451a03" stop-opacity="0.7" />
-                                </linearGradient>
-                                <filter id="moonGlow" x="-30%" y="-30%" width="160%" height="160%">
-                                    <feGaussianBlur stdDeviation="3" result="blur" />
-                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
-                                </filter>
-                            </defs>
-                            
-                            <circle cx="120" cy="120" r="80" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" stroke-dasharray="4 4" />
-                            
-                            <circle cx="120" cy="120" r="28" fill="url(#planetGrad)" style="box-shadow: 0 0 15px ${planetColor}40;" />
-                            <text x="120" y="123" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle" style="font-family: system-ui, sans-serif; pointer-events: none; letter-spacing: 0.5px;">${planetName}</text>
-                            
-                            <g style="transform-origin: 120px 120px; animation: orbit-spin-anim ${duration}s linear infinite;">
-                                <circle cx="120" cy="40" r="7" fill="${moonColor}" filter="url(#moonGlow)" />
-                                <text x="120" y="26" font-size="10" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family: system-ui, sans-serif;">${data.name}</text>
-                            </g>
-                            
-                            <style>
-                                @keyframes orbit-spin-anim {
-                                    from { transform: rotate(0deg); }
-                                    to { transform: rotate(360deg); }
-                                }
-                            </style>
-                        </svg>
-                    `;
+                let planetColor = '#e2e8f0'; 
+                let planetName = 'Planeta';
+                const tagLower = data.planetTag.toLowerCase();
+                
+                if (tagLower.includes('saturn')) {
+                    planetColor = '#fde047';
+                    planetName = 'Saturn';
+                } else if (tagLower.includes('jowisz')) {
+                    planetColor = '#fb923c';
+                    planetName = 'Jowisz';
+                } else if (tagLower.includes('ziemi')) {
+                    planetColor = '#60a5fa';
+                    planetName = 'Ziemia';
+                } else if (tagLower.includes('mars')) {
+                    planetColor = '#f87171';
+                    planetName = 'Mars';
+                } else if (tagLower.includes('neptun')) {
+                    planetColor = '#3b82f6';
+                    planetName = 'Neptun';
+                } else if (tagLower.includes('uran')) {
+                    planetColor = '#2dd4bf';
+                    planetName = 'Uran';
                 }
+
+                const duration = data.orbit.targetDays ? Math.max(4, Math.min(data.orbit.targetDays * 1.5, 25)) : 12;
+                const moonColor = data.themeColor || '#38bdf8';
+
+                visualContainer.innerHTML = `
+                    <svg width="240" height="240" viewBox="0 0 240 240" style="overflow: visible;">
+                        <defs>
+                            <linearGradient id="planetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="${planetColor}" />
+                                <stop offset="100%" stop-color="#451a03" stop-opacity="0.7" />
+                            </linearGradient>
+                            <filter id="moonGlow" x="-30%" y="-30%" width="160%" height="160%">
+                                <feGaussianBlur stdDeviation="3" result="blur" />
+                                <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                            </filter>
+                        </defs>
+                        
+                        <circle cx="120" cy="120" r="80" fill="none" stroke="rgba(255, 255, 255, 0.15)" stroke-width="1.5" stroke-dasharray="4 4" />
+                        
+                        <circle cx="120" cy="120" r="28" fill="url(#planetGrad)" />
+                        <text x="120" y="123" font-size="9" font-weight="bold" fill="#ffffff" text-anchor="middle" style="font-family: system-ui, sans-serif; pointer-events: none;">${planetName}</text>
+                        
+                        <g style="transform-origin: 120px 120px; animation: orbit-spin-anim ${duration}s linear infinite;">
+                            <circle cx="120" cy="40" r="7" fill="${moonColor}" filter="url(#moonGlow)" />
+                            <text x="120" y="26" font-size="10" fill="#ffffff" font-weight="600" text-anchor="middle" style="font-family: system-ui, sans-serif;">${data.name}</text>
+                        </g>
+                        
+                        <style>
+                            @keyframes orbit-spin-anim {
+                                from { transform: rotate(0deg); }
+                                to { transform: rotate(360deg); }
+                            }
+                        </style>
+                    </svg>
+                `;
 
                 const metricsContainer = document.getElementById('content-orbit-metrics');
                 metricsContainer.innerHTML = data.orbit.metrics.map(m => `
-                    <div class="data-metric">
-                        <span class="data-value">${m.value}</span>
-                        <span class="data-label">${m.label}</span>
+                    <div class="card" style="text-align: center;">
+                        <span style="display: block; font-size: 1.5rem; font-weight: bold; color: var(--main-color);">${m.value}</span>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">${m.label}</span>
                     </div>
                 `).join('');
                 document.getElementById('content-orbit-summary').innerHTML = data.orbit.summaryText;
@@ -233,9 +434,9 @@
                 document.getElementById('sec-physical').style.display = 'block';
                 const physContainer = document.getElementById('content-physical');
                 physContainer.innerHTML = data.physicalParameters.map(p => `
-                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
-                        <td style="padding: 12px 0; color: #94a3b8;">${p.label}</td>
-                        <td style="padding: 12px 0; font-weight: bold; text-align: right;">${p.value}</td>
+                    <tr>
+                        <td>${p.label}</td>
+                        <td>${p.value}</td>
                     </tr>
                 `).join('');
             }
@@ -245,9 +446,9 @@
                 document.getElementById('sec-geology').style.display = 'block';
                 const textContainer = document.getElementById('content-geology-text');
                 textContainer.innerHTML = data.geologyChemistry.textBlocks.map(block => `
-                    <div class="text-box">
-                        <h4>${block.title}</h4>
-                        <p>${block.content}</p>
+                    <div class="card">
+                        <h3>${block.title}</h3>
+                        <p style="color: var(--text-muted); line-height: 1.5; margin-bottom: 0;">${block.content}</p>
                     </div>
                 `).join('');
 
@@ -255,7 +456,7 @@
                     document.getElementById('geology-chart-title').innerText = data.geologyChemistry.compositionChart.title;
                     const legend = document.getElementById('geology-chart-legend');
                     legend.innerHTML = data.geologyChemistry.compositionChart.segments.map(seg => `
-                        <li><strong style="color: #38bdf8;">${seg.percentage}</strong> - ${seg.text}</li>
+                        <li><strong style="color: var(--main-color);">${seg.percentage}</strong> - ${seg.text}</li>
                     `).join('');
                 } else {
                     document.getElementById('content-geology-chart-container').style.display = 'none';
@@ -265,7 +466,7 @@
             // 8. Anomalie
             renderFlexSection('sec-anomalies', 'title-anomalies', 'content-anomalies', 'Anomalie Geologiczne', data.anomalies);
 
-            // 9. Analiza porównawcza (Poprawka paska, by nie wychodził ponad 100%)
+            // 9. Analiza porównawcza
             if(data.comparison) {
                 document.getElementById('sec-comparison').style.display = 'block';
                 document.getElementById('title-comparison').innerText = data.comparison.title;
@@ -281,7 +482,7 @@
                     <div class="comparison-item">
                         <div class="comparison-label">
                             <span>${item.label}</span>
-                            <span style="font-weight: bold; color: #38bdf8;">${item.percentage}</span>
+                            <span style="font-weight: bold; color: var(--main-color);">${item.percentage}</span>
                         </div>
                         <div class="progress-bg">
                             <div class="progress-fill" style="width: ${visualWidth}%;"></div>
@@ -298,7 +499,7 @@
                     <div class="card">
                         <h4 style="margin: 0 0 5px 0;">${mission.name}</h4>
                         <span class="agency">${mission.agency}</span>
-                        <p style="color: #cbd5e1; line-height: 1.5; font-size: 0.9rem; margin-top: 10px;">${mission.description}</p>
+                        <p style="color: var(--text-muted); line-height: 1.5; font-size: 0.9rem; margin-top: 10px;">${mission.description}</p>
                     </div>
                 `).join('');
             }
@@ -311,10 +512,7 @@
                 const galContainer = document.getElementById('content-gallery');
                 galContainer.innerHTML = '';
                 data.gallery.forEach(imgUrl => {
-                    galContainer.innerHTML += `
-                        <div class="slide-container">
-                            <img src="${imgUrl}" alt="Zdjęcie obiektu">
-                        </div>`;
+                    galContainer.innerHTML += `<img src="${imgUrl}" alt="Zdjęcie obiektu">`;
                 });
             }
 
@@ -341,9 +539,9 @@
                     }
 
                     container.innerHTML += `
-                        <div class="text-box">
-                            <h4>${item.title}</h4>
-                            <p>${item.content}</p>
+                        <div class="card">
+                            <h3 style="margin-top:0;">${item.title}</h3>
+                            <p style="color: var(--text-muted); line-height: 1.5; margin-bottom: 0; font-size: 0.95rem;">${item.content}</p>
                             ${subImagesHtml}
                         </div>`;
                 });
